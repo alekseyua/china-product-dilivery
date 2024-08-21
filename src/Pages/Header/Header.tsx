@@ -15,6 +15,7 @@ import ButtonGoToUp from "../../Component/Chunks/ButtonGoTo/ButtonGoToUp";
 import SocialContainerContacts from "../../Views/Header/SocialContainerContacts";
 import Container from "../../Views/Block/Container";
 import Phone from "../../Component/Chunks/Phone/Phone";
+import Offset from "../../Views/Offset/Offset";
 
 
 const Header: React.FC<IPropsHeader> = function ({
@@ -25,7 +26,7 @@ const Header: React.FC<IPropsHeader> = function ({
 }: IPropsHeader) {
     // при пролистывании в HeaderBottom нужно добавлять клас sticky > 480px
     return (
-        <HeaderSection>
+        <HeaderSection isBurger={isBurger}> 
             <Container>
                 <HeaderTop>
                     {
@@ -70,8 +71,13 @@ const Header: React.FC<IPropsHeader> = function ({
                 </HeaderBottom>
                 <ButtonGoToUp 
                     onClick={handlerClickButtonUp}
-                />
+                    />
          </Container>
+                    {/* {
+                        isBurger? 
+                            <Offset mt={250} />
+                            : null
+                    } */}
             </HeaderSection>
 
     )

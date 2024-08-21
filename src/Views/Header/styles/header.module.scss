@@ -11,7 +11,16 @@
         left: 0;
         width: 100%;
         z-index: 99;
-        // --main-container: 1600px;
+        //header__th-header--mobile
+        &--mobile{
+            padding: 0;
+            height: 70px;
+            position: relative;
+            &>div>div>div>div>div>div>div{
+                left: 10px;
+                position: relative;
+            }
+        }
     }
     //header-top{}
     &-top{
@@ -27,6 +36,7 @@
         top: 0px;
         right: 0;
         left: 0;
+        
         
         &-sticky {
             top: 0;
@@ -51,7 +61,7 @@
     &__logo{
         width: 100%;
         @include adaptiv-value(min-width, 150,100,1);
-        @include adaptiv-value(margin-right, 70,30,1);
+        @include adaptiv-value(margin-right, 70,30,1);        
         &>a>div>img{
             height: 100px;
             width: 200px;

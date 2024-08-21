@@ -254,6 +254,8 @@
             visibility: hidden;
             transition: all ease 1s;
             z-index: 1;
+            // height: 100vh;
+            top: -10px;
             //nav__burger-container-active
             &-active{
                 left: calc(0px - var(--container-gutters));
@@ -261,6 +263,9 @@
                 visibility: visible;
                 height: 100vh;
                 top: -10px;
+                &>:first-child{
+                    left: 0 !important;
+                }
             }
         }
     }

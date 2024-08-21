@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { IStateBurger } from '../../@types/header/header'
 import NavBurger from './NavBurger'
 import { mainMenu } from '../../config/config.menu'
-import NavDesktopMobile from '../NavDesktop/NavDesktopMobile'
 
 export class NavBurgerContainer extends Component<{},IStateBurger> {
     state: IStateBurger = {
@@ -14,7 +13,7 @@ export class NavBurgerContainer extends Component<{},IStateBurger> {
             isOpen: !state.isOpen
         }))
         if(!this.state.isOpen){
-          document.querySelector('body')?.setAttribute('style', 'overflow:hidden;padding-right:35px;')
+          document.querySelector('body')?.setAttribute('style', 'overflow:hidden;')
         }else{
           document.querySelector('body')?.setAttribute('style', '')
         }
