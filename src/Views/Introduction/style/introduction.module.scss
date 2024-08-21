@@ -1,0 +1,45 @@
+@import '../../../styles/styles/mixin.scss';
+
+.introduction{
+    //introduction__container
+    &__container{
+        position: relative;
+        // padding: 10px;
+        // @include adaptiv-value(margin-top,160,100,1);
+        display: flex;
+        gap: 50px;
+        justify-content: space-between;
+        max-width: 100%;
+        flex-wrap: wrap;
+        @include resize(desktop){
+            flex-wrap: wrap;
+            align-items: center;
+            // max-width: calc(960px + var(--container-gutters));
+            padding-left: calc(var(--container-gutters) / 2);
+            padding-right: calc(var(--container-gutters) / 2);
+        }
+        @include resize(landscape){
+            justify-content: center;
+        }
+    }
+    //introduction__container-wrap
+    &__container-wrap{
+        @include adaptiv-value(padding,50, 30,1);
+        border: 1px solid var(--border-color);
+        // flex: 1 1 33%;
+        min-width: 250px;
+        max-width: 305px;
+        min-height: 350px;
+        // @include adaptiv-value(min-width,350, 270,1);
+    }
+    //introduction__container-grid
+    &__container-grid{
+        display: flex;
+        flex-direction: column;
+    }
+    //introduction__icon-container
+    &__icon-container{
+        justify-self: flex-start;
+
+    }
+}

@@ -1,0 +1,104 @@
+@import '../../../styles/styles/mixin.scss';
+
+.block{
+    //block__wrap
+    &__wrap{
+        padding: 0;
+        width: auto;
+        display: flex;
+        position: relative;
+        width: 100%;
+    }
+    //block__flex
+    &__flex{
+        display: flex;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        width: 100%;      
+    }
+    //block__flex-row
+    &__flex-row{
+        flex-direction: row;
+    }
+    //block__grid
+    &__grid{
+        display: grid;
+        width: 100%;
+        position: relative;
+        @include resize(big-desktop){
+            grid-template-columns: 1fr;      
+        }
+    }
+
+    &__card{
+            //block__card-container-grid
+            &-container-grid{
+                min-width: 250px;
+                min-height: 350px;
+                grid-template-columns: repeat(2, 1fr); 
+                grid-template-rows: auto;
+                gap: 50px;
+                @include resize(landscape){
+                    grid-template-columns: 1fr;
+                    // grid-template-rows: repeat(1, 1fr);
+                    gap: 30px;
+                }
+            }
+            //block__card-container-grid-advantage
+                &-container-grid-advantage{
+                    min-width: 250px;
+                    min-height: 350px;
+                    grid-template-columns: repeat(4, 1fr); 
+                    grid-template-rows: auto;
+                    gap: 50px;
+                    @include resize(landscape){                        
+                        grid-template-rows: repeat(2, 1fr);
+                        gap: 30px;
+                    }
+                }
+                //block__card-container-grid-fullfilment-slogan
+                &-container-grid-fullfilment-slogan{
+                    padding-top: 10px;
+                    min-width: 200px;
+                    min-height: 140px;
+                    grid-template-columns: repeat(3, 1fr); 
+                    grid-template-rows: auto;
+                    gap: 50px;
+                    @include resize(landscape){                        
+                        grid-template-columns: repeat(2, 1fr);
+                        gap: 30px;
+                    }
+                    @include resize(mobile){                        
+                        grid-template-columns: 1fr;
+                        gap: 30px;
+                    }
+                }
+        }
+    &__delivery{
+        //block__delivery-price-card-conrainer
+        &-price-card-conrainer{
+            grid-template-columns: repeat(4,1fr);
+            align-items: center;
+            justify-items: center;
+            gap: 25px;
+            @include resize(desktop){
+                grid-template-columns: repeat(2,1fr);      
+            }
+            @include resize(mobile){
+                grid-template-columns: 1fr;                  
+            }
+        }
+        //block__delivery-info-about-cargo-content-container
+        &-info-about-cargo-content-container{
+            grid-template-columns: repeat(2,1fr);
+            // align-items: center;
+            justify-items: center;
+            gap: 25px;
+            @include resize(mobile){
+                grid-template-columns: 1fr;                  
+            }
+            
+        }
+}
+}

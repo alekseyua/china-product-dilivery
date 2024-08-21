@@ -1,0 +1,66 @@
+@import '../../../../styles/styles/mixin.scss';
+
+//addClases
+.block{
+    //block__about-main-conrainer
+    &__about-main-conrainer{
+        @include resize(desktop){
+            flex-direction: column;
+        }
+    }
+    //block__about-main-container-title
+    &__about-main-container-title{
+        display: flex;
+        justify-content: flex-start;
+    }
+    //block__feature-container-title
+    &__feature-container-title{
+        @include resize(desktop){
+            align-items: flex-end;
+        }
+        @include resize(big-landscape){
+            align-items: flex-start;
+            margin-top: 30px;
+        }
+    }
+     //block__client-card-container-self-info
+     &__client-card-container-self-info{
+        justify-content: flex-start;
+        @include resize(desktop){
+            flex-direction: row;
+        }
+        &>div{
+            &:first-child{
+                max-height: 50px;
+                flex: 1 1 auto;
+                justify-content: flex-start;
+            }
+            &:last-child{
+                flex: 0 1 30%
+            }
+        }
+    }
+    //block__repurchase-goods-info-conrainer
+    &__repurchase-goods-info-conrainer{
+        flex-direction: column;
+    }
+    //block__repurchase-goods-info-map-conrainer
+    &__repurchase-goods-info-map{
+        &-conrainer{
+            flex-direction: row;
+            @include resize(desktop){
+                flex-direction: column;
+            }
+        }
+        //block__repurchase-goods-info-map--left
+        &--left{
+            padding: 0;
+            flex-direction: column;
+        }
+        //block__repurchase-goods-info-map--right
+        &--right{
+            padding: 0;
+            flex-direction: column;
+        }
+    }
+}

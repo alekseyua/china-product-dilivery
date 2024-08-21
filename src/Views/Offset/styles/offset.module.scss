@@ -1,0 +1,14 @@
+@import '../../../styles/styles/mixin.scss';
+
+.offset{
+    //offset__section-top
+    &__section-top{
+        position: relative;
+        @include adaptiv-value(margin-top, 160, 100,1); 
+    }
+    //offset__section-bottom
+    &__section-bottom{
+        position: relative;
+        @include adaptiv-value(margin-bottom, 160, 100,1);    
+    }
+}

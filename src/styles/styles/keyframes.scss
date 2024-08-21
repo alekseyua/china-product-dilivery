@@ -1,0 +1,112 @@
+:root{
+    --fill-scrolling: 0;
+}
+
+@keyframes ripple {
+    
+    0% {
+        transform: scale(1);
+        opacity: 0;
+    }
+    
+    30% {
+        opacity: 0.4;
+    }
+    100% {
+        transform: scale(1.6);
+        opacity: 0;
+    }
+}
+
+@keyframes slideinup {
+    0% {
+        opacity: 0;
+        transform: translateY(70px);
+    }
+    
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes jumpAni {   
+    0% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-30px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        bottom: -100%;
+        // transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        bottom: 0;
+        // transform: translateY(0);
+    }
+}
+
+@keyframes  fadeInLeft{   
+    0% {
+        opacity: 0;
+        // transform: translateX(-40px);
+        left: -100%;
+    }
+    100% {
+        opacity: 1;
+        // transform: translateX(0);
+        left: 0;
+    }
+}
+@keyframes fadeInRight {
+    // 0% {
+    //     opacity: 0;
+    //     // visibility: hidden;
+    //     transform: translateX(40px);
+
+    // }
+    // 100% {
+    //     opacity: 1;
+    //     // visibility: visible;
+    //     transform: translateX(0);
+
+    // }
+    0%{
+        right: -100%;
+        opacity: 0;
+    }
+    100% {
+        right: 0;
+        opacity: 1;
+
+    }
+}
+
+@keyframes yinYang {
+    100%{    
+        transform: rotate(360deg);
+    }
+}
+
+// @keyframes progress {
+//     to {
+//       --angle: var(--fill-scrolling);
+//     }
+//   }
+  
+// @property --angle {
+// syntax: '<angle>';
+// initial-value: var(--fill-scrolling);
+// inherits: false;
+// }

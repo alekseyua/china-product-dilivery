@@ -1,0 +1,90 @@
+@import './mixin.scss';
+@import '../styles/keyframes.scss';
+
+body{
+    font-family: var(--body-font);
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--body-color);
+    line-height: 25px;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    background-color: var(--body-bg);
+}
+
+[style="list-style-type:disc;"]{
+    position: relative;
+    left: 20px;
+}
+
+.image-style-align-center{
+    text-align: center;
+}
+
+.slick-prev,
+.slick-next{
+    display: none !important;
+}
+.slick-slider{
+    // width: 99.99999%;
+}
+
+.react-player__shadow{
+    position: relative;
+    padding: 0;
+    &:hover{
+        cursor: pointer;
+        &::after,&::before {
+            background-color: var(--theme-color);
+        }
+    }
+    &::before{
+        background-color: transparent;
+        border: 1px solid var(--white-color);
+        animation-duration: var(--ripple-ani-duration);
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        animation-name: ripple;
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        border-radius: 50%;
+        transition: all ease 0.4s;
+        
+    }
+    &::after{
+        background-color: transparent;
+        border: 1px solid var(--white-color);
+
+        animation-duration: 2s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        animation-name: ripple;
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        // background-color: var(--theme-color);
+        z-index: 1;
+        border-radius: 50%;
+        transition: all ease 0.4s;
+    }
+}
+
+.react-player{
+    width: 100%;
+    height: 700px !important;
+    @include resize(desktop){
+        height: auto !important;
+    }
+}
+
+.react-player__play-icon{
+    border-color: transparent transparent transparent var(--theme-color) !important;
+}

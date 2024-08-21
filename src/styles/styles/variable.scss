@@ -1,0 +1,46 @@
+@import '../fonts/fonts.scss';
+
+:root {
+    --color-icon          : #FECC52;
+    --theme-color         : #FECC52;
+    --text-color-black    : #000000;
+    --text-color-white    : #ffffff;
+    --title-color         : #fff;
+    --title-black         : #01000F;
+    --body-color          : #999999;
+    --body-bg             : #272727;
+    --smoke-color         : #323232;
+    --black-color         : #000000;
+    --white-color         : #ffffff;
+    --light-color         : #B0B0B0;
+    --yellow-color        : #fec624;
+    --success-color       : #28a745;
+    --error-color         : #dc3545;
+    --border-color        : rgba(255, 255, 255, 0.15);
+    --border-color-expert        : rgba(255, 255, 255, 0.15);
+    --title-font          : 'Oswald', sans-serif;
+    --body-font           : 'Oswald', sans-serif;
+    --para-font           : 'Poppins', sans-serif;
+    --icon-font           : "Font Awesome 6 Pro";
+    --main-container      : 1410px;
+    --container-gutters   : 30px;
+    --section-space       : 160;
+    --section-space-mobile: 100;
+    --section-title-space : 50px;
+    --ripple-ani-duration : 5s;
+    --text-menu-color: #ffffff;
+    --bgc-white: #ffffff;
+    --bgc-menu: #101010;
+    --bgc-footer: #1B1B1B;
+    --fadeInLeft: fadeInLeft;
+    --fadeInUp: fadeInUp;
+    --fadeInDown: fadeInDown;
+    --fadeInRight: fadeInRight;
+    --jumpAni: jumpAni;
+    --progress: progress;
+    // --animation-name: slideinup;
+  }
+  
+$maxWidthContainer: 1630;
+$maxWidth: 1920;
+$minWidth: 320px;

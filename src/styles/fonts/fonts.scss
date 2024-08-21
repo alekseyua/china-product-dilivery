@@ -1,0 +1,42 @@
+@font-face {
+    font-family: 'Oswald';
+    src: local('Oswald-Regular'), local('Oswald-Regular'),
+        url('./Oswald-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Oswald';
+    src: local('Oswald-SemiBold'), local('Oswald-SemiBold'),
+        url('./Oswald-SemiBold\(600\).woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Oswald';
+    src: local('Oswald-Bold'), local('Oswald-Bold'),
+        url('./Oswald-Bold\(700\).woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Poppins';
+    src: local('Poppins-Bold'), local('Poppins-Bold'),
+        url('./Poppins-Bold(700).woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Poppins';
+    src: local('Poppins-Medium'), local('Poppins-Medium'),
+        url('./Poppins-Medium\(500\).woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Poppins';
+    src: local('Poppins-Regular'), local('Poppins-Regular'),
+        url('./Poppins-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}

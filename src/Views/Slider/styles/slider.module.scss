@@ -1,0 +1,223 @@
+@import '../../../styles/styles/mixin.scss';
+@import '../../../styles/styles/keyframes.scss';
+
+.slider{
+    //slider__container
+    &__container{
+      display: block;
+      
+    }
+    //slider__container-wrap
+    &__container-wrap{
+        @include adaptiv-value(padding-top, 40,40,1);
+        @include adaptiv-value(padding-bottom, 100,58,1);
+
+        position: relative;
+        z-index: 1;
+        background-color: transparent;
+        &::after{
+            position: absolute;
+            content: '';
+            top: -40px;
+            @include adaptiv-value(left, 80,20,2);
+            bottom: 43px;
+            width: calc(100% - calc(20px + 59 * (100vw - 320px) / 1600) );
+            background-color: var(--theme-color);
+            z-index: -3;
+            @include resize(desktop1700){
+              width: 100%;
+              left: 0!important;
+            }
+        }
+        &::before{
+            content: '';
+            width:97%;
+            position: absolute;
+            background-color: rgba(0,0,0,0.15);
+            z-index: -2;
+            @include adaptiv-value(top, 60,35,1);
+            @include adaptiv-value(bottom, 75,60,1);
+        }       
+    }
+    //slider__slide-wrap
+    &__slide-wrap{
+        padding: 0;
+        width: 95%;
+        height: 100%;
+        z-index: -2;
+        position: relative;
+        @include resize(desktop1700){
+          width: 100%;
+          // min-height: 320px;
+        }
+    }
+    //slider__image-container
+    &__image-container{
+        // @include adaptiv-value(height, 975,280,2);
+        z-index: 1;
+        position: relative;
+        background-color: transparent;
+        &>div>span>img{
+          min-height: 320px;
+        }
+    }
+    //slider__content-container
+    &__content-container{
+        position: absolute;
+        @include adaptiv-value(margin-left, 100,20,1);
+        z-index: 1;
+        // bottom: 12%;
+        @include adaptiv-value(bottom, 150,40,2);
+        @include resize(landscape){
+          @include adaptiv-value(bottom, 80,10,2);
+        }
+        @include resize(mobile){
+          @include adaptiv-value(bottom, 80,20,1);
+        }
+        @include resize(mid-mobile){
+          @include adaptiv-value(bottom, 120,40,1);
+        }
+    }
+    //slider__content-title
+    &__content-title{
+        @include adaptiv-font(86,15);
+        @include adaptiv-value(line-height, 30,8,2);
+        font-family: Oswald sans-serif;
+        color: var(--text-color-white);
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        margin-bottom: 0;
+        opacity: var(--animation-opacity);
+        animation-fill-mode: both;
+        animation-iteration-count: 1;
+        animation-duration: 1s;
+        animation-delay: 0.3s;
+        animation-name: var(--animation-name);
+        
+    }
+    //slider__content-sub-title
+    &__content-sub-title{
+        @include adaptiv-font(30,8);
+        @include adaptiv-value(line-height, 30,5,2);
+        font-weight: 600;
+        font-family: Oswald sans-serif;
+        letter-spacing: 0.2em;
+        color: var(--theme-color);
+        margin-bottom: 20px;
+        @include adaptiv-value(margin-bottom, 20,10,1);
+
+        opacity: 1;
+        animation-fill-mode: both;
+        animation-iteration-count: 1;
+        animation-duration: 1s;
+        animation-delay: 0.3s;
+        animation-name: var(--animation-name);
+        
+    }
+    //slider__controller-container
+    &__controller-container{
+        background-image: linear-gradient(to top, var(--body-bg) 55px, #212121 25px);
+        @include adaptiv-value(width, 300,120,2);
+        @include adaptiv-value(height, 70,30,2);
+        position: absolute;
+        @include adaptiv-value(right, 140,15,2);
+        gap: 10px;
+        justify-content: space-evenly;
+        display: flex;
+        @include adaptiv-value(bottom, 43,37,2);
+
+    }
+
+
+
+    //slider__feature-controller-container
+    &__feature-controller-container{
+        position: absolute;
+        display: flex;
+        transform: rotate(90deg);
+        left: -210px;
+        top: 160px;
+        @include resize(desktop1700){
+            transform: rotate(0deg) translate(-50%,10%);
+            left: 50%;
+            top: 100%;
+            
+        }
+        &>input{
+            /*********** Baseline, reset styles ***********/
+        &[type="range"] {
+            @include adaptiv-value(width, 280,20,1);
+            height: 1px;
+            top: 15px;
+            left: 3px;
+            position: relative;
+            -webkit-appearance: none;
+            appearance: none;
+            background: transparent;
+            cursor: pointer;
+            // width: 23rem;
+        }
+  
+  /* Removes default focus */
+  &[type="range"]:focus {
+    outline: none;
+  }
+  
+  /******** Chrome, Safari, Opera and Edge Chromium styles ********/
+  /* slider track */
+  &[type="range"]::-webkit-slider-runnable-track {
+    background-color: var(--dots-bg, rgba(255,255,255,0.3));
+    border-radius: 0.5rem;
+    height: 1px;
+    transform: translate(0,-2px);
+    z-index: 20;
+  }
+  
+  /* slider thumb */
+  &[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    margin-top: -4px; /* Centers thumb on the track */
+    background-color: #fff;
+    transform: translate(0,4px);
+    border-radius: 0.5rem;
+    height: 2px;
+    width: 5.5rem;
+  }
+  
+  &[type="range"]:focus::-webkit-slider-thumb {
+    outline: 3px solid #fff;
+    transform: translate(0,4px);
+    outline-offset: 0.125rem;
+  }
+  
+  /*********** Firefox styles ***********/
+  /* slider track */
+  &[type="range"]::-moz-range-track {
+    background-color: var(--dots-bg, rgba(255,255,255,0.3));
+    border-radius: 0.5rem;
+    height: 1px;
+    transform: translate(0,-2px);
+  }
+  
+  /* slider thumb */
+  &[type="range"]::-moz-range-thumb {
+    background-color: #fff;
+    transform: translate(0,4px);
+    border: none; /*Removes extra border that FF applies*/
+    border-radius: 0.5rem;
+    height: 2px;
+    width: 5.5rem;
+  }
+  
+  &[type="range"]:focus::-moz-range-thumb{
+    outline: 3px solid #fff;
+    transform: translate(0,4px);
+
+    outline-offset: 0.125rem;
+  }
+        }
+        
+    }
+}

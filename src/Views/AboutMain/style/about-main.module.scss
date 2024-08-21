@@ -1,0 +1,48 @@
+@import '../../../styles/styles/mixin.scss';
+
+.about-main{
+
+    //about-main__wrap-block
+    &__wrap-block{
+        padding: 0;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 50%;
+        // flex: 1 1 auto;
+        // @include adaptiv-value(min-height, 790,650,1);
+        // @include adaptiv-value(max-height, 790,650,1);
+        @include resize(mobile){
+            flex-wrap: wrap;
+        }
+    }
+    //about-main__image-container
+    &__image-container{
+        position: relative;
+        display: block;
+        height: 100%;
+        // opacity: 0;
+        animation-name: var(--animation-main-about-left);
+        animation-delay: .01s;
+        animation-duration: 1.2s;
+        animation-fill-mode: both;
+    }
+    //about-main__content-container
+    &__content-container{
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        position: relative;
+        // @include adaptiv-value(padding-top,110,50,1);
+        // opacity: 0;
+        // animation-name: var(--fadeInRight);
+        animation-name: var(--animation-main-about-right);
+        animation-duration: 1.2s;
+        animation-delay: .1s;
+        animation-fill-mode: both;        
+        @include resize(desktop){
+            @include adaptiv-value(padding-top,160,100,1);
+        }
+    }
+}

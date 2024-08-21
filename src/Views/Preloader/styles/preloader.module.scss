@@ -1,0 +1,64 @@
+@import '.,/../../../../styles/styles/keyframes.scss';
+
+.preloader{
+    //preloader__container
+    &__container{
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 999;
+        background-color: var(--body-bg);
+    }
+    //preloader__body
+    &__body{
+        text-align: center;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        text-align: center;
+        line-height: 1;
+    }
+    //preloader__loader
+    &__loader{
+        display: inline-block;
+        width: 96px;
+        box-sizing: content-box;
+        height: 48px;
+        background: #FFF;
+        border-color: var(--theme-color);
+        border-style: solid;
+        border-width: 2px 2px 50px 2px;
+        border-radius: 100%;
+        position: relative;
+        animation: 3s yinYang linear infinite;
+        &::after{
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            background: var(--theme-color);
+            border: 18px solid #FFF;
+            border-radius: 100%;
+            width: 12px;
+            height: 12px;
+            box-sizing: content-box;
+        }
+        &::before{
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            background: #FFF;
+            border: 18px solid var(--theme-color);
+            border-radius: 100%;
+            width: 12px;
+            height: 12px;
+            box-sizing: content-box;
+        }
+    }
+}
