@@ -1,4 +1,4 @@
-import logo from "./icon/cargo-logo-734x367.png"
+// import logo from "./icon/cargo-logo-734x367.png"
 
 import slider_1 from './slider_1.jpg';
 import slider_2 from './slider_2.jpg';
@@ -43,6 +43,8 @@ import previewVideoAbout2 from './about/testi_bg_1_1.jpg'
 
 import avatar from './avatar-business-human-svgrepo-com.svg'
 import check from './icon/check-all.svg'
+
+const logo = "https://back.cargo8652.com/media/content/image/page/2024/08/21/cargo-logo-734x367_Sbbbwbc.png";
 
 export {
     check,
