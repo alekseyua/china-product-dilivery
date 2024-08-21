@@ -32,20 +32,21 @@ const InfoMapRepurchaseGoods: React.FC<IAboutMainProps
                 addClass='container__about-main'
             >
                 <BlockFlex addClass='block__repurchase-goods-info-map-conrainer'>
-                    <BlockFlex addClass='block__repurchase-goods-info-map--left'>
+                    <BlockFlex addClass='block__repurchase-goods-info-map--section'>
                         {
-                            infoBlock.blocks.map( (item: any) => {
+                            infoBlock.blocks.map( (item: any, index: number) => {
+                                console.log({item},index % 2)
                                 return (
-                                    <BlockWrap key={item.id}>
-                                        23
+                                    <BlockWrap key={item.id}addClass={`block__repurchase-goods-infomap-item${index % 2? '--right':'--left'}`} >
+                                        {index}
                                     </BlockWrap>
                                 )
                             })
                     }
                     </BlockFlex>
-                    <BlockFlex addClass='block__repurchase-goods-info-map--right'>
+                    {/* <BlockFlex addClass='block__repurchase-goods-info-map--right'>
 2
-                    </BlockFlex>
+                    </BlockFlex> */}
                 </BlockFlex>
             </Container>
         )

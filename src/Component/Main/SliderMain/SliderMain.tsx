@@ -17,8 +17,6 @@ import Button from '../../../Views/Button/Button';
 import Text from '../../../Views/Text/Text';
 import { IPropsBloks, IPropsDataPage } from '../../../@types/common';
 import TextTitle from '../../../Views/Text/TextTitle';
-import Input from '../../../Views/Input/Input';
-import BlockWrap from '../../../Views/Block/BlolckWrap/BlockWrap';
 
 interface IProps {
     infoBlock: IPropsDataPage
@@ -37,13 +35,6 @@ function SliderMain({
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
-        // beforeChange: () => {
-        //     document.documentElement.setAttribute('style','--animation-name: slideinup; --animation-opacity: 0')
-        //     setTimeout(()=>{
-        //         document.documentElement.setAttribute('style','')
-                
-        //     },1500)
-        // },
       };
     const next = () => {
     sliderRef.slickNext();
@@ -51,7 +42,6 @@ function SliderMain({
     const previous = () => {
     sliderRef.slickPrev();
     };
-    console.log({infoBlock})
   return (
     <Container>
 
@@ -83,7 +73,7 @@ function SliderMain({
                                 }}>{infoBlock.title_2}</Text>
                                 <TextTitle style={{
                                     color: `rgba(255,255,255,0.8)`,
-                                    webkitTextStroke: '1px var(--theme-color)',
+                                    WebkitTextStroke: '1px var(--theme-color)',
                                     fontSize: 125
                   }}>{infoBlock.title_1}</TextTitle>
                                 {/* <Button addClass={'button__slider'} iconSvgLeft={line} iconSvgRight={line} btnYellow onClick={onClick}>

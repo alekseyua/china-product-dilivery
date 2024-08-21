@@ -16,6 +16,7 @@ interface IPropsCard {
         locationPath: string
     },
     desc: string,
+    short_description?: string,
     button?: {
         title: string,
         locationPath: string
@@ -37,7 +38,8 @@ const Card = ({
     svgIcon,
     onClick,
     shotText,
-    addClassTitle
+    addClassTitle,
+    short_description,
 }: IPropsCard) => {
     return (
         <BlockWrap
@@ -68,12 +70,13 @@ const Card = ({
                         : null
                 }
                 <Offset mb={10} />
+                <Text addClass='text__title-sub'>{short_description}</Text>
                 <Text
                     addClass='text__blogs-main-desc'
                     style={{
                         'display': '-webkit-box',
-                        '-webkit-box-orient': 'vertical',
-                        '-webkit-line-clamp': `${shotText ? shotText : ''}`,
+                        WebkitTextStroke: 'vertical',
+                        WebkitLineClamp: `${shotText ? shotText : ''}`,
 
                     }}
                 >{desc}</Text>

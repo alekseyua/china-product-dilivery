@@ -3,6 +3,13 @@
 
 //addStyle
 .block {
+    //block__track-container-input
+    &__track-container-input{
+        @include resize(mobile){
+            flex-direction: column;
+            // margin-bottom: 20px;
+        }
+    }
     //block__card-container
     &__card{
         &-container{
@@ -690,5 +697,19 @@
                 }
             }
         }
+    }
+    //block__repurchase-goods-infomap-item--right
+    &__repurchase-goods-infomap-item--right{
+        padding: 10px;
+        margin-left: 50%;
+        border-left: 1px solid var(--theme-color);
+        width: 50%;
+    }
+    //block__repurchase-goods-infomap-item--left
+    &__repurchase-goods-infomap-item--left{
+        padding: 0;
+        border-right: 1px solid var(--theme-color);
+        width: 50.1%;
+
     }
 }

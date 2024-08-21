@@ -39,6 +39,8 @@ const InfoFindProviderMain: React.FC<IAboutMainProps
                 <BlockGrid addClass='block__card-container-grid'>
                     {
                         infoBlock.blocks && infoBlock.blocks.length && infoBlock.blocks.map((item: IPropsBloks) => {
+                        console.log({item})
+
                             return (
                                 <Card
                                     key={item.id}
@@ -48,6 +50,7 @@ const InfoFindProviderMain: React.FC<IAboutMainProps
                                         locationPath: ''
                                     }}
                                     desc={item.description}
+                                    short_description={item.short_description}
                                     shotText='2'
                                 />
 

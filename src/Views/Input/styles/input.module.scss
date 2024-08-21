@@ -1,3 +1,5 @@
+@import '../../../styles/styles/mixin.scss';
+
 .input{
     select::-webkit-input-placeholder, .form-control::-webkit-input-placeholder, .form-select::-webkit-input-placeholder, textarea::-webkit-input-placeholder, input::-webkit-input-placeholder {
         color: var(--body-color);
@@ -18,12 +20,17 @@
     padding: 10px 25px;
     border: 1px solid transparent;
     transition: all 0.3s ease-in-out;
-    //input__main-track
-    &__main-track{
+    //input__track
+    &__track{
         width: 300px;
         height: 70px;
         background-color: #ffffffce;
         margin-right: 50px;
+        @include resize(mobile) {
+            margin-right: 0;
+            width: 100%;
+            margin-bottom: 20px;
+        }
     }
     //input__contact-form
     &__contact{

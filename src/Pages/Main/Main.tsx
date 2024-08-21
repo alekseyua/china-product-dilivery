@@ -19,6 +19,8 @@ import Input from "../../Views/Input/Input";
 import Text from "../../Views/Text/Text";
 import Button from "../../Views/Button/Button";
 import { line } from "../../Images";
+import HeaderSectionFull from "../../Component/Chunks/HeaderSectionFull/HeaderSectionFull";
+import TrackContainer from "../../Component/Track/TrackContainer";
 
 interface IProps {
     listSection: IPropsDataPage[];
@@ -33,26 +35,9 @@ return (
             <SliderMainContainer dataSection={listSection[0]} />
 
             {/* temporally, i am thing will better   */}
-            <Container size={1400}>
+            <TrackContainer />
 
-                <BlockWrap col>
-                    <Text addClass='text__main-slider-label-track'>Отследить груз</Text>
-                    <Offset mb={25} />
-                    <BlockWrap>
-                        <Input
-                            addClass='input__main-track'
-                            placeholder='Введите ТН трек номер'
-                            formInput={'input'}
-                            value={''}
-                        />
-                        <Button addClass={'button__yellow'} iconSvgLeft={line} iconSvgRight={line} btnYellow onClick={() => { alert('тест клика, нужно решить что делать дальше') }}>
-                            <Text>Отследить </Text>
-                        </Button>
-                    </BlockWrap>
-                </BlockWrap>
-            </Container>
-
-            <Offset sectionTop />
+            {/* <Offset sectionTop /> */}
             <InfoFindProviderMainComponent dataSection={listSection[2]}/>
 
             <Offset sectionTop>

@@ -3,6 +3,7 @@ import { IPropsWrap } from '../../../@types/common';
 import classNames from 'classnames';
 
 import styles from '../styles/common.module.scss';
+
 import customStyles from './styles/block-wrap.module.scss';
 
 const  BlockWrap: React.FC<IPropsWrap> = ({addClass='', children, style = {}, col}:IPropsWrap) => {

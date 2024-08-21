@@ -52,10 +52,12 @@
                 flex-direction: column;
             }
         }
-        //block__repurchase-goods-info-map--left
-        &--left{
+        //block__repurchase-goods-info-map--section
+        &--section{
             padding: 0;
             flex-direction: column;
+            align-items: normal;
+            margin: 20px;
         }
         //block__repurchase-goods-info-map--right
         &--right{
