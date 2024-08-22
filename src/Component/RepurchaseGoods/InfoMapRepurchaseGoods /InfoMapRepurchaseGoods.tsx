@@ -1,19 +1,10 @@
 import React from 'react'
 
 import Container from '../../../Views/Block/Container'
-import Image from '../../../Views/Image/Image'
-import Button from '../../../Views/Button/Button';
-import AboutMainImageContainer from '../../../Views/AboutMain/AboutMainImageContainer';
-import AboutMainWrapBlock from '../../../Views/AboutMain/AboutMainWrapBlock';
 import BlockFlex from '../../../Views/Block/BlockTwoSection/BlockTwoSection';
-import AboutMainContentContainer from '../../../Views/AboutMain/AboutMainContentContainer';
 import Text from '../../../Views/Text/Text';
 import TextTitle from '../../../Views/Text/TextTitle';
-import { line } from '../../../Images';
-import { IPropsDataPage } from '../../../@types/common';
-import HeaderSectionFull from '../../Chunks/HeaderSectionFull/HeaderSectionFull';
-import ReactPlayer from 'react-player';
-import Offset from '../../../Views/Offset/Offset';
+import { IPropsBloks, IPropsDataPage } from '../../../@types/common';
 import BlockWrap from '../../../Views/Block/BlolckWrap/BlockWrap';
 
 interface IAboutMainProps {
@@ -29,24 +20,22 @@ const InfoMapRepurchaseGoods: React.FC<IAboutMainProps
 }: IAboutMainProps) => {
         return (
             <Container
-                addClass='container__about-main'
+                size={1400}
+                center
             >
                 <BlockFlex addClass='block__repurchase-goods-info-map-conrainer'>
                     <BlockFlex addClass='block__repurchase-goods-info-map--section'>
                         {
-                            infoBlock.blocks.map( (item: any, index: number) => {
-                                console.log({item},index % 2)
+                            infoBlock.blocks.map((item: IPropsBloks, index: number) => {
                                 return (
-                                    <BlockWrap key={item.id}addClass={`block__repurchase-goods-infomap-item${index % 2? '--right':'--left'}`} >
-                                        {index}
+                                    <BlockWrap data-list={index+1} key={item.id}addClass={`block__repurchase-goods-infomap-item${index % 2? '--right':'--left'}`} >
+                                        <TextTitle type='h5'>{item.title_1}</TextTitle>
+                                        <Text>{item.description}</Text>
                                     </BlockWrap>
                                 )
                             })
                     }
                     </BlockFlex>
-                    {/* <BlockFlex addClass='block__repurchase-goods-info-map--right'>
-2
-                    </BlockFlex> */}
                 </BlockFlex>
             </Container>
         )

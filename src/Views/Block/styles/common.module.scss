@@ -100,5 +100,19 @@
             }
             
         }
-}
+    }
+
+    //block__container-grid-two-three
+    &__container-grid-two-three{
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: auto;
+        column-gap: 50px;
+        row-gap: 20px;
+        @include resize(big-landscape){
+            grid-template-columns: repeat(2,1fr);
+        }
+        @include resize(mobile) {
+            grid-template-columns: 1fr;
+        }
+    }
 }

@@ -288,4 +288,11 @@
   color: var(--text-color-white);
   font-size: 40px;
 }
+
+//style-table-card
+}
+.style-table-card{
+  &>div>figure>table>tbody{
+    padding: 0;
+  }
 }

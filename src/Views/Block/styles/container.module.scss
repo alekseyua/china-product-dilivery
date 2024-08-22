@@ -30,7 +30,10 @@
     }
     //container-1400
     &-1400{
-        max-width: 1400px;
+        // max-width: 1400px;
+        @include adaptiv-value(max-width, 1400, 320, 1);
+        padding-left: calc(var(--container-gutters) / 2);
+            padding-right: calc(var(--container-gutters) / 2);
     }
     //container-center
     &-center{
@@ -49,15 +52,6 @@
             flex-direction: column
         }
     }
-    //container__intruduction, container__about-main, container__info-find-provider
-    &__intruduction, &__about-main, &__info-find-provider{
-        @include adaptiv-value(max-width, 1400, 320,1);
-        // @include adaptiv-value(margin-top, 250, 170,1);
-        padding-left: calc(var(--container-gutters) / 2);
-        padding-right: calc(var(--container-gutters) / 2);
-        justify-content: center;
-        align-items: center;
-    }    
     //container__info-find-provider
     &__info-find-provider{
         @include adaptiv-value(top, 70, 70, 1);

@@ -2,4 +2,8 @@
     border-bottom: 1px solid var(--border-color);
     width: 100%;
     display: block;
+    //line--thick
+    &--thick{
+        border-bottom: 20px solid var(--border-color);
+    }
 }

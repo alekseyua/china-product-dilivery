@@ -11,7 +11,6 @@ import Text from '../../../Views/Text/Text';
 import TextTitle from '../../../Views/Text/TextTitle';
 import { line } from '../../../Images';
 import { IPropsDataPage } from '../../../@types/common';
-import Offset from '../../../Views/Offset/Offset';
 import HeaderSectionFull from '../../Chunks/HeaderSectionFull/HeaderSectionFull';
 
 interface IAboutMainProps {
@@ -27,10 +26,9 @@ const AboutMain: React.FC<IAboutMainProps
 }: IAboutMainProps) => {
         return (
             <Container
-                addClass='container__about-main'
+                size={1400}
+                center
             >
-                {/* <AboutMainContainer> */}
-                    {/* <AboutMainContainerWrap> */}
                         <BlockFlex addClass='block__about-main-conrainer'>
                             <AboutMainWrapBlock>
                                 <AboutMainImageContainer>
@@ -52,9 +50,6 @@ const AboutMain: React.FC<IAboutMainProps
                                 </AboutMainContentContainer>
                             </AboutMainWrapBlock>
                         </BlockFlex>
-
-                    {/* </AboutMainContainerWrap> */}
-                {/* </AboutMainContainer> */}
             </Container>
         )
     }

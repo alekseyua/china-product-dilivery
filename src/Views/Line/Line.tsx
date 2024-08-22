@@ -1,10 +1,16 @@
 import React from 'react'
-import styles from './styles/line.module.scss';
 import classNames from 'classnames';
 
-const Line:React.FC = () => {
+import styles from './styles/line.module.scss';
+
+interface IProps {
+  thick?: boolean;
+}
+
+const Line: React.FC<IProps> = ({ thick }: IProps) => {
     const classNameInit = classNames({
         [styles['line']]: true,
+        [styles['line--thick']]: thick,
     })
   return (
     <span className={classNameInit}></span>

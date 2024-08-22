@@ -6,7 +6,7 @@ import styles from '../styles/common.module.scss';
 
 import customStyles from './styles/block-wrap.module.scss';
 
-const  BlockWrap: React.FC<IPropsWrap> = ({addClass='', children, style = {}, col}:IPropsWrap) => {
+const  BlockWrap: React.FC<IPropsWrap> = ({addClass='', children, style = {}, col, ...props}:IPropsWrap) => {
   let styleInit = {}
   let classNameInit = classNames({
     [styles['block__wrap']]:true,
@@ -21,6 +21,7 @@ const  BlockWrap: React.FC<IPropsWrap> = ({addClass='', children, style = {}, co
           ...styleInit,
           ...style
         }}
+        {...props}
     >{children}</div>
   )
 }

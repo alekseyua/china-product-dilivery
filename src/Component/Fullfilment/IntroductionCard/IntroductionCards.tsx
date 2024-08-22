@@ -22,7 +22,8 @@ const IntroductionCards:React.FC<IPropsIntroduction & IProps> = ({
 }:IPropsIntroduction & IProps) => {
   return (
     <Container
-        addClass='container__intruduction'
+          size={1400}
+          center
     >
     <IntroductionContainer>
         {

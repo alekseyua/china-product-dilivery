@@ -1,7 +1,8 @@
 import classNames from 'classnames'
 import React from 'react'
-import styles from '../styles/common.module.scss';
 import { IPropsBlockGrid } from '../../../@types/common';
+
+import styles from '../styles/common.module.scss';
 
 const BlockGrid:React.FC<IPropsBlockGrid> = ({
     children,

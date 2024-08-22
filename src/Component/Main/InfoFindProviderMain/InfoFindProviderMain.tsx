@@ -21,6 +21,8 @@ const InfoFindProviderMain: React.FC<IAboutMainProps
         return (
             <Container
                 addClass='container__info-find-provider'
+                size={1400}
+                center
             >
                 <HeaderSectionFull
                     title={infoBlock?.title_1}

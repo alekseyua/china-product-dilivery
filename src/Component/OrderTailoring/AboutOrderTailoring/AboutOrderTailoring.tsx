@@ -27,10 +27,9 @@ const AboutOrderTailoring: React.FC<IAboutMainProps
 }: IAboutMainProps) => {
         return (
             <Container
-                addClass='container__about-main'
+                size={1400}
+                center
             >
-                {/* <AboutMainContainer> */}
-                    {/* <AboutMainContainerWrap> */}
                         <BlockFlex addClass='block__about-main-conrainer'>
                             <AboutMainWrapBlock>
                                 <AboutMainImageContainer>
@@ -76,9 +75,6 @@ const AboutOrderTailoring: React.FC<IAboutMainProps
                                 </AboutMainContentContainer>
                             </AboutMainWrapBlock>
                         </BlockFlex>
-
-                    {/* </AboutMainContainerWrap> */}
-                {/* </AboutMainContainer> */}
             </Container>
         )
     }

@@ -28,13 +28,10 @@ const InfoRepurchaseGoods: React.FC<IAboutMainProps
 }: IAboutMainProps) => {
         return (
             <Container
-                addClass='container__about-main'
+                size={1400}
+                center
             >
-                {/* <AboutMainContainer> */}
-                    {/* <AboutMainContainerWrap> */}
                         <BlockFlex addClass='block__repurchase-goods-info-conrainer'>
-                            {/* <AboutMainWrapBlock> */}
-                                {/* <AboutMainImageContainer> */}
                                     {
                                         infoBlock.videos.length ?
                                             <ReactPlayer
@@ -60,8 +57,6 @@ const InfoRepurchaseGoods: React.FC<IAboutMainProps
                                             
                                             : infoBlock.images && 
                                             <Image src={infoBlock.images?.length ? infoBlock.images[0].url : ''} />}
-                                {/* </AboutMainImageContainer> */}
-                            {/* </AboutMainWrapBlock> */}
                             <AboutMainWrapBlock>
                                 <AboutMainContentContainer>
                                     <TextTitle type='h6' addClass='text__title-sub'>{infoBlock.short_description}</TextTitle>
@@ -79,9 +74,6 @@ const InfoRepurchaseGoods: React.FC<IAboutMainProps
                                 </AboutMainContentContainer>
                             </AboutMainWrapBlock>
                         </BlockFlex>
-
-                    {/* </AboutMainContainerWrap> */}
-                {/* </AboutMainContainer> */}
             </Container>
         )
     }
