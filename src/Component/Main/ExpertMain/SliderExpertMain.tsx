@@ -50,9 +50,9 @@ function SliderExpertMain({
         }
       },
       {
-        breakpoint: 767.1,
+        breakpoint: 800.1,
         settings: {
-          slidesToShow: countSlider !== 1 ? countSlider - 1 : 1,
+          slidesToShow: 2,
         }
       },
       {

@@ -9,7 +9,7 @@ interface IProps{
 export function WithCheckLoadDataPage<P extends object>(WrapComponent: React.ComponentType<P>){
 
     return (props: P & IProps)=>{
-        console.log({ props })
+        // console.log({ props })
 
         if (props.listSection === undefined) return <Container>{<Preloader />}</Container>;
         if (props.listSection && !props.listSection.length) return <Container>{<Preloader />}</Container>;

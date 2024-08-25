@@ -18,7 +18,8 @@ export interface IPropsWrap extends IProps {
 
 export interface IPropsMenu extends IProps {
     submenu?: boolean; 
-    isMobile?: boolean; 
+    isMobile?: boolean;
+    isIcon?: boolean;
 }
 
 export interface IPropsMenuContainer extends IProps {

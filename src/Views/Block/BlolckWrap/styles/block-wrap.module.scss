@@ -5,6 +5,7 @@
 .block {
     //block__track-container-input
     &__track-container-input{
+        justify-content: center;
         @include resize(mobile){
             flex-direction: column;
             // margin-bottom: 20px;
@@ -284,9 +285,9 @@
             //block__expert-card-container-title
             &-title{
                 flex-direction: column;
-                min-height: 139px;
+                // min-height: 139px;
                 &>:first-child{
-                    min-height: 100px;
+                    // min-height: 100px;
                 }
                 //block__expert-card-container-title-row                
                 &-row{
@@ -309,7 +310,7 @@
             z-index: 1;
             position: relative;
             display: block;
-
+            min-height: 40px;
             &>div {
                 justify-content: flex-start;
                 &::after {

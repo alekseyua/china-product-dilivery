@@ -44,11 +44,11 @@ function SliderClientSayMain({
         autoplaySpeed: 5000,
         slidesToShow: countSlide,
         slidesToScroll: 1,
-        // autoplay: true,
+        autoplay: true,
         // initialSlide: 0,
         // centerPadding: "0px",
         // vertical: true,
-        adaptiveHeight: true,
+        // adaptiveHeight: true,
         responsive: [
             {
               breakpoint: 992.1,
@@ -84,14 +84,14 @@ function SliderClientSayMain({
                                       src={card.images[0].url} 
                                       style={{
                                         width: '100%',
-                                        height: '180px',
+                                        // height: '180px',
                                         overflow: 'hidden'
                                       }}
                                     />
                                     : <Image 
                                         src={card.images[0].url} 
                                         style={{
-                                          maxHeight: 180,
+                                          // maxHeight: 180,
                                           objectFit: 'contain'
                                         }}
                                       />
@@ -104,7 +104,6 @@ function SliderClientSayMain({
                                <Image addClass='image__client-avatar' src={avatar} />
                                <BlockWrap addClass='block__client-card-self-info' col>
                                  <TextTitle type='h5' addClass='text__client-card-title-self-info-title'>{card.title_1}</TextTitle>
-                                 {/* <TextTitle sub>{card.infoClient.profetion}</TextTitle> */}
                                </BlockWrap>
                              </BlockTwoSection>
                              <BlockWrap addClass='block__client-card-self-info-icon'>

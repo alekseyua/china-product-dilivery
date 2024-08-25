@@ -1,6 +1,10 @@
 import { listUrls } from "../config/config.menu";
 import { insta, telega } from "../Images";
 
+export function delay(ms:number) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
 export function decimalDigit(number: number): string {
   if (number < 10) return "0" + number;
   return `${number}`;

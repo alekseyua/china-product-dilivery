@@ -21,7 +21,7 @@ const CardExpert: React.FC<IProps> = ({ card, titleandcocial }: IProps) => {
         <TextTitle addClass='text__expert-title' type={'h3'}>{card.title_1}</TextTitle>
       </BlockWrap>
       <BlockWrap addClass='block__expert-card-media-container'>
-        <SocialMedia isIcon listMedia={card.social_networks}/>
+        <SocialMedia isIcon listMedia={card.social_networks} location='flex-start'/>
       </BlockWrap>
     </BlockWrap>
     <BlockWrap addClass='block__expert-card-image-container'>

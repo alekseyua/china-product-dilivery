@@ -31,6 +31,7 @@ const Slogan: React.FC<IProps> = ({
                     infoBlock?.blocks.map((info: IPropsBloks, index: number): any => {
                         return (
                             <Card 
+                                key={info.id}
                                 desc={info.description}
                                 id={info.id}
                                 addClassTitle={'text__stroke-title'}

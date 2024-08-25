@@ -20,23 +20,24 @@ const Fulfilment: React.FC<IProps> = function ({
 }: IProps){
     return (
         <Container>
+            <Offset sectionTop />
             <Breadcrumbs image={image}/>
             <Offset sectionTop />
 
-
+            
+                        <SloganComponent dataSection={listSection[4]} />
+                        <Offset sectionTop /> 
+{/* 
             <ServiceFullfilmentComponent dataSection={listSection[1]} />
-            <Offset sectionTop />
+            <Offset sectionTop /> */}
 
             <AboutStorageContainer dataSection={listSection[2]} />
             <Offset sectionTop />
 
             <PriceFullfilmentComponent dataSection={listSection[0]} />
-            <Offset sectionTop /> 
+            {/* <Offset sectionTop />  */}
 
             <IntroductionCardsComponent dataSection={listSection[3]} />
-            <Offset sectionTop /> 
-
-            <SloganComponent dataSection={listSection[4]} />
             <Offset sectionTop /> 
         </Container>
     )

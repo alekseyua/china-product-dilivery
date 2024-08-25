@@ -9,14 +9,17 @@ const GetText = (text: string | JSX.Element): string | JSX.Element => {
         str.push(item.replace(/^<p>/g, '').replace(/<\/p>$/g, ''))
       }
     });
+    // console.log({str})
     return <div dangerouslySetInnerHTML={{
       __html: str.join(' ') }} />
-  }
-  if (typeof text === "string") {
+    }
+    if (typeof text === "string") {
+    // console.log({text1: text})
     return (
       <div dangerouslySetInnerHTML={{ __html: text }} />
     )
   }
+  // console.log({text2: text})
   return text;
 }
 

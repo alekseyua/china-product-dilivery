@@ -38,11 +38,11 @@
                 min-height: 350px;
                 grid-template-columns: repeat(2, 1fr); 
                 grid-template-rows: auto;
-                gap: 50px;
+                gap: 20px;
                 @include resize(landscape){
                     grid-template-columns: 1fr;
                     // grid-template-rows: repeat(1, 1fr);
-                    gap: 30px;
+                    gap: 10px;
                 }
             }
             //block__card-container-grid-advantage

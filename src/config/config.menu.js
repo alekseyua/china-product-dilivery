@@ -98,7 +98,7 @@ export const listUrls = [
     },
     {
         id: 5,
-        title: 'Фулфилмент',
+        title: '',
         path: '/fullfilment',
     },
     {

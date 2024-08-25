@@ -8,6 +8,7 @@ export class NavDesktopContainer extends Component<IPropsMobileContainer,{}> {
     return (
       <NavDesktopMobile 
         listMenu={mainMenu}
+        isIcon
       />
     )
   }

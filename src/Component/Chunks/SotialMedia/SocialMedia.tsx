@@ -11,11 +11,16 @@ import { getIconFromName } from '../../../helpers/helpers'
 interface IProps{
   listMedia: IPropsBloks['social_networks'];
   isIcon?: boolean; // default false
+  location?: 'center' | 'flex-end' | 'flex-start' | 'space-around' | 'space-between' | 'space-evenly' | undefined; // default center
 }
 
-const SocialMedia: React.FC<IProps> = ({ listMedia, isIcon }: IProps) => {
+const SocialMedia: React.FC<IProps> = ({ listMedia, isIcon, location = 'center' }: IProps) => {
   return (
-    <SocialWrap>
+    <SocialWrap
+      style={{
+        justifyContent: location
+      }}
+    >
       {
         isIcon?
         <>

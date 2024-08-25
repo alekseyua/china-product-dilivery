@@ -14,6 +14,7 @@ const NavDesktopMobile:React.FC<IHeaderMenu> = ({
   listMenu,
   isMobile,
   isFooter,
+  isIcon,
 }:IHeaderMenu) => {
   return (
     // <BlockWrap style={{ width: '100%' }}>
@@ -22,7 +23,7 @@ const NavDesktopMobile:React.FC<IHeaderMenu> = ({
             {
                 listMenu && listMenu.map((elMenu: any) => {
                     return (
-                        <NavMainMenuItem key={elMenu.id} submenu={!!elMenu?.submenu.length} isMobile={isMobile} >
+                        <NavMainMenuItem key={elMenu.id} submenu={!!elMenu?.submenu.length} isMobile={isMobile} isIcon={isIcon} >
                             <Link to={elMenu.path}>{elMenu.title}</Link>
                             {
                                 

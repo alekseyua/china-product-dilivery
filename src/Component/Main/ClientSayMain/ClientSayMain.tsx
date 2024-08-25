@@ -15,7 +15,6 @@ const ClientSayMain: React.FC<IProps> = ({
 }: IProps) => {
     return (
         <Container size={1400}>
-        
             <HeaderSliderCenter
                 title={infoBlock?.title_1}
                 slogan={infoBlock?.title_2}

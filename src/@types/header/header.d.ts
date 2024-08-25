@@ -4,6 +4,7 @@ export interface IPropsHeader {
     isBurger?: boolean;
     handlerClickButtonUp?: any;
     isMainPage?: boolean;
+    style?:{};
 }
 
 export interface IStateHeader {
@@ -47,6 +48,7 @@ export interface IHeaderMenu {
     } | any;
     isMobile?: boolean
     isFooter?: boolean
+    isIcon?: boolean
 }
 
 export interface IPropsMobileContainer {

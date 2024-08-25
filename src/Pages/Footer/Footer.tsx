@@ -11,74 +11,135 @@ import SocialMedia from "../../Component/Chunks/SotialMedia/SocialMedia";
 import IconSvg from "../../Views/Icon/IconSvg";
 import { location, mail, phone } from "../../Images";
 import NavFooterContainer from "../../Component/NavFooter/NavFooterContainer";
+import { IPropsDataPage } from "../../@types/common";
+import { WithCheckLoadDataPage } from "../../HOC/WithCheckLoadDataPage/WithCheckLoadDataPage";
 
-const Footer: React.FC = function () {
+interface IProps {
+    listSection: IPropsDataPage[];
+    image: string;
+}
 
+const Footer: React.FC<IProps> = function ({
+    listSection,
+    image,
+}: IProps) {
+    console.log({ listSection })
     return (
         <footer>
             <Container size={1400}>
                 <BlockWrap col>
 
-                            <BlockWrap addClass="block__footer-container">
-                                <BlockWrap addClass="block__footer-container-inner-left" col>
-                                        <BlockWrap>
-                                            <HeaderLogo />
-                                        </BlockWrap>
-                                        <Offset mb={33}/>
-                                        <BlockWrap col>
-                                                <Text addClass="text__footer-desc">Conveniently develop impactful value without next-generation applications. Progressively strategize ubiquitous initiatives after go forward resources.</Text>
-                                                <Offset mt={20} />
-                                                <TextTitle type="h6"  addClass="text__footer-sotial-media">Social Network:</TextTitle>
-                                                <SocialMedia listMedia={[]}/>
-                                        </BlockWrap>
-                                </BlockWrap>
-                                <BlockWrap addClass="block__footer-container-inner-center">
-                                    <div className="widget widget_nav_menu footer-widget style2">
-                                    <TextTitle type="h3" addClass="text__footer-title">Services</TextTitle>
-                                    <Offset mt={10} />
-                                    <NavFooterContainer />                                           
-                                    <Offset mt={40} />
+                    <BlockWrap addClass="block__footer-container">
 
-                                    </div>
-                                </BlockWrap>
-                                <BlockWrap addClass="block__footer-container-inner-right" col>
-                                        <TextTitle type="h3" addClass="text__footer-title">Contact Now</TextTitle>
-                                            <BlockWrap addClass="block__footer-wrap-item-contact">
-                                                <IconSvg src={location} />
-                                                <BlockWrap col>
-                                                    <TextTitle>Office Address</TextTitle>
-                                                    <Text addClass="text__footer-desc-address">#482 2 Henerala Street, Ukraine</Text>
-                                                </BlockWrap>
-                                            </BlockWrap>
-                                            <Offset mt={10} />
-                                            <BlockWrap addClass="block__footer-wrap-item-contact">
-                                                <IconSvg src={phone} style={{width: 20}}/>
+                        <BlockWrap addClass="block__footer-container-inner-left" col>
+                            <BlockWrap>
+                                <HeaderLogo />
+                            </BlockWrap>
+                            <Offset mb={33} />
+                            <BlockWrap col>
+                                {/* <Text addClass="text__footer-desc">Conveniently develop impactful value without next-generation applications. Progressively strategize ubiquitous initiatives after go forward resources.</Text> */}
+                                <TextTitle sub>
+                                    {
+                                        listSection.length &&
+                                        listSection[0].short_description
+                                    }
+                                </TextTitle>
+                                {
+                                    listSection.length ? <Line /> : null}
+                                <Text addClass="text__footer-desc">Х
+                                    {
+                                        listSection.length &&
+                                        listSection[0].description
+                                    }
+                                </Text>
+                                <Offset mt={20} />
+                                <TextTitle type="h6" addClass="text__footer-sotial-media">Социальные сети:</TextTitle>
+                                <SocialMedia isIcon listMedia={listSection[0]?.blocks[0]?.social_networks} location='flex-start'/>
+                            </BlockWrap>
+                        </BlockWrap>
 
-                                                <BlockWrap col>
-                                                    <TextTitle>Phone Number</TextTitle>
-                                                    <Link to="tel:+11234567890" ><Text addClass="text__footer-desc-address" style={{textWrap: 'nowrap'}}>+(1) 123 456 7890</Text></Link>
-                                                </BlockWrap>
-                                            </BlockWrap>
-                                            <Offset mt={10} />
-                                            <BlockWrap addClass="block__footer-wrap-item-contact">
-                                                <IconSvg src={mail} style={{width: 20}}/>
+                        <BlockWrap addClass="block__footer-container-inner-center">
+                            <div className="widget widget_nav_menu footer-widget style2">
+                                <TextTitle type="h3" addClass="text__footer-title">
+                                    {
+                                        listSection.length &&
+                                        listSection[1].title_1
+                                    }
+                                </TextTitle>
+                                <Offset mt={10} />
+                                <NavFooterContainer />
+                                <Offset mt={40} />
 
-                                                <BlockWrap col>
-                                                    <TextTitle >Email Address</TextTitle>
-                                                    <Link to="mailto:info@artraz.com" ><Text addClass="text__footer-desc-address">info@artraz.com</Text></Link>
-                                                </BlockWrap>
-                                            </BlockWrap>
+                            </div>
+                        </BlockWrap>
+
+                        <BlockWrap addClass="block__footer-container-inner-right" col>
+                            <TextTitle type="h3" addClass="text__footer-title">{
+                                listSection.length &&
+                                listSection[2].title_1
+                            }</TextTitle>
+                            <BlockWrap addClass="block__footer-wrap-item-contact">
+                                <IconSvg src={location} />
+                                <BlockWrap col>
+                                    <TextTitle>
+                                        {
+                                            listSection.length &&
+                                            listSection[2].blocks[0].short_description
+                                        }
+                                    </TextTitle>
+                                    <Text addClass="text__footer-desc-address">
+                                        {
+                                            listSection.length &&
+                                            listSection[2].blocks[0].description
+                                        }
+                                    </Text>
                                 </BlockWrap>
                             </BlockWrap>
+                            <Offset mt={10} />
+                            <BlockWrap addClass="block__footer-wrap-item-contact">
+                                <IconSvg src={phone} style={{ width: 20 }} />
+
+                                <BlockWrap col>
+                                    <TextTitle>
+                                        {
+                                            listSection.length &&
+                                            listSection[2].blocks[1].short_description
+                                        }
+                                    </TextTitle>
+                                    <Link to={`tel:${listSection.length &&
+                                        listSection[2].blocks[1].description.replace(/^<p>/g, '').replace(/<\/p>$/g, '')}`} ><Text addClass="text__footer-desc-address" style={{ textWrap: 'nowrap' }}>
+                                            {
+                                                listSection.length &&
+                                                listSection[2].blocks[1].description
+                                            }
+                                        </Text></Link>
+                                </BlockWrap>
+                            </BlockWrap>
+                            <Offset mt={10} />
+                            <BlockWrap addClass="block__footer-wrap-item-contact">
+                                <IconSvg src={mail} style={{ width: 20 }} />
+
+                                <BlockWrap col>
+                                    <TextTitle >
+                                        {
+                                            listSection.length &&
+                                            listSection[2].blocks[2].short_description
+                                        }
+                                    </TextTitle>
+                                    <Link to={`mailto::${listSection.length && listSection[2].blocks[2].description.replace(/^<p>/g, '').replace(/<\/p>$/g, '')} `} ><Text addClass="text__footer-desc-address">{listSection.length && listSection[2].blocks[2].description}</Text></Link>
+                                </BlockWrap>
+                            </BlockWrap>
+                        </BlockWrap>
+                    </BlockWrap>
                 </BlockWrap>
             </Container>
             <Line />
-                    <BlockWrap addClass="block__footer-copyright-container">
-                            <Text addClass="text__footer-copyright"> Copyright By © <Link to="/">Artraz</Link> - 2024</Text>
-                    </BlockWrap>
+            <BlockWrap addClass="block__footer-copyright-container">
+                <Text addClass="text__footer-copyright"> Copyright By © <Link to="/">Artraz</Link> - 2024</Text>
+            </BlockWrap>
         </footer>
 
     )
 }
 
-export default Footer;
+export default (Footer);

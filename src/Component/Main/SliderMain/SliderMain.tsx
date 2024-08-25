@@ -52,6 +52,7 @@ function SliderMain({
         }}>
             {
                 infoBlock.blocks.map((item: IPropsBloks, index: number) => {
+                    console.log({item})
                     return (
                         <SlideWrap key={index}>
                             <SliderImageContainer>                        
@@ -63,7 +64,7 @@ function SliderMain({
                     )
                 })
             }             
-        </Slider>
+        </Slider>   
                             <SliderContentContainer>
                                 <Text style={{
                                     fontSize: 65,
