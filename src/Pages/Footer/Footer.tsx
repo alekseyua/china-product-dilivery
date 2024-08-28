@@ -47,7 +47,7 @@ const Footer: React.FC<IProps> = function ({
                                 </TextTitle>
                                 {
                                     listSection.length ? <Line /> : null}
-                                <Text addClass="text__footer-desc">Х
+                                <Text addClass="text__footer-desc">
                                     {
                                         listSection.length &&
                                         listSection[0].description
