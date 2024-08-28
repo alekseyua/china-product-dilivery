@@ -27,7 +27,7 @@ const NavDesktopMobile:React.FC<IHeaderMenu> = ({
                             <Link to={elMenu.path}>{elMenu.title}</Link>
                             {
                                 
-                                elMenu?.submenu.length ?
+                                !isFooter && elMenu?.submenu.length ?
                                     <NavMainSubMenuWrap isMobile={isMobile}>
                                         <NavMainSubMenuContainer isMobile={isMobile}>
                                             {

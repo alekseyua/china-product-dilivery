@@ -99,6 +99,7 @@
             width: 100%;
             display: flex;
             justify-content: space-between;
+            align-items: center;
             padding: 17px 0;
 
             @include adaptiv-value(padding-left, 80,1,1);

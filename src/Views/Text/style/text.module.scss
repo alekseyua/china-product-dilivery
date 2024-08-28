@@ -232,7 +232,9 @@
       line-height: 1;
       display: block;
       color: var(--white-color);
-      @include adaptiv-font(20,15);
+      line-height: 140%;
+      text-transform: lowercase;
+      @include adaptiv-font(20,10);
       font-family: var(--title-font);
       margin-bottom: 0;
     }

@@ -15,15 +15,22 @@ import ButtonGoToUp from "../../Component/Chunks/ButtonGoTo/ButtonGoToUp";
 import SocialContainerContacts from "../../Views/Header/SocialContainerContacts";
 import Container from "../../Views/Block/Container";
 import Phone from "../../Component/Chunks/Phone/Phone";
-import Offset from "../../Views/Offset/Offset";
+import { IPropsBloksSocial } from "../../@types/common";
 
 
-const Header: React.FC<IPropsHeader> = function ({
+interface IPropsHeaderTop {
+    phoneNumber: string;
+    socialNetwork: IPropsBloksSocial[]
+}
+
+const Header: React.FC<IPropsHeader & IPropsHeaderTop> = function ({
     isFixed,
     isBurger,
     isMainPage,
+    phoneNumber,
+    socialNetwork,
     handlerClickButtonUp,
-}: IPropsHeader) {
+}: IPropsHeader & IPropsHeaderTop) {
     // при пролистывании в HeaderBottom нужно добавлять клас sticky > 480px
     return (
         <HeaderSection isBurger={isBurger}> 
@@ -33,16 +40,16 @@ const Header: React.FC<IPropsHeader> = function ({
                         isMainPage? 
                             <SocialContainer>
                             <SocialBox>
-                                <SocialMedia isIcon listMedia={[]}/>                        
+                                    <SocialMedia isIcon listMedia={socialNetwork}/>                        
                             </SocialBox>
                             </SocialContainer>
                             : 
                             <SocialContainerContacts>
                                 <BlockWrap>
-                                    <SocialMedia listMedia={[]}/>
+                                    <SocialMedia listMedia={socialNetwork}/>
                                 </BlockWrap>
-                                <BlockWrap>
-                                     <Phone />
+                                <BlockWrap style={{justifyContent: 'flex-end'}}>
+                                    <Phone isIcon phoneNumber={phoneNumber} />
                                 </BlockWrap>
                                 </SocialContainerContacts>
 

@@ -31,11 +31,11 @@ const IntroductionCards:React.FC<IPropsIntroduction & IProps> = ({
                 <IntroductionWrap key={item.id}>
                     <IntroductionGrid>
                         <IntroductionIconContainer>
-                        <Text>{item.title_2}</Text>
+                            <Text>{item.title_2}</Text>
                         </IntroductionIconContainer>
                         <Offset mb={30} />
                         <TextTitle type='h3' addClass='text__title-introduction'>{item.title_1}</TextTitle>
-                        <Text tag='p' addClass="text__text-introduction">{item.description}</Text>
+                        <Text addClass="text__text-introduction">{item.description}</Text>
                     </IntroductionGrid>
                 </IntroductionWrap>
             ))

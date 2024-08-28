@@ -3,8 +3,25 @@ import Header from "./Header";
 import { IStateHeader } from "../../@types/header/header";
 import withRouter from "../../HOC/withRouter/withRouter";
 import { WithRouterProps } from "../../@types/hoc/hoc";
+import { connectStoreon } from "storeon/react";
+import { IPropsDataPage } from "../../@types/common";
 
-class HeaderContainer extends React.Component<WithRouterProps,IStateHeader>{
+interface IProps{
+    dispatch: any;
+    dataHeaderFooter: {
+        footer: {
+            "id": number,
+            "slug": string
+            "name": string
+            "title": string
+            "description": string
+            "image": string
+            "sections": IPropsDataPage[]
+        }
+    };
+}
+
+class HeaderContainer extends React.Component<WithRouterProps & IProps,IStateHeader>{
 
     state:IStateHeader = {
         isFixed: false,
@@ -82,7 +99,15 @@ class HeaderContainer extends React.Component<WithRouterProps,IStateHeader>{
     componentDidMount(): void {
         this.listenWidth()
         window.addEventListener('scroll', this.listenToScroll)   
-        window.addEventListener('resize', this.listenWidth)   
+        window.addEventListener('resize', this.listenWidth)
+
+        const getData = async () => {
+            this.props.dispatch('getFooter', {
+                url: '/page/get_page/',
+                slug: 'footer'
+            })
+        }
+        getData()
     }
     componentWillUnmount() {
         window.removeEventListener('scroll', this.listenToScroll)
@@ -93,8 +118,12 @@ class HeaderContainer extends React.Component<WithRouterProps,IStateHeader>{
         document.documentElement.scrollTo({top: 0, behavior: 'smooth'});
       }
     render(): React.ReactNode{
+        console.log({props: this.props})
         return (
             <Header 
+                phoneNumber={this.props?.dataHeaderFooter?.footer.sections[2].blocks[1].description}
+                socialNetwork={this.props?.dataHeaderFooter?.footer.sections[0].blocks[0].social_networks}
+
                 isMainPage={this.props.location && this.props.location.pathname === '/'}
                 isFixed={this.state.isFixed}
                 isBurger={this.state.isBurger}
@@ -104,6 +133,7 @@ class HeaderContainer extends React.Component<WithRouterProps,IStateHeader>{
     }
 }
 
-export default withRouter ( 
-    HeaderContainer
+export default connectStoreon( 
+    'dataHeaderFooter',
+    withRouter (HeaderContainer)
 );

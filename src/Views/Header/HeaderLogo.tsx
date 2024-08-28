@@ -1,5 +1,5 @@
 import React from 'react'
-import { IBurgerLogo, IPropsHeader } from '../../@types/header/header';
+import { IBurgerLogo } from '../../@types/header/header';
 import styles from './styles/header.module.scss';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
@@ -18,7 +18,7 @@ const  HeaderLogo: React.FC<IBurgerLogo> = ({
         className={className}
     >
     <Link to="/">
-      <Icon src={logo} alt="Artraz" />
+      <Icon src={logo} alt="С Китая легко" />
     </Link>
     </div>
   )

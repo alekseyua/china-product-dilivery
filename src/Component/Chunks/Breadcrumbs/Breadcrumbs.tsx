@@ -27,7 +27,7 @@ const Breadcrumbs:React.FC<IProps> = ({
             <TextTitle type='h1' addClass='text__breadcrumbs-title'>{breadcrumbs.map(({ breadcrumb }: any, index) => breadcrumbs.length === index+1 && getTitleFromUrl(breadcrumb))}</TextTitle>
             <Offset mb={10} />
             <TextTitle addClass='text__breadcrumbs-links'>{breadcrumbs.map(({ breadcrumb }: any, index) =>{ 
-                return <Link to={breadcrumb.key}>{getTitleFromUrl(breadcrumb)} 
+                return <Link key={breadcrumb.key} to={breadcrumb.key}>{getTitleFromUrl(breadcrumb)} 
                     {breadcrumbs.length !== index+1 && <Arrow  addClass='arrow__braedcrumb'/> }
                 </Link>
             })}</TextTitle>

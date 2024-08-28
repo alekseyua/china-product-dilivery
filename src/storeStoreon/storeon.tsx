@@ -18,7 +18,7 @@ export const getDataPage = (store: any): any => {
     const initDataPage: object = {
 
     }
-    const initDataFooter: IFooter = {
+    const initdataHeaderFooter: IFooter = {
         footer: {
             "id": 0,
             "slug": '',
@@ -43,15 +43,15 @@ export const getDataPage = (store: any): any => {
         console.log({response})
     })
   
-    store.on('@init',()=> ({dataPage: initDataFooter}));
-    store.on('setDataFooter', ({}, data:object)=> ({dataFooter: data}))
-    store.on('dataFooterNull', ({ }, data: object) => ({ dataFooter: initDataFooter }))
+    store.on('@init',()=> ({dataPage: initdataHeaderFooter}));
+    store.on('setdataHeaderFooter', ({}, data:object)=> ({dataHeaderFooter: data}))
+    store.on('dataHeaderFooterNull', ({ }, data: object) => ({ dataHeaderFooter: initdataHeaderFooter }))
     store.on('getFooter', async ({},data:any, {dispatch}:{dispatch:any})=>{
         const response = await api.get({
             url: data.url,
             slug: data.slug
         })
-        dispatch('setDataFooter', {
+        dispatch('setdataHeaderFooter', {
             [data.slug]:response
         })
         console.log({response})

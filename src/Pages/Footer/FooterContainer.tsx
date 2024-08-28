@@ -6,7 +6,7 @@ import { delay } from "../../helpers/helpers";
 
 
 interface IProps {
-    dataFooter: {
+    dataHeaderFooter: {
         footer: {
             "id": number,
             "slug": string
@@ -28,19 +28,19 @@ class FooterContainer extends React.Component<IProps>{
                 slug: 'footer'
             })
         }
-        getData()
+        getData();
     }
     render(): React.ReactNode{
         if (
-            !this.props.dataFooter?.footer && !this.props.dataFooter?.footer?.sections) return <></>
+            !this.props.dataHeaderFooter?.footer && !this.props.dataHeaderFooter?.footer?.sections) return <></>
         return (
             <Footer 
-                listSection={this.props.dataFooter?.footer?.sections}
-                image={this.props.dataFooter?.footer?.image}
+                listSection={this.props.dataHeaderFooter?.footer?.sections}
+                image={this.props.dataHeaderFooter?.footer?.image}
             />
         )
     }
 }
 
 export default connectStoreon(
-    'dataFooter', FooterContainer);
+    'dataHeaderFooter', FooterContainer);

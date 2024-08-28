@@ -12,6 +12,16 @@ body{
     background-color: var(--body-bg);
 }
 
+.table{
+    overflow-x: scroll;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    &>table{
+        width: 100%;
+    }
+}
+
 [style="list-style-type:disc;"]{
     position: relative;
     left: 20px;

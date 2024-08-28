@@ -13,6 +13,7 @@ import { location, mail, phone } from "../../Images";
 import NavFooterContainer from "../../Component/NavFooter/NavFooterContainer";
 import { IPropsDataPage } from "../../@types/common";
 import { WithCheckLoadDataPage } from "../../HOC/WithCheckLoadDataPage/WithCheckLoadDataPage";
+import Phone from "../../Component/Chunks/Phone/Phone";
 
 interface IProps {
     listSection: IPropsDataPage[];
@@ -106,13 +107,7 @@ const Footer: React.FC<IProps> = function ({
                                             listSection[2].blocks[1].short_description
                                         }
                                     </TextTitle>
-                                    <Link to={`tel:${listSection.length &&
-                                        listSection[2].blocks[1].description.replace(/^<p>/g, '').replace(/<\/p>$/g, '')}`} ><Text addClass="text__footer-desc-address" style={{ textWrap: 'nowrap' }}>
-                                            {
-                                                listSection.length &&
-                                                listSection[2].blocks[1].description
-                                            }
-                                        </Text></Link>
+                                    <Phone phoneNumber={listSection[2].blocks[1].description} />
                                 </BlockWrap>
                             </BlockWrap>
                             <Offset mt={10} />

@@ -55,13 +55,13 @@ export const mainMenu = [
     submenu: [],
     color: `var(--text-color-blue)`,
   },
-  {
-    id: 5,
-    title: "ОПЛАТА В КИТАЙ",
-    path: "/payment-to-china",
-    submenu: [],
-    color: `var(--text-color)`,
-  },
+  // {
+  //   id: 5,
+  //   title: "ОПЛАТА В КИТАЙ",
+  //   path: "/payment-to-china",
+  //   submenu: [],
+  //   color: `var(--text-color)`,
+  // },
   {
     id: 6,
     title: "Выкуп ТОВАРА",
