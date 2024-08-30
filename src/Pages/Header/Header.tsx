@@ -42,6 +42,9 @@ const Header: React.FC<IPropsHeader & IPropsHeaderTop> = function ({
                             <SocialBox>
                                     <SocialMedia isIcon listMedia={socialNetwork}/>                        
                             </SocialBox>
+                                <BlockWrap style={{justifyContent: 'flex-end'}}>
+                                    {/* faq */}
+                                </BlockWrap>
                             </SocialContainer>
                             : 
                             <SocialContainerContacts>
@@ -49,7 +52,8 @@ const Header: React.FC<IPropsHeader & IPropsHeaderTop> = function ({
                                     <SocialMedia listMedia={socialNetwork}/>
                                 </BlockWrap>
                                 <BlockWrap style={{justifyContent: 'flex-end'}}>
-                                    <Phone isIcon phoneNumber={phoneNumber} />
+                                    {/* <Phone isIcon phoneNumber={phoneNumber} /> */}
+                                    {/* faq */}
                                 </BlockWrap>
                                 </SocialContainerContacts>
 

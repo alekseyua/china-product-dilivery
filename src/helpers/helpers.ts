@@ -1,5 +1,5 @@
 import { listUrls } from "../config/config.menu";
-import { insta, telega } from "../Images";
+import { facebook, insta, rutube, telega, youtube } from "../Images";
 
 export function delay(ms:number) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -63,16 +63,25 @@ export function getLocalStore({ key }: { key: string }) {
 //   }
 // }
 
-export function getIconFromName(name: string): string{
+export function getIconFromName(type: number): string{
 
   let icon = telega;
    
-  switch (name) {
-    case 'Facebook':
+  switch (type) {
+    case 4:
       icon = telega      
       break;
-    case 'Instagram':
+    case 1:
+      icon = facebook     
+      break;
+    case 2:
       icon = insta      
+      break;
+    case 3:
+      icon = youtube;      
+      break;
+    case 5:
+      icon = rutube;      
       break;
   
     default:

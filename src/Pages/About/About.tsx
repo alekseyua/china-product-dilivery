@@ -19,6 +19,7 @@ const About: React.FC<IProps> = function ({
 
     return (
         <Container>
+            <Offset mt={100} />
             <Breadcrumbs image={image}/>
             <Offset sectionTop>
             <Background />

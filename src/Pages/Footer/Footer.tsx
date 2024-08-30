@@ -24,7 +24,6 @@ const Footer: React.FC<IProps> = function ({
     listSection,
     image,
 }: IProps) {
-    console.log({ listSection })
     return (
         <footer>
             <Container size={1400}>

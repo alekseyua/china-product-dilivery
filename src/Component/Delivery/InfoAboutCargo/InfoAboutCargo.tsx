@@ -32,7 +32,7 @@ const InfoAboutCargo: React.FC<IProps> = ({
                     infoBlock?.blocks && infoBlock?.blocks.length &&
                     infoBlock?.blocks.map((info: IPropsBloks, index: number): any => {
                         return (
-                                <BlockWrap col>
+                                <BlockWrap key={info.id} col>
                                     <TextTitle sub center>{info.title_1}</TextTitle>
                                     <Text >{info.description}</Text>
                                 </BlockWrap>

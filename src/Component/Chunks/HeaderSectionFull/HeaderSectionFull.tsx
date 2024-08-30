@@ -12,7 +12,7 @@ const HeaderSectionFull: React.FC<IPropsHeaderSectionFull> = ({
     slogan,
     button,
     onClick,
-    location = 'flex-start'
+    location = 'flex-start',
 }: IPropsHeaderSectionFull) => {
     return (
         <BlockWrap addClass='block__container-header-section'>
@@ -27,7 +27,7 @@ const HeaderSectionFull: React.FC<IPropsHeaderSectionFull> = ({
             </BlockFlex>
 
             {button && <BlockFlex end addClass='block__feature-container-title' style={{
-                    flex: '1 1'
+                flex: '1 1',
                 }}>
                 <ButtonTransporent
                         name={button.name}

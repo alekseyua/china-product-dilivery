@@ -27,6 +27,7 @@ const InfoFindProviderMain: React.FC<IAboutMainProps
                 <HeaderSectionFull
                     title={infoBlock?.title_1}
                     slogan={infoBlock?.title_2}
+                    location='center'
                     // button={{
                     //     name: 'infoBlock?.button_1',
                     //     href: '/'
@@ -35,7 +36,7 @@ const InfoFindProviderMain: React.FC<IAboutMainProps
 
                 />
                 <BlockWrap>
-                    <TextTitle type='h6' addClass='text__title-sub'>{infoBlock.short_description}</TextTitle>
+                    <TextTitle type='h6' addClass='text__title-sub' style={{textAlign: 'center', width: '100%'}}>{infoBlock.short_description}</TextTitle>
                 </BlockWrap>
 
                 <BlockGrid addClass='block__card-container-grid'>

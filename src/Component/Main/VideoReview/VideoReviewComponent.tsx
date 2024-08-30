@@ -11,7 +11,7 @@ interface IProps {
 export class VideoReviewComponent extends Component<IProps> {
     
   render() {
-    console.log(this.props.dataSection)
+    // console.log(this.props.dataSection)
     return (
       <VideoReview
         infoBlock={this.props.dataSection}

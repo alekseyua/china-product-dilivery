@@ -1,3 +1,8 @@
+import insta from './icon/instagram_brand_logo_social media_icon.svg'
+import telega from './icon/media_social_telegram_icon.svg'
+import youtube from './icon/youtube.svg';
+import rutube from './icon/rutube.svg';
+import facebook from './icon/facebook.svg';
 // import logo from "./icon/cargo-logo-734x367.png"
 
 import slider_1 from './slider_1.jpg';
@@ -18,8 +23,6 @@ import feature1 from './featureSlider/project_3_1.jpg'
 import feature2 from './featureSlider/project_3_2.jpg'
 import feature3 from './featureSlider/project_3_3.jpg'
 
-import insta from './icon/instagram_brand_logo_social media_icon.svg'
-import telega from './icon/media_social_telegram_icon.svg'
 
 import video1 from './video_1.jpg'
 
@@ -47,6 +50,9 @@ import check from './icon/check-all.svg'
 const logo = "https://back.cargo8652.com/media/content/image/page/2024/08/21/cargo-logo-734x367_Sbbbwbc.png";
 
 export {
+    facebook,
+    rutube,
+    youtube,
     check,
     avatar,
     previewVideoAbout1,

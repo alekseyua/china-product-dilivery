@@ -1,8 +1,6 @@
 import React from 'react'
-import Container from '../../../Views/Block/Container'
 import TextTitle from '../../../Views/Text/TextTitle'
 import Image from '../../../Views/Image/Image'
-import { IPropsBreadcrumbs } from '../../../@types/common'
 import { aboutPage } from '../../../Images'
 import BreadcrumbsContainer from '../../../Views/Breadcrumbs/BreadcrumbsContainer'
 import BlockWrap from '../../../Views/Block/BlolckWrap/BlockWrap'

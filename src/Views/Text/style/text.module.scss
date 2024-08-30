@@ -87,7 +87,8 @@
   //text__stroke-title
   &__stroke-title {
     // padding-left: 15px;
-    -webkit-text-stroke: 0.75px var(--border-color);
+    -webkit-text-stroke: 0.75px var(--theme-color);
+    // -webkit-text-stroke: 0.75px var(--border-color);
     text-transform: uppercase;
     font-weight: 600;
     align-items: center;

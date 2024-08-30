@@ -107,7 +107,7 @@ class HeaderContainer extends React.Component<WithRouterProps & IProps,IStateHea
                 slug: 'footer'
             })
         }
-        getData()
+        // getData()
     }
     componentWillUnmount() {
         window.removeEventListener('scroll', this.listenToScroll)
@@ -118,7 +118,6 @@ class HeaderContainer extends React.Component<WithRouterProps & IProps,IStateHea
         document.documentElement.scrollTo({top: 0, behavior: 'smooth'});
       }
     render(): React.ReactNode{
-        console.log({props: this.props})
         return (
             <Header 
                 phoneNumber={this.props?.dataHeaderFooter?.footer.sections[2].blocks[1].description}

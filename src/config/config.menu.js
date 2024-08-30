@@ -78,12 +78,12 @@ export const listUrls = [
     },
     {
         id: 1,
-        title: 'О НАС',
+        title: '',
         path: '/about',
     },
     {
         id: 2,
-        title: 'Услуги Доставки',
+        title: '',
         path: '/delivery',
     },
     {

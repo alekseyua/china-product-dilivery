@@ -147,4 +147,6 @@ export interface IPropsBloksSocial {
   id: number;
   name: string;
   url: string;
+  type: number,
+  type_name: string
 }
