@@ -113,7 +113,7 @@ export const listUrls = [
     },
     {
         id: 8,
-        title: 'Выкуп ТОВАРА',
+        title: '',
         path: '/repurchase-of-goods',
     },
 ]

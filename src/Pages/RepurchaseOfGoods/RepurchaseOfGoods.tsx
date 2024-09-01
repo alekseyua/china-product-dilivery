@@ -19,6 +19,7 @@ const RepurchaseOfGoods: React.FC<IProps> = function ({ listSection,
 
     return (
         <Container>
+            <Offset sectionTop />
             <Breadcrumbs image={image} />
             <Offset sectionTop />
             <InfoRepurchaseGoodsComponent dataSection={listSection[0]} />

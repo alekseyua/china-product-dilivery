@@ -18,7 +18,7 @@ const DeliveryServices: React.FC<IProps> = function ({
     listSection,
     image,
 }:IProps){
-    // console.log({ listSection })
+    console.log({ listSection })
     return (
         <Container>
             <Offset sectionTop />
