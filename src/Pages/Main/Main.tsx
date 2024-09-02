@@ -30,14 +30,13 @@ interface IProps {
 const Main: React.FC<IProps> = ({listSection}:IProps) => {
 return (
         <React.Fragment>
+
             
             <Offset sectionTop />
             <SliderMainContainer dataSection={listSection[0]} />
 
-            {/* temporally, i am thing will better   */}
             <TrackContainer />
 
-            {/* <Offset sectionTop /> */}
             <InfoFindProviderMainComponent dataSection={listSection[2]}/>
 
             <Offset sectionTop>
@@ -58,14 +57,16 @@ return (
             <Offset sectionTop />
 
             <BlogsMainComponent dataSection={listSection[7]} />
-            <Offset sectionTop /> 
+            <Offset sectionTop />  
 
-            {/*
-
-<HighQualityMainComponent />
 <Offset sectionTop />
-            <Offset sectionTop />
-            */}
+<Offset sectionTop />
+<Offset sectionTop />
+            
+
+{/* <HighQualityMainComponent />
+            <Offset sectionTop /> */}
+           
         </React.Fragment>
     )
 }

@@ -21,8 +21,8 @@ const OrderTailoring: React.FC<IProps> = function ({
         <Container>
             <Breadcrumbs image={image} />
             <Offset sectionTop />
-            <ContactFormMainContainer dataSection={listSection[0]} />/
-            <Offset sectionTop />
+            {/* <ContactFormMainContainer dataSection={listSection[0]} />/
+            <Offset sectionTop /> */}
             
             <AboutOrderTailoringComponent dataSection={listSection[1]}/>
             <Offset sectionTop />

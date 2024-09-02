@@ -1,7 +1,6 @@
 import React, { memo } from 'react'
 import {IPropsButton} from '../../@types/button/button'
 import classNames from 'classnames';
-import withRouter from '../../HOC/withRouter/withRouter';
 import { WithRouterProps } from '../../@types/hoc/hoc';
 import IconSvg from '../Icon/IconSvg';
 

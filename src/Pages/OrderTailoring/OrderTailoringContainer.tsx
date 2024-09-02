@@ -21,7 +21,7 @@ class OrderTailoringContainer extends React.Component<IProps>{
     //order-tailoring
     componentDidMount(): void {
         this.props.dispatch('getPage', {
-            url: '/page/get_page/',
+            url: '/content/page/get_page/',
             slug: 'order_tailoring'
         })
     }

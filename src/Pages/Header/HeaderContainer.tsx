@@ -8,6 +8,7 @@ import { IPropsDataPage } from "../../@types/common";
 
 interface IProps{
     dispatch: any;
+    handlerChangeOpenFAQ: any;
     dataHeaderFooter: {
         footer: {
             "id": number,
@@ -100,14 +101,6 @@ class HeaderContainer extends React.Component<WithRouterProps & IProps,IStateHea
         this.listenWidth()
         window.addEventListener('scroll', this.listenToScroll)   
         window.addEventListener('resize', this.listenWidth)
-
-        const getData = async () => {
-            this.props.dispatch('getFooter', {
-                url: '/page/get_page/',
-                slug: 'footer'
-            })
-        }
-        // getData()
     }
     componentWillUnmount() {
         window.removeEventListener('scroll', this.listenToScroll)
@@ -120,6 +113,7 @@ class HeaderContainer extends React.Component<WithRouterProps & IProps,IStateHea
     render(): React.ReactNode{
         return (
             <Header 
+
                 phoneNumber={this.props?.dataHeaderFooter?.footer.sections[2].blocks[1].description}
                 socialNetwork={this.props?.dataHeaderFooter?.footer.sections[0].blocks[0].social_networks}
 
@@ -127,6 +121,8 @@ class HeaderContainer extends React.Component<WithRouterProps & IProps,IStateHea
                 isFixed={this.state.isFixed}
                 isBurger={this.state.isBurger}
                 handlerClickButtonUp={this.handlerClickButtonUp}
+
+                handlerChangeOpenFAQ={this.props.handlerChangeOpenFAQ}
             />
         )
     }

@@ -23,7 +23,7 @@ class MainContainer extends React.Component<IProps>{
         // this.props.dispathe(getDataPage());
         // this.props.test()
         this.props.dispatch('getPage',{
-             url: '/page/get_page/',
+            url: '/content/page/get_page/',
             slug: 'main'
         })
     }

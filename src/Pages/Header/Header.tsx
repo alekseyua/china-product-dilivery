@@ -16,11 +16,13 @@ import SocialContainerContacts from "../../Views/Header/SocialContainerContacts"
 import Container from "../../Views/Block/Container";
 import Phone from "../../Component/Chunks/Phone/Phone";
 import { IPropsBloksSocial } from "../../@types/common";
+import FAQContainer from "../../Component/FAQ/FAQContainer";
 
 
 interface IPropsHeaderTop {
     phoneNumber: string;
-    socialNetwork: IPropsBloksSocial[]
+    socialNetwork: IPropsBloksSocial[];
+    handlerChangeOpenFAQ: any;
 }
 
 const Header: React.FC<IPropsHeader & IPropsHeaderTop> = function ({
@@ -30,6 +32,7 @@ const Header: React.FC<IPropsHeader & IPropsHeaderTop> = function ({
     phoneNumber,
     socialNetwork,
     handlerClickButtonUp,
+    handlerChangeOpenFAQ,
 }: IPropsHeader & IPropsHeaderTop) {
     // при пролистывании в HeaderBottom нужно добавлять клас sticky > 480px
     return (
@@ -39,11 +42,11 @@ const Header: React.FC<IPropsHeader & IPropsHeaderTop> = function ({
                     {
                         isMainPage? 
                             <SocialContainer>
-                            <SocialBox>
-                                    <SocialMedia isIcon listMedia={socialNetwork}/>                        
-                            </SocialBox>
-                                <BlockWrap style={{justifyContent: 'flex-end'}}>
-                                    {/* faq */}
+                                <SocialBox>
+                                        <SocialMedia isIcon listMedia={socialNetwork}/>                        
+                                </SocialBox>
+                                <BlockWrap style={{ justifyContent: 'flex-end', alignItems: 'center' }}>
+                                    <FAQContainer handlerChangeOpenFAQ={handlerChangeOpenFAQ} />
                                 </BlockWrap>
                             </SocialContainer>
                             : 
@@ -51,9 +54,9 @@ const Header: React.FC<IPropsHeader & IPropsHeaderTop> = function ({
                                 <BlockWrap>
                                     <SocialMedia listMedia={socialNetwork}/>
                                 </BlockWrap>
-                                <BlockWrap style={{justifyContent: 'flex-end'}}>
+                                <BlockWrap style={{justifyContent: 'flex-end', alignItems: 'center'}}>
                                     {/* <Phone isIcon phoneNumber={phoneNumber} /> */}
-                                    {/* faq */}
+                                    <FAQContainer handlerChangeOpenFAQ={handlerChangeOpenFAQ }/>
                                 </BlockWrap>
                                 </SocialContainerContacts>
 

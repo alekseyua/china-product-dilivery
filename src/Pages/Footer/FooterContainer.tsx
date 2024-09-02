@@ -24,7 +24,7 @@ class FooterContainer extends React.Component<IProps>{
     componentDidMount(): void {
         const getData = async () => {
             this.props.dispatch('getFooter', {
-                url: '/page/get_page/',
+                url: '/content/page/get_page/',
                 slug: 'footer'
             })
         }

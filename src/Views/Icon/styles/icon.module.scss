@@ -62,20 +62,20 @@
     //icon__link-header
     &__link-header{
         @include adaptiv-value(width, 20,15,1);
-        path {
-            fill-opacity: 1;
-            stroke: var(--theme-color);
-            fill: var(--border-color);
-            stroke-width: 1;
-            stroke-dasharray: 2500;
-            stroke-dashoffset: 2500;
-        }
-        &>div>svg:hover{
-            cursor: pointer;
-            & > path {
-                animation: fillAni 5s ease-in-out;
-            }
-        }
+        // path {
+        //     fill-opacity: 1;
+        //     stroke: var(--theme-color);
+        //     fill: var(--border-color);
+        //     stroke-width: 1;
+        //     stroke-dasharray: 2500;
+        //     stroke-dashoffset: 2500;
+        // }
+        // &>div>svg:hover{
+        //     cursor: pointer;
+        //     & > path {
+        //         animation: fillAni 5s ease-in-out;
+        //     }
+        // }
     }
     @keyframes fillAni {
         0%{

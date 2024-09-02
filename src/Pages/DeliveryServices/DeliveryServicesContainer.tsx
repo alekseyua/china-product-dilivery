@@ -22,7 +22,7 @@ interface IProps {
 class DeliveryServicesContainer extends React.Component<IProps>{
     componentDidMount(): void {
         this.props.dispatch('getPage', {
-            url: '/page/get_page/',
+            url: '/content/page/get_page/',
             slug: 'delivery'
         })
     }

@@ -1,5 +1,5 @@
 import { listUrls } from "../config/config.menu";
-import { facebook, insta, rutube, telega, youtube } from "../Images";
+import { facebook, insta, rutube, telega, whatsapp, youtube } from "../Images";
 
 export function delay(ms:number) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -82,6 +82,9 @@ export function getIconFromName(type: number): string{
       break;
     case 5:
       icon = rutube;      
+      break;
+    case 6:
+      icon = whatsapp;      
       break;
   
     default:

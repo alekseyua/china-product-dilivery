@@ -1,5 +1,6 @@
 @import './../../../styles/styles/global.scss';
 @import '../../../styles/styles/mixin.scss';
+@import '../../../styles/styles/keyframes.scss';
 
 .header{
     //header__th-header
@@ -25,6 +26,7 @@
     //header-top{}
     &-top{
         font-family: var(--para-font);
+        padding-right: var(--scroll-padding);
     }
     //header__bottom{}
     &__bottom{
@@ -32,8 +34,8 @@
         @include adaptiv-value(padding-left, 80,1,1);
         @include adaptiv-value(padding-right,80,1,1);
         position: fixed;
-        padding-top: 40px;
-        top: 0px;
+        // padding-top: 40px;
+        top: 40px;
         right: 0;
         left: 0;
         
@@ -56,6 +58,7 @@
         // @include adaptiv-value(top, 20,0,1);
         position: relative;
         padding:20px 0;
+        padding-right: var(--scroll-padding);
     }
     //header__logo
     &__logo{
@@ -100,7 +103,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 17px 0;
+            padding: 10px 0;
 
             @include adaptiv-value(padding-left, 80,1,1);
             @include adaptiv-value(padding-right,80,1,1);
@@ -110,8 +113,8 @@
     //header__socialbox
     &__socialbox{ // social-box
         min-width: 200px;
-        @include adaptiv-value(min-width, 200,100,1);        
-        justify-content: space-around;
+        @include adaptiv-value(min-width, 270,200,1);        
+        justify-content: space-evenly;
         display: flex;
         align-items: center;
         background-color: var(--body-bg);
@@ -132,11 +135,32 @@
         justify-content: center;
         &>a> div > div{
             display: flex;
-            padding: 4px 0;
-            &>svg:hover{
-                path{ 
-                    fill: var(--theme-color);
+            path, polygon {
+                    fill-opacity: 1;
+                    stroke: var(--theme-color);
+                    fill: var(--body-color);
+                    stroke-width: 1;
+                    stroke-dasharray: 2500;
+                    stroke-dashoffset: 2500;
+                    transition: fill .6s;
                 }
+                &>svg:hover{
+                    animation-fill-mode: forwards;
+                    &>path {
+                        // animation: fillAni 2s;
+                        fill: var(--theme-color);
+                        transition: fill 1s;
+                    }                
+                    &>g>path {
+                        // animation: fillAni 2s;
+                        fill: var(--theme-color);
+                        transition: fill 1s;
+                    }                
+                    &>polygon {
+                        // animation: fillAni 2s;
+                        fill: var(--theme-color);
+                        transition: fill 1s;
+                    }                
             }
         }
     }

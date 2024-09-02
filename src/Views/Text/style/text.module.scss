@@ -291,9 +291,18 @@
   color: var(--text-color-white);
   font-size: 40px;
 }
-
-//style-table-card
+//text__faq-title
+&__faq-title{
+  transition: color .3s;
+  font-size: 20px;
+  &:hover{
+    cursor: pointer;
+    color: var(--theme-color);
+    transition: color .3s;
+  }
 }
+}
+//style-table-card
 .style-table-card{
   &>div>figure>table>tbody{
     padding: 0;
