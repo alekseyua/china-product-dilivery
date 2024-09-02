@@ -36,14 +36,18 @@
             &-container-grid{
                 min-width: 250px;
                 min-height: 350px;
-                grid-template-columns: repeat(2, 1fr); 
+                grid-template-columns: repeat(4, 1fr); 
                 grid-template-rows: auto;
                 gap: 20px;
-                @include resize(landscape){
-                    grid-template-columns: 1fr;
+                @include resize(big-landscape){
+                    grid-template-columns: repeat(2, 1fr); 
                     // grid-template-rows: repeat(1, 1fr);
                     gap: 10px;
                 }
+                @include resize(mobile){
+                    grid-template-columns: 1fr;
+                }
+
             }
             //block__card-container-grid-advantage
                 &-container-grid-advantage{
@@ -62,11 +66,11 @@
                     padding-top: 10px;
                     min-width: 200px;
                     min-height: 140px;
-                    grid-template-columns: repeat(3, 1fr); 
+                    grid-template-columns: repeat(6, 1fr); 
                     grid-template-rows: auto;
                     gap: 50px;
-                    @include resize(landscape){                        
-                        grid-template-columns: repeat(2, 1fr);
+                    @include resize(big-landscape){                        
+                        grid-template-columns: repeat(4, 1fr);
                         gap: 30px;
                     }
                     @include resize(mobile){                        
@@ -91,14 +95,28 @@
         }
         //block__delivery-info-about-cargo-content-container
         &-info-about-cargo-content-container{
-            grid-template-columns: repeat(2,1fr);
+            grid-template-columns: repeat(3,1fr);
             // align-items: center;
             justify-items: center;
             gap: 25px;
-            @include resize(mobile){
-                grid-template-columns: 1fr;                  
+            @include resize(big-landscape){
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px;         
             }
-            
+            @include resize(mobile){
+                grid-template-columns: 1fr;
+                &>div{
+                    // border: 1px solid var(--body-color);
+                    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+                    background-color: var(--card-bg);
+                    transition: box-shadow 0.3s ease;
+                    border-radius: 10px;
+                    padding: 50px;
+                    &:hover {
+                        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+                    }
+                }
+            }
         }
     }
 

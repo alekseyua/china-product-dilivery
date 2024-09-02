@@ -2,6 +2,7 @@ import React from 'react'
 
 const GetText = (text: string | JSX.Element): string | JSX.Element => {  
   // console.log({text})  
+  if (text === '<p>&nbsp;</p>') return '';
   if(typeof text === 'object' && Array.isArray(text)){
     let str: string[] = [];
     text.forEach((item: string) => {

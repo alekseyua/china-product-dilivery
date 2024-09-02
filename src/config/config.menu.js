@@ -103,7 +103,7 @@ export const listUrls = [
     },
     {
         id: 6,
-        title: 'Заказать пошив',
+        title: '',
         path: '/ordertailoring',
     },
     {

@@ -24,24 +24,18 @@ const InfoDelivery: React.FC<IProps> = ({
 }: IProps) => {
   return (
     <Container row addClass='container__delivery-info-section' center size={1400}>
-      {/* <BlockWrap addClass='block__about-container-left' > */}
       <BlockWrap addClass='block__delivery-info-container-image'>
-        {/* <BlockWrap addClass='block__about-image-1'> */}
           <Image src={infoBlock.images[0].url} />
-        <BlockWrap addClass='block__delivery-info-container-image--title'>
           <HeaderSectionFull
             title={infoBlock?.title_1}
             slogan={infoBlock?.title_2}
           />
-        </BlockWrap>
       </BlockWrap>
-      {/* </BlockWrap> */}
       <BlockWrap addClass='block__delivery-info-container-content' col>
         <TextTitle sub>{infoBlock.short_description}</TextTitle>
         <Offset mb={25} />
         <Text>{infoBlock.description}</Text>
         <Offset mb={45} />
-        {/* <Button onClick={handlerChangeScreen} href={infoBlock.button.locationPath} iconSvgLeft={line} iconSvgRight={line} btnYellow>{infoBlock.button.title}</Button> */}
       </BlockWrap>
     </Container>
 

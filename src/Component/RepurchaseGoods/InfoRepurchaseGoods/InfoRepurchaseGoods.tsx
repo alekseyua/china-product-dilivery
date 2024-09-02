@@ -68,7 +68,7 @@ const InfoRepurchaseGoods: React.FC<IAboutMainProps
 
                                     <Text> {infoBlock.description }</Text>
                                     <Offset mb={20} />
-                            <Button addClass={'button__full-yellow'} href={'/about'} onClick={handlerDonwload} iconSvgLeft={line} iconSvgRight={line} btnYellow>
+                            <Button addClass={'button__full-yellow'} onClick={handlerDonwload} iconSvgLeft={line} iconSvgRight={line} btnYellow>
                                         <Text>{'Скачать бланк заказа'}</Text>
                                     </Button>
                                 </AboutMainContentContainer>

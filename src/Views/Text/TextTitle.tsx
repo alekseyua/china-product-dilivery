@@ -27,20 +27,20 @@ const TextTitle:React.FC<IPropsTagTitleText> = ({
 
     switch (type) {
         case 'h1':
-            return <h1 className={classNameInit} style={style}>{GetText(children)}</h1>
+            return GetText(children) ? <h1 className={classNameInit} style={style}>{GetText(children)}</h1> : null
         case 'h2':
-            return <h2 className={classNameInit} style={style}>{GetText(children)}</h2>
+            return GetText(children) ? <h2 className={classNameInit} style={style}>{GetText(children)}</h2> : null
         case 'h3':
-            return <h3 className={classNameInit} style={style}>{GetText(children)}</h3>
+            return GetText(children) ? <h3 className={classNameInit} style={style}>{GetText(children)}</h3> : null
         case 'h4':
-            return <h4 className={classNameInit} style={style}>{GetText(children)}</h4>
+            return GetText(children) ? <h4 className={classNameInit} style={style}>{GetText(children)}</h4> : null
         case 'h5':
-            return <h5 className={classNameInit} style={style}>{GetText(children)}</h5>
+            return GetText(children) ? <h5 className={classNameInit} style={style}>{GetText(children)}</h5> : null
         case 'h6':
-            return <h6 className={classNameInit} style={style}>{GetText(children)}</h6>
+            return GetText(children) ? <h6 className={classNameInit} style={style}>{GetText(children)}</h6> : null
             
         default:
-            return <div className={classNameInit} style={style}>{GetText(children)}</div>
+            return GetText(children)? <div className={classNameInit} style={style}>{GetText(children)}</div> : null
     } 
 }
 

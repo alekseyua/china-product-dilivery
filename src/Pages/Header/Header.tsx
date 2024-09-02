@@ -21,7 +21,7 @@ import FAQContainer from "../../Component/FAQ/FAQContainer";
 
 interface IPropsHeaderTop {
     phoneNumber: string;
-    socialNetwork: IPropsBloksSocial[];
+    listSocialNetwork: IPropsBloksSocial[];
     handlerChangeOpenFAQ: any;
 }
 
@@ -30,7 +30,7 @@ const Header: React.FC<IPropsHeader & IPropsHeaderTop> = function ({
     isBurger,
     isMainPage,
     phoneNumber,
-    socialNetwork,
+    listSocialNetwork,
     handlerClickButtonUp,
     handlerChangeOpenFAQ,
 }: IPropsHeader & IPropsHeaderTop) {
@@ -43,7 +43,7 @@ const Header: React.FC<IPropsHeader & IPropsHeaderTop> = function ({
                         isMainPage? 
                             <SocialContainer>
                                 <SocialBox>
-                                        <SocialMedia isIcon listMedia={socialNetwork}/>                        
+                                        <SocialMedia isIcon listMedia={listSocialNetwork}/>                        
                                 </SocialBox>
                                 <BlockWrap style={{ justifyContent: 'flex-end', alignItems: 'center' }}>
                                     <FAQContainer handlerChangeOpenFAQ={handlerChangeOpenFAQ} />
@@ -52,7 +52,7 @@ const Header: React.FC<IPropsHeader & IPropsHeaderTop> = function ({
                             : 
                             <SocialContainerContacts>
                                 <BlockWrap>
-                                    <SocialMedia listMedia={socialNetwork}/>
+                                    <SocialMedia listMedia={listSocialNetwork}/>
                                 </BlockWrap>
                                 <BlockWrap style={{justifyContent: 'flex-end', alignItems: 'center'}}>
                                     {/* <Phone isIcon phoneNumber={phoneNumber} /> */}

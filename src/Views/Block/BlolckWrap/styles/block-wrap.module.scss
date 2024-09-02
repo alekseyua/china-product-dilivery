@@ -68,17 +68,10 @@
         width: 100%;
         justify-content: center;
         margin-bottom: var(--section-title-space);
-        // margin-top: -0.20em;
-        animation-name: var(--animation-main-hight);
-        animation-duration: 4s;
-        animation-delay: .1s;
-        animation-fill-mode: both;
-        bottom: -100%;
         @include resize(big-landscape) {
             flex-direction: column;
             align-items: flex-start;
             justify-content: flex-start;
-            // padding: 0 0px 50px;
             @include adaptiv-value(margin-bottom, 50, 10, 1);
         }
         @include resize(mobile) {
@@ -273,7 +266,6 @@
                 position: absolute;
                 top: 0;
                 left: 0;
-                -webkit-transition: 0.4s ease-in-out;
                 transition: 0.4s ease-in-out;
                 pointer-events: none;
             }
@@ -689,20 +681,6 @@
             &-content{
                 padding: 0;
             }
-            //block__delivery-info-container-image
-            &-image{
-                padding: 0;
-                position: relative;
-                max-width: 500px;
-                @include adaptiv-value(max-width, 1200,320,1);
-                margin: 0 auto;
-                //block__delivery-info-container-image--title
-                &--title{
-                    position: absolute;
-                    // bottom: 250px;
-                    bottom: 35%;
-                }
-            }
         }
     }
     //block__delivery-price-card-conrainer-desc
@@ -812,5 +790,21 @@
             top: 70;
             right: 0;
         }      
+    }
+    //block__order-tail-action-social
+    &__order-tail-action-social{
+        padding: 0;
+        height: 0;
+        visibility: hidden;
+        opacity: 0;
+        //block__order-tail-action-social--active
+        transition: height .5s, visibility .2s, opacity .6s ease-in;
+        &--active{
+            padding: 0;
+            height: 30px;
+            visibility: visible;
+            opacity: 1;
+            transition: height .5s, visibility .2s, opacity .6s ease-in;
+        }
     }
 }

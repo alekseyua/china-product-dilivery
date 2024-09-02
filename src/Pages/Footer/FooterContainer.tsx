@@ -3,20 +3,11 @@ import Footer from "./Footer";
 import { connectStoreon } from "storeon/react";
 import { IPropsDataPage } from "../../@types/common";
 import { delay } from "../../helpers/helpers";
+import { IFooter } from "../../@types/footer/footer";
 
 
 interface IProps {
-    dataHeaderFooter: {
-        footer: {
-            "id": number,
-            "slug": string
-            "name": string
-            "title": string
-            "description": string
-            "image": string
-            "sections": IPropsDataPage[]
-        }
-    };
+    dataHeaderFooter: IFooter;
     dispatch: any;
 }
 

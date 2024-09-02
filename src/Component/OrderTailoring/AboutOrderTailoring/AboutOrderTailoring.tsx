@@ -10,20 +10,26 @@ import AboutMainContentContainer from '../../../Views/AboutMain/AboutMainContent
 import Text from '../../../Views/Text/Text';
 import TextTitle from '../../../Views/Text/TextTitle';
 import { line } from '../../../Images';
-import { IPropsDataPage } from '../../../@types/common';
+import { IPropsBloksSocial, IPropsDataPage } from '../../../@types/common';
 import HeaderSectionFull from '../../Chunks/HeaderSectionFull/HeaderSectionFull';
 import ReactPlayer from 'react-player';
+import SocialMedia from '../../Chunks/SotialMedia/SocialMedia';
+import BlockWrap from '../../../Views/Block/BlolckWrap/BlockWrap';
 
 interface IAboutMainProps {
     infoBlock: IPropsDataPage;
-    handlerChangeScreen: any;
+    handlerOpenSocial: any;
+    isOpenSocial: boolean;
+    listSocialNetwork: IPropsBloksSocial[]
 }
 
 
 const AboutOrderTailoring: React.FC<IAboutMainProps
 > = ({
     infoBlock,
-    handlerChangeScreen,
+    isOpenSocial,
+    listSocialNetwork,
+    handlerOpenSocial,
 }: IAboutMainProps) => {
         return (
             <Container
@@ -69,8 +75,11 @@ const AboutOrderTailoring: React.FC<IAboutMainProps
                                     />
 
                                     <Text> {infoBlock.description }</Text>
-                                    <Button addClass={'button__about-us'} href={'/about'} onClick={handlerChangeScreen} iconSvgLeft={line} iconSvgRight={line} btnYellow>
-                                        <Text>{'О нас'}</Text>
+                                    <BlockWrap addClass={isOpenSocial ? 'block__order-tail-action-social--active' : 'block__order-tail-action-social'}>
+                                        <SocialMedia  isIcon listMedia={listSocialNetwork}/>
+                                    </BlockWrap>
+                                    <Button addClass={'button__about-us'} onClick={handlerOpenSocial} iconSvgLeft={line} iconSvgRight={line} btnYellow>
+                                        <Text>{'заказать расчет'}</Text>
                                     </Button>
                                 </AboutMainContentContainer>
                             </AboutMainWrapBlock>

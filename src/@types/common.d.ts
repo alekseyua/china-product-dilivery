@@ -107,15 +107,16 @@ export interface IPropsDataPage {
   description: string;
   short_description: string;
   images: {
-    "id": number;
+    id: number;
     section: number;
     url: string;
   }[];
   videos: {
-    "id": number;
-    "section": number;
-    "url": string
+    id: number;
+    section: number;
+    url: string;
   }[];
+  files: IDataPageFiles[];
   blocks: IPropsBloks[];
 }
 
@@ -149,4 +150,10 @@ export interface IPropsBloksSocial {
   url: string;
   type: number,
   type_name: string
+}
+
+export interface IDataPageFiles {
+  id: nummber;
+  section: number;
+  url: string;
 }

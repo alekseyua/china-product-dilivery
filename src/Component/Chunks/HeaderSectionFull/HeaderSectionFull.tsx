@@ -14,6 +14,7 @@ const HeaderSectionFull: React.FC<IPropsHeaderSectionFull> = ({
     onClick,
     location = 'flex-start',
 }: IPropsHeaderSectionFull) => {
+    console.log({title})
     return (
         <BlockWrap addClass='block__container-header-section'>
             <BlockFlex start style={{

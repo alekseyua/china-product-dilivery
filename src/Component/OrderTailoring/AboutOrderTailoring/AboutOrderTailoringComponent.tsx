@@ -1,19 +1,28 @@
 import React, { Component } from 'react'
 import AboutOrderTailoring from './AboutOrderTailoring'
-import withRouter from '../../../HOC/withRouter/withRouter';
-import { WithRouterProps } from '../../../@types/hoc/hoc';
 import { IPropsDataPage } from '../../../@types/common';
+import { connectStoreon } from 'storeon/react';
+import { IFooter } from '../../../@types/footer/footer';
 
 interface IAboutMainProps {
-  dataSection: IPropsDataPage}
+  dataSection: IPropsDataPage;
+  dataHeaderFooter: IFooter;
+}
 
-export class AboutOrderTailoringComponent extends Component<WithRouterProps & IAboutMainProps> {
+interface IState {
+  isOpenSocial: boolean;
+}
 
-    handlerChangeScreen = ({e, href}:{e:Event, href: string}) => {
-      if(href){
-        return this.props.navigate(href);
-    }
-    
+export class AboutOrderTailoringComponent extends Component<IAboutMainProps, IState> {
+  state: IState = {
+    isOpenSocial: false,
+  }
+
+  handlerOpenSocial = () => {
+    this.setState(state =>({
+      ...state,
+      isOpenSocial:!state.isOpenSocial,
+    }))
   }
 
   render() {
@@ -21,10 +30,16 @@ export class AboutOrderTailoringComponent extends Component<WithRouterProps & IA
     return (
       <AboutOrderTailoring
         infoBlock={this.props.dataSection}
-        handlerChangeScreen={this.handlerChangeScreen}
+        isOpenSocial={this.state.isOpenSocial}
+        listSocialNetwork={this.props?.dataHeaderFooter?.footer.sections[0].blocks[0].social_networks}
+        handlerOpenSocial={this.handlerOpenSocial}
+
       />
     )
   }
 }
 
-export default withRouter(AboutOrderTailoringComponent)
+export default connectStoreon( 
+  'dataHeaderFooter',
+  AboutOrderTailoringComponent
+)

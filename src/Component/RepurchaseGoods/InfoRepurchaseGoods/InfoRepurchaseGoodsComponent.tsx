@@ -10,12 +10,13 @@ interface IAboutMainProps {
 export class InfoRepurchaseGoodsComponent extends Component<WithRouterProps & IAboutMainProps> {
 
     handlerDonwload = ({e, href}:{e:Event, href: string}) => {
-      alert('Need file from admin service')
+      // alert('Need file from admin service')
+      window.open(this.props.dataSection.files[0].url)
     
   }
 
   render() {
-    // console.log(this.props.dataSection)
+    console.log(this.props.dataSection)
     return (
       <InfoRepurchaseGoods
         infoBlock={this.props.dataSection}

@@ -4,22 +4,12 @@ import { IStateHeader } from "../../@types/header/header";
 import withRouter from "../../HOC/withRouter/withRouter";
 import { WithRouterProps } from "../../@types/hoc/hoc";
 import { connectStoreon } from "storeon/react";
-import { IPropsDataPage } from "../../@types/common";
+import { IFooter } from "../../@types/footer/footer";
 
 interface IProps{
     dispatch: any;
     handlerChangeOpenFAQ: any;
-    dataHeaderFooter: {
-        footer: {
-            "id": number,
-            "slug": string
-            "name": string
-            "title": string
-            "description": string
-            "image": string
-            "sections": IPropsDataPage[]
-        }
-    };
+    dataHeaderFooter: IFooter;
 }
 
 class HeaderContainer extends React.Component<WithRouterProps & IProps,IStateHeader>{
@@ -115,7 +105,7 @@ class HeaderContainer extends React.Component<WithRouterProps & IProps,IStateHea
             <Header 
 
                 phoneNumber={this.props?.dataHeaderFooter?.footer.sections[2].blocks[1].description}
-                socialNetwork={this.props?.dataHeaderFooter?.footer.sections[0].blocks[0].social_networks}
+                listSocialNetwork={this.props?.dataHeaderFooter?.footer.sections[0].blocks[0].social_networks}
 
                 isMainPage={this.props.location && this.props.location.pathname === '/'}
                 isFixed={this.state.isFixed}

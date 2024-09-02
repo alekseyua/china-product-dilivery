@@ -23,7 +23,7 @@ class LayoutContainer extends React.Component<IProps, IState> {
                 slug: 'faq'
             })
         }
-        // getFaq();
+        getFaq();
     }
     handlerChangeOpenFAQ = (value: boolean) => {
         this.setState( state => ({...state, isOpenFAQ: value }))

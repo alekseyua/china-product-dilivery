@@ -301,6 +301,16 @@
     transition: color .3s;
   }
 }
+//text__delivery-info-about-cargo-title-card
+&__delivery-info-about-cargo-title-card{
+  min-height: 50px;
+  &>div>p{
+    font-weight: 600;
+    text-align: center;
+  }
+}
+
+
 }
 //style-table-card
 .style-table-card{

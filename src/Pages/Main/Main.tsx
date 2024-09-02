@@ -32,7 +32,7 @@ return (
         <React.Fragment>
 
             
-            <Offset sectionTop />
+            {/* <Offset sectionTop />
             <SliderMainContainer dataSection={listSection[0]} />
 
             <TrackContainer />
@@ -57,7 +57,7 @@ return (
             <Offset sectionTop />
 
             <BlogsMainComponent dataSection={listSection[7]} />
-            <Offset sectionTop />  
+            <Offset sectionTop />   */}
 
 <Offset sectionTop />
 <Offset sectionTop />
