@@ -55,4 +55,12 @@
             @include adaptiv-value(max-width, 120, 80,1);
         }
     }
+    //image__feature-card-image
+    &__feature-card-image{
+        min-height: 410px;
+        max-height: 410px;
+        &>img{
+            height: 400px;
+        }
+    }
 }

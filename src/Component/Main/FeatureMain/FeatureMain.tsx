@@ -20,20 +20,21 @@ const FeatureMain: React.FC<IProps> = ({
         // <Container>
             <Container
                 addClass='container__feature-main'
+                size={1400}
             >
                 <HeaderSectionFull 
                     title={infoBlock?.title_1}
                     slogan={infoBlock?.title_2}
-                    button={{
-                        name: 'Узнать больше',
-                        href: '/'
-                    }}
+                    // button={{
+                    //     name: 'Узнать больше',
+                    //     href: '/'
+                    // }}
                     onClick={handlerChangeScreen}
 
                 />
             {/* </Container> */}
             <BlockWrap style={{
-                maxHeight: 400
+                // maxHeight: 400
             }}> 
                 <SliderFeatureMain listCards={infoBlock?.blocks} />
             </BlockWrap>

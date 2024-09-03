@@ -39,8 +39,6 @@ const Header: React.FC<IPropsHeader & IPropsHeaderTop> = function ({
         <HeaderSection isBurger={isBurger}> 
             <Container>
                 <HeaderTop>
-                    {
-                        isMainPage? 
                             <SocialContainer>
                                 <SocialBox>
                                         <SocialMedia isIcon listMedia={listSocialNetwork}/>                        
@@ -48,19 +46,7 @@ const Header: React.FC<IPropsHeader & IPropsHeaderTop> = function ({
                                 <BlockWrap style={{ justifyContent: 'flex-end', alignItems: 'center' }}>
                                     <FAQContainer handlerChangeOpenFAQ={handlerChangeOpenFAQ} />
                                 </BlockWrap>
-                            </SocialContainer>
-                            : 
-                            <SocialContainerContacts>
-                                <BlockWrap>
-                                    <SocialMedia listMedia={listSocialNetwork}/>
-                                </BlockWrap>
-                                <BlockWrap style={{justifyContent: 'flex-end', alignItems: 'center'}}>
-                                    {/* <Phone isIcon phoneNumber={phoneNumber} /> */}
-                                    <FAQContainer handlerChangeOpenFAQ={handlerChangeOpenFAQ }/>
-                                </BlockWrap>
-                                </SocialContainerContacts>
-
-                    }
+                            </SocialContainer>                    
                 </HeaderTop>
                 <HeaderBottom isFixed={isFixed}>
                     <div className="sticky-active">

@@ -58,23 +58,17 @@
     }
     //container__feature-main
     &__feature-main{
-        @include adaptiv-value(margin-top,220,0,1);
-        @include resize(desktop){
-            @include adaptiv-value(margin-top,50,0,1);
-            padding: 0 30px;
-        }
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        animation-name: var(--animation-main-feature);
-        animation-duration: 5s;
-        animation-delay: .1s;
-        animation-fill-mode: both;
-        max-height: max-content;
-        // bottom: -100%;
-        // bottom: -120px;
+        // @include adaptiv-value(margin-top,220,0,1);
+        // @include resize(desktop){
+        //     @include adaptiv-value(margin-top,50,0,1);
+        //     padding: 0 30px;
+        // }
+        // width: 100%;
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: center;
+        // align-items: center;
+        // max-height: max-content;
     }
     //container__video-review-main
     &__video-review-main{

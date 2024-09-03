@@ -1,102 +1,99 @@
-
 export interface IProps {
-    children?: React.ReactNode | JSX.Element | Element.outerHTML,
-    style?: object,
+  children?: React.ReactNode | JSX.Element | Element.outerHTML;
+  style?: object;
 }
 export interface IPropsArrow {
-    right?: boolean;
-    left?: boolean;
-    down?: boolean;
-    up?: boolean;
-    style?: object;
-    addClass?: string;
+  right?: boolean;
+  left?: boolean;
+  down?: boolean;
+  up?: boolean;
+  style?: object;
+  addClass?: string;
 }
 export interface IPropsWrap extends IProps {
-    col?: boolean;
-    addClass?: string;
+  col?: boolean;
+  addClass?: string;
 }
 
 export interface IPropsMenu extends IProps {
-    submenu?: boolean; 
-    isMobile?: boolean;
-    isIcon?: boolean;
+  submenu?: boolean;
+  isMobile?: boolean;
+  isIcon?: boolean;
 }
 
 export interface IPropsMenuContainer extends IProps {
-    isMobile?: boolean;
-    isFooter?: boolean;
+  isMobile?: boolean;
+  isFooter?: boolean;
 }
 
 export interface IPropsTagH extends IProps {
-    type?: string;
-    addClass?: string;
-    className?: string
+  type?: string;
+  addClass?: string;
+  className?: string;
 }
 export interface IPropsTagTitleText extends IPropsTagH {
-    sub?:boolean;
-    center?:boolean;
+  sub?: boolean;
+  center?: boolean;
 }
 export interface IPropsTagText extends IProps {
-    tag?: string;
-    addClass?: string;
+  tag?: string;
+  addClass?: string;
 }
-export interface IPropsTagP extends IProps { 
-    addClass?: string;
-    className?: string;
+export interface IPropsTagP extends IProps {
+  addClass?: string;
+  className?: string;
 }
-export interface IPropsContainer extends IProps { 
-    addClass?: string;
-    size?: number;
-    row?: boolean;
-    center?: boolean;
+export interface IPropsContainer extends IProps {
+  addClass?: string;
+  size?: number;
+  row?: boolean;
+  center?: boolean;
 }
-export interface IPropsBlockFlex extends IProps { 
-    addClass?: string;
-    start?: boolean;
-    end?: boolean;
-    sb?: boolean | 'space-between';
-    ab?: boolean | 'around-between';
-    eb?: boolean | 'evently-between';
-    row?:boolean;
-    
+export interface IPropsBlockFlex extends IProps {
+  addClass?: string;
+  start?: boolean;
+  end?: boolean;
+  sb?: boolean | "space-between";
+  ab?: boolean | "around-between";
+  eb?: boolean | "evently-between";
+  row?: boolean;
 }
-export interface IPropsBlockGrid extends IProps { 
-    addClass?: string;
-    col?: number;
-    row?: number;
+export interface IPropsBlockGrid extends IProps {
+  addClass?: string;
+  col?: number;
+  row?: number;
 }
 
 export interface IPropsOffset extends IProps {
-    mt?: number;
-    mb?: number;
-    ml?: number;
-    mr?: number;
-    pt?: number;
-    pb?: number;
-    pl?: number;
-    pr?: number;
-    sectionTop?: boolean;
-    sectionBottom?: boolean;
+  mt?: number;
+  mb?: number;
+  ml?: number;
+  mr?: number;
+  pt?: number;
+  pb?: number;
+  pl?: number;
+  pr?: number;
+  sectionTop?: boolean;
+  sectionBottom?: boolean;
 }
 
-export interface IPropsInput{
-    placeholder?: string;
-    value: string | number;
-    autocomplete?: HTMLInputAutoCompleteAttribute | undefined;
-    name?: string;
-    onChange?: any;
-    onClick?: any;
-    addClass?: string;
-    onClickInside?:any;
-    onClickOutside?:any;
-    formInput: 'input' | 'textarea';
+export interface IPropsInput {
+  placeholder?: string;
+  value: string | number;
+  autocomplete?: HTMLInputAutoCompleteAttribute | undefined;
+  name?: string;
+  onChange?: any;
+  onClick?: any;
+  addClass?: string;
+  onClickInside?: any;
+  onClickOutside?: any;
+  formInput: "input" | "textarea";
 }
 
 export interface IPropsBreadcrumbs {
-    title: string;
-    onClick: any;
+  title: string;
+  onClick: any;
 }
-
 
 export interface IPropsDataPage {
   id: number;
@@ -121,7 +118,7 @@ export interface IPropsDataPage {
 }
 
 export interface IPropsMain {
-    listSection: IPropsDataPage[]
+  listSection: IPropsDataPage[];
 }
 
 export interface IPropsBloks {
@@ -137,9 +134,9 @@ export interface IPropsBloks {
     url: string;
   }[];
   videos: {
-    "id": number;
-    "section": number;
-    "url": string
+    id: number;
+    section: number;
+    url: string;
   }[];
   social_networks: IPropsBloksSocial[];
 }
@@ -148,12 +145,22 @@ export interface IPropsBloksSocial {
   id: number;
   name: string;
   url: string;
-  type: number,
-  type_name: string
+  type: number;
+  type_name: string;
 }
 
 export interface IDataPageFiles {
   id: nummber;
   section: number;
   url: string;
+}
+
+export interface IFAQ {
+  id: number;
+  text: string;
+  answer: {
+    id: number;
+    question: number;
+    text: string;
+  };
 }

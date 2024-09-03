@@ -35,7 +35,7 @@
         @include adaptiv-value(padding-right,80,1,1);
         position: fixed;
         // padding-top: 40px;
-        top: 40px;
+        top: 65px;
         right: 0;
         left: 0;
         
@@ -57,7 +57,7 @@
         align-items: center;        
         // @include adaptiv-value(top, 20,0,1);
         position: relative;
-        padding:20px 0;
+        // padding:20px 0;
         padding-right: var(--scroll-padding);
     }
     //header__logo

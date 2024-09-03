@@ -10,12 +10,17 @@
         align-items: center;
         justify-content: center;
         flex: 50%;
+        width: 100%;
         // flex: 1 1 auto;
         // @include adaptiv-value(min-height, 790,650,1);
         // @include adaptiv-value(max-height, 790,650,1);
-        @include resize(mobile){
-            flex-wrap: wrap;
+        @include resize(desktop){
+            display: block;
         }
+        // @include resize(mobile){
+        //     display: flex;
+        //     flex-wrap: wrap;
+        // }
     }
     //about-main__image-container
     &__image-container{

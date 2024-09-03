@@ -42,8 +42,6 @@ const InfoFindProviderMain: React.FC<IAboutMainProps
                 <BlockGrid addClass='block__card-container-grid'>
                     {
                         infoBlock.blocks && infoBlock.blocks.length && infoBlock.blocks.map((item: IPropsBloks) => {
-                        console.log({item})
-
                             return (
                                 <Card
                                     key={item.id}

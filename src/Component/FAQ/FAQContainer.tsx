@@ -27,6 +27,14 @@ export class FAQContainer extends Component<IProps, IStateFAQ> {
           document.documentElement.style.setProperty('--scroll-padding', '0px')
         }
     }
+
+    componentWillUnmount(): void {
+      this.setState(state => ({
+        ...state,
+        isOpen: false
+      }))
+      this.props.handlerChangeOpenFAQ(false)
+    }
   render() {
     return (
       <FAQ 

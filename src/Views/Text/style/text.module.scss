@@ -6,6 +6,9 @@
   font-size: 14px;
   font-family: var(--body-font);
   color: var(--body-color);
+  overflow: hidden;
+  text-align: start;
+  text-wrap: wrap;
   &>div{
     width: 100%,
   }
@@ -102,6 +105,7 @@
 
   //text__feature-card-title
   &__feature-card-title {
+    padding-right: 5px;
     &>a {
       color: #fff;
 

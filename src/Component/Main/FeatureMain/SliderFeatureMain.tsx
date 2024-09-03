@@ -35,8 +35,6 @@ function SliderFeatureMain({
     speed: 1500,
     slidesToShow: 3,
     slidesToScroll: 1,
-    // centerPadding: "60px",
-
     variableWidth: true,
     autoplay: true,
     afterChange: () => setUpdateCount(updateCount + 1),
@@ -63,29 +61,7 @@ function SliderFeatureMain({
     sliderRef.slickPrev();
   };
 
-  // useEffect(()=>{
-//     .slick - track {
-//       display: flex;
-//     }
-// .slick - track.slick - slide {
-//       display: flex;
-//       height: auto;
-//       align - items: center;
-//       justify - content: center;
-//     }
-    // document.querySelector('.slick - track')  && document.querySelector('.slick - track')?.style.setProperty('display', 'flex')
-//     addCssProperty(document.querySelectorAll('.slick-track'),{
-//       'display': 'flex'
-//     })
-//     addCssProperty(document.querySelectorAll('.slick-track>.slick-slide'),{
-//       'display': 'flex',
-//       'height': 'auto',
-//       'align-items': 'center',
-//       'justify-content': 'center',
-//     })
-// console.log('render')
-//   },[])
-  return (
+   return (
     <Container style={{
       overflow: 'hidden',
       maxWidth: 1200
@@ -99,25 +75,24 @@ function SliderFeatureMain({
             listCards && listCards?.length &&
             listCards.map((card: any, index: number): any => {
               return (
-                <div className="project-card" key={card.id}>
+                <div className="project-card" key={card.id} >
                   <BlockWrap col
                     style={{ marginRight: 20, maxWidth: 320  }}
                   >
-                    <Image src={card.images[0].url} alt="project image" />
-                    <BlockWrap style={{ alignItems: 'center', justifyContent: 'space-between' }}>
+                    <Image src={card.images[0].url} addClass='image__feature-card-image'/>
+                    <BlockWrap style={{ alignItems: 'flex-start', justifyContent: 'space-between' }}>
                       <BlockWrap col >
                         <Link to={'/'}>
                           <TextTitle type='h3' addClass='text__feature-card-title'>
                             {card.title_1}
                           </TextTitle>
                         </Link>
-                        <BlockWrap><IconSvg src={location} />
-                          <Offset mr={10} />
+                        <BlockWrap>
                           <Text addClass='text__feature-text-location'>{card.title_2}</Text>
                         </BlockWrap>
                       </BlockWrap>
                       <Text addClass='text__stroke-title'
-                        style={{ fontSize: 60 }}
+                        style={{ fontSize: 60, width: '100%', textAlign: 'end', top: -11, position: 'relative' }}
                       >{decimalDigit(index + 1)}</Text>
                     </BlockWrap>
                   </BlockWrap>

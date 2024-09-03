@@ -8,6 +8,7 @@ import BlockWrap from '../../../Views/Block/BlolckWrap/BlockWrap';
 import Text from '../../../Views/Text/Text';
 import TextTitle from '../../../Views/Text/TextTitle';
 import CountUp from 'react-countup';
+import HeaderSectionFull from '../../Chunks/HeaderSectionFull/HeaderSectionFull';
 
 
 const VideoReview:React.FC<IPropsVideoReview> = ({
@@ -18,6 +19,11 @@ const VideoReview:React.FC<IPropsVideoReview> = ({
     <Container
         addClass='container__video-review-main'
     >
+          <HeaderSectionFull
+              title={infoBlock?.title_1}
+              slogan={infoBlock?.title_2}
+
+          />
         <ReactPlayer
             className='react-player'
             // light={<Image src={infoBlock.videos[0].url} alt='Thumbnail' />}

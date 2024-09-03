@@ -82,7 +82,6 @@ function SliderExpertMain({
               {
                 listCards && listCards?.length &&
                 listCards.map((card: any): any => {
-                  console.log({card})
                    return (
                    <CardExpert 
                       key={card.id}

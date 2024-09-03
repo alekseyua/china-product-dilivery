@@ -60,7 +60,7 @@ export const getDataPage = (store: any): any => {
     const initdataFAQ:IFAQ = {
 
     }
-    store.on('@init',()=> ({dataPage: initdataFAQ}));
+    store.on('@init',()=> ({dataFAQ: initdataFAQ}));
     store.on('setdataFAQ', ({}, data:object)=> ({dataFAQ: data}))
     store.on('dataFAQNull', () => ({ dataHeaderFooter: initdataFAQ }))
     store.on('getFAQ', async ({},data:any, {dispatch}:{dispatch:any})=>{

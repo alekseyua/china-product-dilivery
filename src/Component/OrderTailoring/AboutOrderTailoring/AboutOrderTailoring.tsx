@@ -31,6 +31,7 @@ const AboutOrderTailoring: React.FC<IAboutMainProps
     listSocialNetwork,
     handlerOpenSocial,
 }: IAboutMainProps) => {
+    console.log(infoBlock.blocks[0].social_networks)
         return (
             <Container
                 size={1400}
@@ -76,7 +77,7 @@ const AboutOrderTailoring: React.FC<IAboutMainProps
 
                                     <Text> {infoBlock.description }</Text>
                                     <BlockWrap addClass={isOpenSocial ? 'block__order-tail-action-social--active' : 'block__order-tail-action-social'}>
-                                        <SocialMedia  isIcon listMedia={listSocialNetwork}/>
+                                        <SocialMedia  isIcon listMedia={infoBlock.blocks[0].social_networks}/>
                                     </BlockWrap>
                                     <Button addClass={'button__about-us'} onClick={handlerOpenSocial} iconSvgLeft={line} iconSvgRight={line} btnYellow>
                                         <Text>{'заказать расчет'}</Text>
