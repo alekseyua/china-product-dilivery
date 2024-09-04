@@ -9,34 +9,39 @@
   overflow: hidden;
   text-align: start;
   text-wrap: wrap;
-  &>div{
+
+  &>div {
     width: 100%,
   }
+
   //text__social-media-title
-  &__social-media-title{
+  &__social-media-title {
     display: inline-block;
     position: relative;
-    @include adaptiv-font(16,12);
+    @include adaptiv-font(16, 12);
     color: var(--white-color);
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    @include adaptiv-value(margin-right,20,0,1);
-    &:hover{
+    @include adaptiv-value(margin-right, 20, 0, 1);
+
+    &:hover {
       cursor: pointer;
       color: var(--theme-color);
     }
   }
+
   //text__header-top-phone
-  &__header-top-phone{
+  &__header-top-phone {
     display: inline-block;
     position: relative;
-    @include adaptiv-font(16,12);
+    @include adaptiv-font(16, 12);
     color: var(--white-color);
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    @include adaptiv-value(margin-left,8,5,1);
+    @include adaptiv-value(margin-left, 8, 5, 1);
     // margin-right: 20px;
   }
+
   //text__sub-title
   &__sub-title {
     color: var(--theme-color);
@@ -63,8 +68,9 @@
     text-transform: uppercase;
     display: inline-flex;
     font-weight: 700;
+
     //text__title--center
-    &--center{
+    &--center {
       justify-content: center;
     }
   }
@@ -76,17 +82,20 @@
     line-height: 180%;
     font-weight: 600;
     margin-right: 10px;
-    @include resize(mobile){
+
+    @include resize(mobile) {
       flex-direction: column;
     }
   }
+
   //text__theme-title
-  &__theme-title{
+  &__theme-title {
     color: var(--theme-color) !important;
     text-transform: uppercase;
     font-weight: 600;
     margin-left: 7px;
   }
+
   //text__stroke-title
   &__stroke-title {
     // padding-left: 15px;
@@ -106,6 +115,7 @@
   //text__feature-card-title
   &__feature-card-title {
     padding-right: 5px;
+
     &>a {
       color: #fff;
 
@@ -164,8 +174,9 @@
       text-align: left;
       @include adaptiv-font(30, 15);
     }
+
     //text__expert-sub-title
-    &-sub-title{
+    &-sub-title {
       min-height: 50px;
       @include adaptiv-font(16, 10);
 
@@ -199,22 +210,25 @@
   }
 
   //text__footer-copyright
-  &__footer{
+  &__footer {
     &-copyright {
-      &>a{
+      &>a {
         color: var(--theme-color)
       }
     }
+
     //text__footer-sotial-media
-    &-sotial-media{
-      color:var(--theme-color);
+    &-sotial-media {
+      color: var(--theme-color);
     }
+
     //text__footer-desc
-    &-desc{
+    &-desc {
       padding: 0px;
     }
+
     //text__footer-title
-    &-title{
+    &-title {
       padding: 0;
       font-family: var(--title-font);
       font-size: 30px;
@@ -223,7 +237,8 @@
       padding: 0 0 15px 0;
       margin: -0.14em 0 40px 0;
       position: relative;
-      &::after{
+
+      &::after {
         position: absolute;
         width: 60px;
         height: 2px;
@@ -232,93 +247,110 @@
         bottom: 0;
       }
     }
+
     //text__footer-desc-address
-    &-desc-address{
+    &-desc-address {
       line-height: 1;
       display: block;
       color: var(--white-color);
       line-height: 140%;
       text-transform: lowercase;
-      @include adaptiv-font(20,10);
+      @include adaptiv-font(20, 10);
       font-family: var(--title-font);
       margin-bottom: 0;
     }
 
-}
-//text__breadcrumbs-title
-&__breadcrumbs-title{
-  color: var(--white-color);
-  margin: -0.22em 0 -0.12em 0;
-  font-size: 60px;
-  line-height: 1.1666;
-  font-weight: 700;
+  }
 
-}
-//text__breadcrumbs-links
-&__breadcrumbs-links{
-  &>a{
-
-    white-space: normal;
-    color: inherit;
-  word-break: break-word;
-  font-weight: 400;
-  font-size: 20px;
-  color: var(--white-color);
-}
-}
-//text__big-title
-&__big-title{
-  font-size: 200px;
-  font-weight: 600;
-  display: inline-block;
-  line-height: 0.93;
-  margin-top: -0.099em;
-  -webkit-text-stroke: 1px var(--border-color);
-  color: transparent;
-}
-//text__client-card-title-self-info-title
-&__client-card-title-self-info-title{
-  @include adaptiv-font(20,10);
-}
-
-//text__card-title
-&__card{
-  &-title{
+  //text__breadcrumbs-title
+  &__breadcrumbs-title {
     color: var(--white-color);
-    font-size: 22px;
-  }
-}
+    margin: -0.22em 0 -0.12em 0;
+    font-size: 60px;
+    line-height: 1.1666;
+    font-weight: 700;
 
-//text__main-slider-label-track
-&__main-slider-label-track{
-  margin-top: 40px;
-  color: var(--text-color-white);
-  font-size: 40px;
-}
-//text__faq-title
-&__faq-title{
-  transition: color .3s;
-  font-size: 20px;
-  &:hover{
-    cursor: pointer;
-    color: var(--theme-color);
-    transition: color .3s;
   }
-}
-//text__delivery-info-about-cargo-title-card
-&__delivery-info-about-cargo-title-card{
-  min-height: 50px;
-  &>div>p{
+
+  //text__breadcrumbs-links
+  &__breadcrumbs-links {
+    &>a {
+
+      white-space: normal;
+      color: inherit;
+      word-break: break-word;
+      font-weight: 400;
+      font-size: 20px;
+      color: var(--white-color);
+    }
+  }
+
+  //text__big-title
+  &__big-title {
+    font-size: 200px;
     font-weight: 600;
-    text-align: center;
+    display: inline-block;
+    line-height: 0.93;
+    margin-top: -0.099em;
+    -webkit-text-stroke: 1px var(--border-color);
+    color: transparent;
   }
+
+  //text__client-card-title-self-info-title
+  &__client-card-title-self-info-title {
+    @include adaptiv-font(20, 10);
+  }
+
+  //text__card-title
+  &__card {
+    &-title {
+      color: var(--white-color);
+      font-size: 22px;
+    }
+  }
+
+  //text__main-slider-label-track
+  &__main-slider-label-track {
+    margin-top: 40px;
+    color: var(--text-color-white);
+    font-size: 40px;
+  }
+
+  //text__faq-title
+  &__faq-title {
+    transition: color .3s;
+    font-size: 20px;
+
+    &:hover {
+      cursor: pointer;
+      color: var(--theme-color);
+      transition: color .3s;
+    }
+  }
+
+  //text__delivery-info-about-cargo-title-card
+  &__delivery-info-about-cargo-title-card {
+    min-height: 50px;
+
+    &>div>p {
+      font-weight: 600;
+      text-align: center;
+    }
+  }
+
+  //text__calculate-price
+  &__calculate-price {
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--theme-color);
+    margin: 5px;
+  }
+
 }
 
-
-}
 //style-table-card
-.style-table-card{
-  &>div>figure>table>tbody{
+.style-table-card {
+  &>div>figure>table>tbody {
     padding: 0;
   }
 }

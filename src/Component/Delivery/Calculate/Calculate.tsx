@@ -133,12 +133,13 @@ const Calculate: React.FC<IProps> = ({
                 </BlockWrap>
             </BlockWrap>
             {priceDelivery?.price &&
-
+<>
+                    <Offset mt={50} />
                 <BlockWrap location='center'>
-                    <Offset mt={20} />
                     <Text addClass='text__calculate-price'>{priceDelivery.price}</Text>
                     <Text addClass='text__calculate-price'>$</Text>
                 </BlockWrap>
+</>
             }
             <Offset mt={50} />
             <Text>* Указаны ориентировочная стоимость и срок перевозки. Результаты расчета не являются публичной офертой. Если Вам необходима доставка в другие страны, а также чтобы узнать точную стоимость доставки свяжитесь с нашими менеджерами.</Text>
