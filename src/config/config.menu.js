@@ -21,22 +21,22 @@ export const mainMenu = [
       {
         id: 0,
         title: "Авиа",
-        path: "/delivery/plane",
+        path: "/delivery",
       },
       {
         id: 1,
         title: "Авто",
-        path: "/delivery/auto",
+        path: "/delivery",
       },
       {
         id: 2,
         title: "Ж/д",
-        path: "/delivery/train",
+        path: "/delivery",
       },
       {
         id: 3,
         title: "Море",
-        path: "/delivery/see",
+        path: "/delivery",
       },
     ],
     color: `var(--text-color)`,
