@@ -93,3 +93,15 @@ export function getIconFromName(type: number): string{
 
   return icon;
 }
+
+export function getValidListSelect(
+  lisst: any[]
+): {
+  readonly value: string;
+  readonly label: string;
+  readonly color: string;
+  readonly isFixed?: boolean;
+  readonly isDisabled?: boolean;
+}[] {
+  return lisst.map((item) => ({ value: item.id, label: item.name, color: 'var(--theme-color)' }));
+}

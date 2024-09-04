@@ -23,7 +23,7 @@ const FeatureMain: React.FC<IProps> = ({
                 slogan={infoBlock?.title_2}
                 button={{
                     name: 'Узнать больше',
-                    href: '/'
+                    href: '/delivery'
                 }}
                 onClick={handlerChangeScreen}
             />

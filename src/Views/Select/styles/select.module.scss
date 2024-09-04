@@ -1,0 +1,24 @@
+.select{
+    padding: 0;
+    &>div{
+        background-color: var(--smoke-color);
+        border: none;
+        height: 50px;
+        &>div>div{
+            color: var(--body-color);
+        }
+    }
+    &>div+div{
+        background-color: var(--smoke-color);
+        &>div{
+            &>div{
+                background-color: var(--smoke-color);
+                border-bottom: 1px solid var(--border-color);
+                padding: 5px;
+                &:active{
+                background-color: var(--border-color);
+                color: var(--white-color);
+            }}
+        }
+    }
+}

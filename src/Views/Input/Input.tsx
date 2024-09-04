@@ -3,6 +3,7 @@ import { IPropsInput } from '../../@types/common';
 import useClickInside from '../../HOC/useClickInside';
 import useClickOutside from '../../HOC/useClickOutside';
 import classNames from 'classnames';
+
 import styles from './styles/input.module.scss';
 
 const Input: React.FC<IPropsInput> = ({
@@ -10,6 +11,7 @@ const Input: React.FC<IPropsInput> = ({
     value,
     autocomplete = 'off',
     name = 'input',
+    type = 'text',
     addClass = '',
     formInput,
     onClick = () => { },
@@ -43,7 +45,6 @@ const Input: React.FC<IPropsInput> = ({
             {
                 formInput === 'input' ?
                     <input
-
                         ref={clickRef}
                         placeholder={placeholder}
                         autoComplete={autocomplete}
@@ -51,6 +52,7 @@ const Input: React.FC<IPropsInput> = ({
                             handlerChange(e);
                         }}
                         value={value}
+                        type={type}
                         name={name}
                         onKeyDown={(ev: any) => {
                             ev.key === "Enter" && ev.target.blur();

@@ -1,8 +1,26 @@
-import { createStoreon } from "storeon";
+import { createStoreon, StoreonStore } from "storeon";
 import api from "../api/api";
 import { IPropsDataPage } from "../@types/common";
+import { calculate } from "./calculate/calculate";
 
-interface IFooter {
+
+export const getDataPage = (store: StoreonStore): any => {
+    const initDataPage: object = {}
+    
+    store.on('@init',()=> ({dataPage: initDataPage}));
+    store.on('setDataPage', (_, data:object)=> ({dataPage: data}))
+    store.on('dataPageNull', () => ({ dataPage: initDataPage }))
+    store.on('getPage', async (_,data:any, {dispatch}:{dispatch:any})=>{
+        const response = await api.get({
+            url: data.url,
+            slug: data.slug
+        })
+        dispatch('setDataPage', {
+            [data.slug]:response
+        })
+    })
+    
+    interface IFooter {
     footer: {
         "id": number,
         "slug": string
@@ -12,26 +30,8 @@ interface IFooter {
         "image": string
         "sections": IPropsDataPage[]
     }
-}
-
-export const getDataPage = (store: any): any => {
-    const initDataPage: object = {
-
     }
-    
-    store.on('@init',()=> ({dataPage: initDataPage}));
-    store.on('setDataPage', ({}, data:object)=> ({dataPage: data}))
-    store.on('dataPageNull', () => ({ dataPage: initDataPage }))
-    store.on('getPage', async ({},data:any, {dispatch}:{dispatch:any})=>{
-        const response = await api.get({
-            url: data.url,
-            slug: data.slug
-        })
-        dispatch('setDataPage', {
-            [data.slug]:response
-        })
-    })
-  
+
     const initdataHeaderFooter: IFooter = {
         footer: {
             "id": 0,
@@ -44,9 +44,9 @@ export const getDataPage = (store: any): any => {
         }
     }
     store.on('@init',()=> ({dataPage: initdataHeaderFooter}));
-    store.on('setdataHeaderFooter', ({}, data:object)=> ({dataHeaderFooter: data}))
+    store.on('setdataHeaderFooter', (_, data:object)=> ({dataHeaderFooter: data}))
     store.on('dataHeaderFooterNull', () => ({ dataHeaderFooter: initdataHeaderFooter }))
-    store.on('getFooter', async ({},data:any, {dispatch}:{dispatch:any})=>{
+    store.on('getFooter', async (_,data:any, {dispatch}:{dispatch:any})=>{
         const response = await api.get({
             url: data.url,
             slug: data.slug
@@ -61,9 +61,9 @@ export const getDataPage = (store: any): any => {
 
     }
     store.on('@init',()=> ({dataFAQ: initdataFAQ}));
-    store.on('setdataFAQ', ({}, data:object)=> ({dataFAQ: data}))
+    store.on('setdataFAQ', (_, data:object)=> ({dataFAQ: data}))
     store.on('dataFAQNull', () => ({ dataHeaderFooter: initdataFAQ }))
-    store.on('getFAQ', async ({},data:any, {dispatch}:{dispatch:any})=>{
+    store.on('getFAQ', async (_,data:any, {dispatch}:{dispatch:any})=>{
         const response = await api.get({
             url: data.url,
             slug: data.slug
@@ -75,6 +75,7 @@ export const getDataPage = (store: any): any => {
 }
 
 export const storeon = createStoreon([
-    getDataPage
+    getDataPage,
+    calculate,
 ]
 )

@@ -21,6 +21,7 @@ const ExpertMain: React.FC<IProps> = ({
                 slogan={infoBlock?.title_2}
                 location={'center'}   
             />
+            <div id='expert'></div>
             <SliderExpertMain listCards={infoBlock?.blocks} countSlider={4}/>
 
         </Container>

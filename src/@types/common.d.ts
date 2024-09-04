@@ -13,6 +13,7 @@ export interface IPropsArrow {
 export interface IPropsWrap extends IProps {
   col?: boolean;
   addClass?: string;
+  location?: string;
 }
 
 export interface IPropsMenu extends IProps {
@@ -79,7 +80,7 @@ export interface IPropsOffset extends IProps {
 
 export interface IPropsInput {
   placeholder?: string;
-  value: string | number;
+  value: string | number | undefined;
   autocomplete?: HTMLInputAutoCompleteAttribute | undefined;
   name?: string;
   onChange?: any;
@@ -88,6 +89,7 @@ export interface IPropsInput {
   onClickInside?: any;
   onClickOutside?: any;
   formInput: "input" | "textarea";
+  type?: string;
 }
 
 export interface IPropsBreadcrumbs {
@@ -163,4 +165,13 @@ export interface IFAQ {
     question: number;
     text: string;
   };
+}
+
+export interface IListDeliveries {
+  id: number;
+  name: string;
+}
+export interface IListProducts {
+  id: number;
+  name: string;
 }

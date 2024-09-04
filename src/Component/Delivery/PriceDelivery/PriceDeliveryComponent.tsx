@@ -11,11 +11,24 @@ interface IProps {
 
 export class PriceDeliveryComponent extends Component<WithRouterProps & IProps> {
 
-    handlerChangeScreen = ({e, href}:{e:Event, href: string}) => {
-      if(href){
-        return this.props.navigate(href);
+  delayLoad(): any {
+    setTimeout(() => {
+      if (document.querySelector('#calculation')) {
+        document.querySelector('#calculation')?.
+          scrollIntoView({ block: "center", behavior: "smooth" })
+      } else {
+        console.log('time off repeat')
+        this.delayLoad()
       }
+    }, 1000)
+  }
+
+  handlerChangeScreen = ({ e, href }: { e: Event, href: string }) => {
+    if (href) {
+      this.delayLoad()
+      return this.props.navigate(href);
     }
+  }
   render() {
     return (
       <PriceDelivery

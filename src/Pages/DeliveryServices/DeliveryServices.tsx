@@ -8,6 +8,7 @@ import InfoDeliveryComponent from "../../Component/Delivery/InfoDelivery/InfoDel
 import PriceDeliveryComponent from "../../Component/Delivery/PriceDelivery/PriceDeliveryComponent";
 import InfoAboutCargoComponent from "../../Component/Delivery/InfoAboutCargo/InfoAboutCargoComponent";
 import OurAdvantageComponent from "../../Component/Delivery/OurAdvantage/OurAdvantageComponent";
+import CalculateComponent from "../../Component/Delivery/Calculate/CalculateComponent";
 
 interface IProps {
     listSection: IPropsDataPage[];
@@ -24,7 +25,7 @@ const DeliveryServices: React.FC<IProps> = function ({
             <Offset sectionTop />
             <Breadcrumbs image={image} />
             <Offset sectionTop />
-        {/* Render delivery services section */}
+
             <InfoDeliveryComponent dataSection={listSection[0]} />
             <Offset sectionTop />
             
@@ -35,6 +36,9 @@ const DeliveryServices: React.FC<IProps> = function ({
             <Offset sectionTop />
 
             <OurAdvantageComponent dataSection={listSection[3]} />
+            <Offset sectionTop />
+            
+            <CalculateComponent dataSection={listSection[4]} />
             <Offset sectionTop />
 
     </Container>

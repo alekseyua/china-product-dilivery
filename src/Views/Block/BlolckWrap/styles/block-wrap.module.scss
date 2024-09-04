@@ -824,4 +824,12 @@
             transition: height .5s, visibility .2s, opacity .6s ease-in;
         }
     }
+    //block__calculate-container
+    &__calculate-container{
+        gap: 50px;
+
+        @include resize(landscape){
+            flex-direction: column;
+        }
+    }
 }
