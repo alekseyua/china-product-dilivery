@@ -17,17 +17,19 @@ export interface IStateBurger {
 }
 
 export interface INavBurger {
-    isOpen: boolean;
-    handlerOpenBurger?: () => void;
-    children?: React.ReactNode;
-    listMenu?:  {
-        id: number,
-        title: string,
-        path: string,
-        submenu: [],
-        color: string
-    } | any;
-    
+  isOpen: boolean;
+  handlerItemBurger?: any;
+  handlerOpenBurger?: () => void;
+  children?: React.ReactNode;
+  listMenu?:
+    | {
+        id: number;
+        title: string;
+        path: string;
+        submenu: [];
+        color: string;
+      }
+    | any;
 }
 
 export interface IBurger {
@@ -39,16 +41,19 @@ export interface IBurgerLogo {
 }
 
 export interface IHeaderMenu {
-    listMenu:  {
-        id: number,
-        title: string,
-        path: string,
-        submenu: [],
-        color: string
-    } | any;
-    isMobile?: boolean
-    isFooter?: boolean
-    isIcon?: boolean
+  listMenu:
+    | {
+        id: number;
+        title: string;
+        path: string;
+        submenu: [];
+        color: string;
+      }
+    | any;
+  isMobile?: boolean;
+  isFooter?: boolean;
+  isIcon?: boolean;
+  handlerItemBurger?: any
 }
 
 export interface IPropsMobileContainer {

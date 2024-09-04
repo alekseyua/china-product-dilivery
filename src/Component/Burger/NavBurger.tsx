@@ -9,6 +9,7 @@ const NavBurger:React.FC<INavBurger> = ({
   isOpen,
   listMenu,
   handlerOpenBurger,
+  handlerItemBurger,
 }:INavBurger) => {
   return (
     <React.Fragment>
@@ -21,6 +22,7 @@ const NavBurger:React.FC<INavBurger> = ({
         <HeaderLogo isBurger />
         <NavDesktopMobile
           listMenu={listMenu}
+          handlerItemBurger={handlerItemBurger}
           isMobile
         />
       </NavBurgerWrapContainer>

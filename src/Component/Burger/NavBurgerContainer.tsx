@@ -18,12 +18,25 @@ export class NavBurgerContainer extends Component<{},IStateBurger> {
           document.querySelector('body')?.setAttribute('style', '')
         }
     }
+
+  handlerItemBurger=()=>{
+    console.log('burger')
+    this.setState(state=>({
+      ...state,
+      isOpen: false
+    }))
+    // this.props.handlerChangeOpenFAQ(false)
+    document.querySelector('body')?.setAttribute('style', '')
+    document.documentElement.style.setProperty('--scroll-padding', '0px')
+    window.scrollTo(0, 0)
+  }
   render() {
     return (
       <NavBurger 
         isOpen = {this.state.isOpen}
         handlerOpenBurger={this.handlerOpenBurger}
         listMenu={mainMenu}
+        handlerItemBurger={this.handlerItemBurger}
         />
     )
   }
