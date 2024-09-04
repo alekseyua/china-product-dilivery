@@ -1,7 +1,7 @@
 import React from 'react'
 import Container from '../../../Views/Block/Container'
 import HeaderSectionFull from '../../Chunks/HeaderSectionFull/HeaderSectionFull';
-import {IListDeliveries, IListProducts, IPropsDataPage } from '../../../@types/common';
+import { IListDeliveries, IListProducts, IPropsDataPage } from '../../../@types/common';
 import ReactPlayer from 'react-player';
 import BlockWrap from '../../../Views/Block/BlolckWrap/BlockWrap';
 import Text from '../../../Views/Text/Text';
@@ -17,6 +17,7 @@ interface IProps {
     handlerChangeInput: any; // TODO: Define type for this function parameter (e.g., ({e, href}: {e: Event, href: string}))
     listProducts: IListProducts[]; // TODO: Define type for this listDeliveries prop (e.g., [{id: number, name: string}])
     listDeliveries: IListDeliveries[]; // TODO: Define type for this listDeliveries prop (e.g., [{id: number, name: string}])
+    priceDelivery: { price: number }
     handlerChangeSelect: any;
     handlerChangeScreen: any;
     dataForm: {
@@ -38,6 +39,7 @@ const Calculate: React.FC<IProps> = ({
     dataForm,
     infoBlock,
     listProducts,
+    priceDelivery,
     listDeliveries,
     handlerChangeInput,
     handlerChangeScreen,
@@ -48,7 +50,7 @@ const Calculate: React.FC<IProps> = ({
         <Container
             size={1400}
             center
-            style={{ overflow:'visible' }}
+            style={{ overflow: 'visible' }}
         >
             <HeaderSectionFull
                 title={infoBlock?.title_1}
@@ -56,26 +58,26 @@ const Calculate: React.FC<IProps> = ({
             />
             <div id='calculation'></div>
             <BlockWrap location='center'>
-                <Text>{infoBlock.description}</Text>  
+                <Text>{infoBlock.description}</Text>
             </BlockWrap>
             <Offset mt={20} />
             <BlockWrap addClass='block__calculate-container'>
                 <BlockWrap addClass='block__calculate-part--left' col>
                     <Text>Город отправитель</Text>
-                    <Input 
+                    <Input
                         placeholder='Шанхай'
                         addClass='input__calculate'
-                        value={dataForm.city_out} 
+                        value={dataForm.city_out}
                         name='city_out'
                         onChange={handlerChangeInput}
                         formInput={'input'}
                     />
                     <Offset mt={20} />
                     <Text>Вес, кг</Text>
-                    <Input 
+                    <Input
                         placeholder='100'
                         addClass='input__calculate'
-                        value={dataForm.wheigt} 
+                        value={dataForm.wheigt}
                         name='wheigt'
                         type="number"
                         onChange={handlerChangeInput}
@@ -97,8 +99,8 @@ const Calculate: React.FC<IProps> = ({
 
                 <BlockWrap addClass='block__calculate-part--right' col>
                     <Text>Город получатель</Text>
-                    <Input 
-                        placeholder='Санкт-Петербург' 
+                    <Input
+                        placeholder='Санкт-Петербург'
                         addClass='input__calculate'
                         value={dataForm.city_in}
                         name='city_in'
@@ -118,27 +120,35 @@ const Calculate: React.FC<IProps> = ({
                     />
                     <Offset mt={20} />
                     <Text>Тип перевозки</Text>
-                    {listDeliveries  && <SelectComponent
-                        name = {'delivery'}
+                    {listDeliveries && <SelectComponent
+                        name={'delivery'}
                         value={dataForm.delivery}
                         onChange={(e: void) => handlerChangeSelect({
                             name: 'delivery',
                             values: e
                         })}
                         listOptions={getValidListSelect(listDeliveries)}
-                        />
-}
+                    />
+                    }
                 </BlockWrap>
             </BlockWrap>
-                        <pre>{JSON.stringify(dataForm, null, 4)}</pre>
-                        <Offset mt={50} />
+            {priceDelivery?.price &&
+
+                <BlockWrap location='center'>
+                    <Offset mt={20} />
+                    <Text addClass='text__calculate-price'>{priceDelivery.price}</Text>
+                    <Text addClass='text__calculate-price'>$</Text>
+                </BlockWrap>
+            }
+            <Offset mt={50} />
             <Text>* Указаны ориентировочная стоимость и срок перевозки. Результаты расчета не являются публичной офертой. Если Вам необходима доставка в другие страны, а также чтобы узнать точную стоимость доставки свяжитесь с нашими менеджерами.</Text>
+            <Offset mt={50} />
             <Button
                 href='/'
                 addClass='button__yellow'
                 onClick={handlerChangeScreen}
             >
-                Связаться с менеджерам
+                Связаться с менеджером
             </Button>
         </Container>
     )
