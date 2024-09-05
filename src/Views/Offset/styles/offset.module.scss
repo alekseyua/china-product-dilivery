@@ -4,7 +4,10 @@
     //offset__section-top
     &__section-top{
         position: relative;
-        @include adaptiv-value(margin-top, 170, 100,1); 
+        @include adaptiv-value(margin-top, 170, 100,1);
+        @include resize(big-landscape){
+            @include adaptiv-value(margin-top, 100, 70,1);
+        }
     }
     //offset__section-bottom
     &__section-bottom{

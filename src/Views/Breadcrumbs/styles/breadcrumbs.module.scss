@@ -1,9 +1,14 @@
+@import '../../../styles/styles/mixin.scss';
+
 .braedcrumbs{
     //braedcrumbs
     position: relative;
     z-index: 1;
     margin-top: 60px;
     min-height: 300px;
+    @include resize(mobile){
+        min-height: unset;
+    }
     &>div>span>img{
         min-height: 400px;
     }

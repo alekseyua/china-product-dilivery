@@ -1,6 +1,4 @@
 import React from 'react'
-import { IPropsFeatureMain } from '../../../@types/feature-main/feature-main';
-
 import Container from '../../../Views/Block/Container'
 import BlockWrap from '../../../Views/Block/BlolckWrap/BlockWrap';
 import SliderFeatureMain from './SliderFeatureMain';
@@ -17,25 +15,16 @@ const FeatureMain: React.FC<IProps> = ({
     handlerChangeScreen,
 }: IProps) => {
     return (
-        // <Container>
-            <Container
-                addClass='container__feature-main'
-                size={1400}
-            >
-                <HeaderSectionFull 
-                    title={infoBlock?.title_1}
-                    slogan={infoBlock?.title_2}
-                    // button={{
-                    //     name: 'Узнать больше',
-                    //     href: '/'
-                    // }}
-                    onClick={handlerChangeScreen}
-
-                />
-            {/* </Container> */}
-            <BlockWrap style={{
-                // maxHeight: 400
-            }}> 
+        <Container
+            addClass='container__feature-main'
+            size={1400}
+        >
+            <HeaderSectionFull 
+                title={infoBlock?.title_1}
+                slogan={infoBlock?.title_2}
+                onClick={handlerChangeScreen}
+            />
+            <BlockWrap> 
                 <SliderFeatureMain listCards={infoBlock?.blocks} />
             </BlockWrap>
         </Container>

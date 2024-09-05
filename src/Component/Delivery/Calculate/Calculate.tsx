@@ -135,7 +135,8 @@ const Calculate: React.FC<IProps> = ({
             {priceDelivery?.price &&
 <>
                     <Offset mt={50} />
-                <BlockWrap location='center'>
+                <BlockWrap location='center' style={{alignItems: 'flex-end'}}>
+                    <Text addClass='text__calculate-price'>Стоимость доставки</Text>
                     <Text addClass='text__calculate-price'>{priceDelivery.price}</Text>
                     <Text addClass='text__calculate-price'>$</Text>
                 </BlockWrap>

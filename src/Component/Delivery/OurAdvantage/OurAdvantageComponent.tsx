@@ -11,16 +11,10 @@ interface IProps {
 
 export class OurAdvantageComponent extends Component<WithRouterProps & IProps> {
 
-    handlerChangeScreen = ({e, href}:{e:Event, href: string}) => {
-      if(href){
-        return this.props.navigate(href);
-      }
-    }
   render() {
     return (
       <OurAdvantage
         infoBlock={this.props.dataSection}
-        handlerChangeScreen={this.handlerChangeScreen}
       />
     )
   }

@@ -18,7 +18,7 @@
         &::after{
             position: absolute;
             content: '';
-            top: -40px;
+            top: 20px;
             @include adaptiv-value(left, 80,20,2);
             bottom: 43px;
             width: calc(100% - calc(20px + 59 * (100vw - 320px) / 1600) );

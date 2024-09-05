@@ -1,11 +1,9 @@
 import React from 'react'
 import Container from '../../../Views/Block/Container'
 import SliderClientSayMain from './SliderClientSayMain';
-import { IPropsClientSayMain } from '../../../@types/client-say/client-say';
 import HeaderSliderCenter from '../../Chunks/HeaderSliderCenter/HeaderSliderCenter';
 import Offset from '../../../Views/Offset/Offset';
 import { IPropsDataPage } from '../../../@types/common';
-
 
 interface IProps {
     infoBlock: IPropsDataPage

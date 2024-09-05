@@ -29,12 +29,15 @@ const Main: React.FC<IProps> = ({listSection}:IProps) => (
         <TrackContainer />
 
         <InfoFindProviderMainComponent dataSection={listSection[2]}/>
-
         <Offset sectionTop>
         <Background />
         </Offset>
+
         <AboutMainComponent dataSection={listSection[1]} /> 
+        <Offset sectionTop />
+
         <FeatureMainComponent dataSection={listSection[3]} />
+        
         <Offset sectionTop />
         <VideoReviewComponent dataSection={listSection[4]} />
         <Offset sectionTop />

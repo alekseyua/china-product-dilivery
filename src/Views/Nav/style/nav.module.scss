@@ -47,6 +47,9 @@
         position: relative;
         margin: 0 15px;
         @include adaptiv-value(margin-right,10,0,1);
+        @include resize(desktop){
+            @include adaptiv-font(14, 11);
+        }
         & > a {
             color: var(--text-menu-color);
             font-family: var(--title-font);
@@ -132,6 +135,7 @@
     //nav__main-sub-menu-item
     &__main-sub-menu-item{
         padding: 0;
+
         &>a {
             color: var(--text-menu-color);
         }
@@ -142,6 +146,7 @@
             left: 25px;
             line-height: 220%;
             top: 5px;
+            list-style-type: none;
             &:first-child::before{
                 content: '';
                 display: block;

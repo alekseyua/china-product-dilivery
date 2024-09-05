@@ -20,9 +20,7 @@ const Breadcrumbs:React.FC<IProps> = ({
     const breadcrumbs = useReactRouterBreadcrumbs();
     return (
         <BreadcrumbsContainer>
-        <Image src={image? image : aboutPage} 
-        // style={{maxHeight: 650}}
-        />
+        <Image src={image? image : aboutPage}/>
         <BlockWrap addClass='block__breadcrumbs-container-title'>
             <TextTitle type='h1' addClass='text__breadcrumbs-title'>{breadcrumbs.map(({ breadcrumb }: any, index) => breadcrumbs.length === index+1 && getTitleFromUrl(breadcrumb))}</TextTitle>
             <Offset mb={10} />
@@ -31,10 +29,7 @@ const Breadcrumbs:React.FC<IProps> = ({
                     {breadcrumbs.length !== index+1 && <Arrow  addClass='arrow__braedcrumb'/> }
                 </Link>
             })}</TextTitle>
-
-
         </BlockWrap>
-
     </BreadcrumbsContainer>
   )
 }

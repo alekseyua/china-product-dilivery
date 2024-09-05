@@ -8,6 +8,7 @@ import Button from '../../../Views/Button/Button'
 import Line from '../../../Views/Line/Line'
 import Offset from '../../../Views/Offset/Offset'
 import { line, lineGray, plus } from '../../../Images'
+
 interface IProps {
   list: IFAQ[];
   isOpenItemFAQ: number[];
@@ -19,25 +20,28 @@ const FAQ: React.FC<IProps> = ({
   isOpenItemFAQ,
   handlerOpenAnswer,
 }: IProps) => {
-  console.log({ dataFAQ:list })
-
   return (
     <BlockWrap addClass='block__faq-container'>
       {
         list.map((faq: IFAQ, index: number) => (
-            <Button
-              style={{width: '100%'}}
-              onClick={()=>handlerOpenAnswer(faq.id)}
-            >
-          <BlockWrap key={faq.id} addClass='block__faq-item-wrap' col>
+          <Button
+            style={{ width: '100%' }}
+            onClick={() => handlerOpenAnswer(faq.id)}
+          >
+            <BlockWrap key={faq.id} addClass='block__faq-item-wrap' col>
               <BlockWrap addClass='block__faq-item-question'>
-                <TextTitle style={{marginRight: 20}}>
-                  {faq.text} 
+                <TextTitle 
+                style={{
+                    marginRight: 20,
+                    color: isOpenItemFAQ.includes(faq.id) ? 'var(--theme-color)' : 'var(--body-color)'
+                  }}
+                >
+                  {faq.text}
                 </TextTitle>
-                <IconSvg src={isOpenItemFAQ.includes(faq.id) ? lineGray : plus}/>
+                <IconSvg src={isOpenItemFAQ.includes(faq.id) ? lineGray : plus} />
               </BlockWrap>
               {
-                isOpenItemFAQ.includes(faq.id) && 
+                isOpenItemFAQ.includes(faq.id) &&
                 <BlockWrap addClass='block__faq-item-answer' col>
                   <Offset mt={10} />
                   <Line />
@@ -47,8 +51,8 @@ const FAQ: React.FC<IProps> = ({
                   </Text>
                 </BlockWrap>
               }
-          </BlockWrap>
-                </Button>
+            </BlockWrap>
+          </Button>
         ))
       }
     </BlockWrap>

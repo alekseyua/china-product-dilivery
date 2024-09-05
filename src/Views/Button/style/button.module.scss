@@ -29,6 +29,7 @@
     //button__yellow, button__transparent
     &__yellow, &__transparent{
         background-color: var(--theme-color);
+        min-height: 58px;
         z-index: 2;
         position: relative;
         overflow: hidden;

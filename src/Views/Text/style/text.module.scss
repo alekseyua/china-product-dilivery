@@ -323,7 +323,7 @@
 
     &:hover {
       cursor: pointer;
-      color: var(--theme-color);
+      color: var(--theme-color) !important;
       transition: color .3s;
     }
   }
@@ -344,6 +344,8 @@
     font-weight: 600;
     color: var(--theme-color);
     margin: 5px;
+    line-height: 120%;
+    width: min-content;
   }
 
 }

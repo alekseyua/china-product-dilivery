@@ -17,7 +17,10 @@ const FAQ:React.FC<IProps> = ({
       <Button
         onClick={handlerOpenFAQ}
       >
-        <TextTitle addClass='text__faq-title' 
+        <TextTitle addClass='text__faq-title'
+          style={{
+            color: isOpen? 'var(--theme-color)' : 'var(--body-color)'
+          }}
           >
           FAQ
         </TextTitle>

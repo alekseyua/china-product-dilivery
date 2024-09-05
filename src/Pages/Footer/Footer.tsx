@@ -12,7 +12,6 @@ import IconSvg from "../../Views/Icon/IconSvg";
 import { location, mail, phone } from "../../Images";
 import NavFooterContainer from "../../Component/NavFooter/NavFooterContainer";
 import { IPropsDataPage } from "../../@types/common";
-import { WithCheckLoadDataPage } from "../../HOC/WithCheckLoadDataPage/WithCheckLoadDataPage";
 import Phone from "../../Component/Chunks/Phone/Phone";
 
 interface IProps {
@@ -37,7 +36,6 @@ const Footer: React.FC<IProps> = function ({
                             </BlockWrap>
                             <Offset mb={33} />
                             <BlockWrap col>
-                                {/* <Text addClass="text__footer-desc">Conveniently develop impactful value without next-generation applications. Progressively strategize ubiquitous initiatives after go forward resources.</Text> */}
                                 <TextTitle sub>
                                     {
                                         listSection.length &&
@@ -54,7 +52,7 @@ const Footer: React.FC<IProps> = function ({
                                 </Text>
                                 <Offset mt={20} />
                                 <TextTitle type="h6" addClass="text__footer-sotial-media">Социальные сети:</TextTitle>
-                                <SocialMedia isIcon listMedia={listSection[0]?.blocks[0]?.social_networks} location='flex-start'/>
+                                <SocialMedia isIcon listMedia={listSection[0]?.blocks[0]?.social_networks} location='flex-start' />
                             </BlockWrap>
                         </BlockWrap>
 
@@ -127,6 +125,7 @@ const Footer: React.FC<IProps> = function ({
                     </BlockWrap>
                 </BlockWrap>
             </Container>
+            <Offset mb={20} />
             <Line />
             <BlockWrap addClass="block__footer-copyright-container">
                 <Text addClass="text__footer-copyright"> Copyright By © <Link to="/">Artraz</Link> - 2024</Text>

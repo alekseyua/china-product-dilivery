@@ -8,7 +8,7 @@ export class TrackContainer extends Component {
     }
 
     handlerTrack = () => {
-        alert('тест клика, нужно решить что делать дальше for number ' + this.state.valueTrack) 
+        alert('для получения информации о посылке, через соц сети свяжитесь с менеджером, сервис на стадии разработки' + this.state.valueTrack) 
     }
 
     handlerChangeInput = (event: Event) => {
