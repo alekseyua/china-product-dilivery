@@ -1,14 +1,12 @@
-import React, { useRef } from 'react'
+import { useRef } from 'react'
 import Slider from 'react-slick'
 import SliderWrap from '../../../Views/Slider/SliderWrap';
-import { arrowLeft, arrowRight, line, slider_1, slider_2 } from '../../../Images';
+import { arrowLeft, arrowRight} from '../../../Images';
 import "slick-carousel/slick/slick.scss";
 import "slick-carousel/slick/slick-theme.scss";
 import SlideWrap from '../../../Views/Slider/SlideWrap';
 import Container from '../../../Views/Block/Container';
 import SliderContentContainer from '../../../Views/Slider/SliderContentContainer';
-import SliderContentSubTitle from '../../../Views/Slider/SliderContentSubTitle';
-import SliderContentTitle from '../../../Views/Slider/SliderContentTitle';
 import Image from '../../../Views/Image/Image';
 import BackgrounColor from '../../../Views/Block/BackgrounColor';
 import SliderControllerContainer from '../../../Views/Slider/SliderControllerContainer';

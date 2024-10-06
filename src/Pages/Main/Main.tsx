@@ -3,7 +3,6 @@ import SliderMainContainer from "../../Component/Main/SliderMain/SliderMainConta
 import AboutMainComponent from "../../Component/Main/AboutMain/AboutMainComponent";
 import FeatureMainComponent from "../../Component/Main/FeatureMain/FeatureMainComponent";
 import VideoReviewComponent from "../../Component/Main/VideoReview/VideoReviewComponent";
-import HighQualityMainComponent from "../../Component/Main/HighQualityMain/HighQualityMainComponent";
 import ExpertMainComponent from "../../Component/Main/ExpertMain/ExpertMainComponent";
 import Offset from "../../Views/Offset/Offset";
 import ClientSayMainComponent from "../../Component/Main/ClientSayMain/ClientSayMainComponent";
@@ -51,8 +50,6 @@ const Main: React.FC<IProps> = ({listSection}:IProps) => (
         <BlogsMainComponent dataSection={listSection[7]} />
         <Offset sectionTop />
 
-        {/* <HighQualityMainComponent />
-                    <Offset sectionTop /> */}
 
     </React.Fragment>
 )

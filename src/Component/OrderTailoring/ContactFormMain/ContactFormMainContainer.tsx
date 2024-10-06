@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import ContactFormMain from './ContactFormMain'
 import { IStateContactFormMain } from '../../../@types/contact-form/contact-form'
-import { contact, mail, phone } from '../../../Images'
 import { IPropsDataPage } from '../../../@types/common'
 
 interface IProps {
