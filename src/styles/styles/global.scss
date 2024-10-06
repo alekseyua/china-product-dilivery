@@ -112,8 +112,18 @@ body{
     @include resize(landscape){
         height: auto !important;
     }
+
+    // react-player__play-icon
+    &__play-icon{
+        border-color: transparent transparent transparent var(--theme-color) !important;
+    }
+    // react-player__about
+    &__about{
+        width: 100%;
+        height: 700px !important;    
+        @include resize(landscape) {
+            height: auto !important;
+        }
+    }
 }
 
-.react-player__play-icon{
-    border-color: transparent transparent transparent var(--theme-color) !important;
-}

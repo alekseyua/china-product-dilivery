@@ -11,6 +11,7 @@ import Text from '../../../Views/Text/Text';
 import Button from '../../../Views/Button/Button';
 import { line } from '../../../Images';
 import { IPropsDataPage } from '../../../@types/common';
+import ReactPlayer from 'react-player';
 
 interface IProps {
   infoBlock: IPropsDataPage
@@ -23,15 +24,30 @@ const AboutSection: React.FC<IProps> = ({
 }: IProps) => {
   return (
     <Container row addClass='container__about-section' size={1400} center>
-      <BlockWrap addClass='block__about-container-left' >
-        <BlockWrap addClass='block__about-container-image'>
+      <BlockWrap addClass='block__about-container-left' style={{alignItems: 'center'}}>
+        {/* <BlockWrap addClass='block__about-container-image'>
           <BlockWrap addClass='block__about-image-1'>
             <Image src={infoBlock?.images && infoBlock.images[0].url} />
           <BlockWrap addClass='block__about-image-2'>
               <Image src={infoBlock?.images && infoBlock.images[2].url} />
           </BlockWrap>
-          </BlockWrap>
-        </BlockWrap>
+          </BlockWrap> 
+        </BlockWrap> */}
+        <ReactPlayer
+          className='react-player__about'
+          url={infoBlock.videos[0].url}
+          width='100%'
+          loop={true}
+          playing={true}
+          playsinline={true}
+          muted={true}
+          onReady={(e: any) => {
+            const player = e.getInternalPlayer();
+            setTimeout(() => {
+              player.setAttribute('muted', 'true');
+            }, 1000);
+          }}
+        />
       </BlockWrap>
       <BlockWrap addClass='block__about-container-right' col>
         <TextTitle addClass='text__big-title'>A.</TextTitle>
