@@ -9,14 +9,12 @@ import BlockWrap from '../../../Views/Block/BlolckWrap/BlockWrap';
 
 interface IAboutMainProps {
     infoBlock: IPropsDataPage;
-    handlerDonwload: any;
 }
 
 
 const InfoMapRepurchaseGoods: React.FC<IAboutMainProps
 > = ({
     infoBlock,
-    handlerDonwload,
 }: IAboutMainProps) => {
         return (
             <Container

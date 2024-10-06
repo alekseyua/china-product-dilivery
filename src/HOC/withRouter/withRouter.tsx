@@ -9,7 +9,6 @@ const withRouter = <Props extends WithRouterProps>(
       const location = useLocation();
       const params = useParams();
       const navigate = useNavigate();
-      // console.log('with router work', Component)
       useEffect(()=>{
         document.documentElement.scrollTo(0, 0);
       },[location.pathname])

@@ -5,7 +5,6 @@ import Offset from "../../Views/Offset/Offset";
 import { IPropsDataPage } from "../../@types/common";
 import { WithCheckLoadDataPage } from "../../HOC/WithCheckLoadDataPage/WithCheckLoadDataPage";
 import PriceFullfilmentComponent from "../../Component/Fullfilment/PriceFullfilment/PriceFullfilmentComponent";
-import ServiceFullfilmentComponent from "../../Component/Fullfilment/ServiceFullfilment/ServiceFullfilmentComponent";
 import { AboutStorageContainer } from "../../Component/Delivery/AboutStorage/AboutStorageComponent";
 import IntroductionCardsComponent from "../../Component/Fullfilment/IntroductionCard/IntroductionCardsComponent";
 import SloganComponent from "../../Component/Fullfilment/Slogan/SloganComponent";
@@ -17,30 +16,21 @@ interface IProps {
 const Fulfilment: React.FC<IProps> = function ({
     listSection,
     image,
-}: IProps){
+}: IProps) {
     return (
         <Container>
             <Offset sectionTop />
-            <Breadcrumbs image={image}/>
+            <Breadcrumbs image={image} />
             <Offset sectionTop />
-
-            
-                        <SloganComponent dataSection={listSection[4]} />
-                        <Offset sectionTop /> 
-{/* 
-            <ServiceFullfilmentComponent dataSection={listSection[1]} />
-            <Offset sectionTop /> */}
-
+            <SloganComponent dataSection={listSection[4]} />
+            <Offset sectionTop />
             <AboutStorageContainer dataSection={listSection[2]} />
             <Offset sectionTop />
-
             <PriceFullfilmentComponent dataSection={listSection[0]} />
-            {/* <Offset sectionTop />  */}
-
             <IntroductionCardsComponent dataSection={listSection[3]} />
-            <Offset sectionTop /> 
+            <Offset sectionTop />
         </Container>
     )
 }
 
-export default WithCheckLoadDataPage( Fulfilment);
+export default WithCheckLoadDataPage(Fulfilment);

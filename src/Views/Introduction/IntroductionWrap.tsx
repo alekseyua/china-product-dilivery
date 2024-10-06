@@ -3,16 +3,16 @@ import { IPropsViewIntroduction } from '../../@types/introduction/introduction'
 import styles from './style/introduction.module.scss';
 
 
-const IntroductionWrap:React.FC<IPropsViewIntroduction> = ({
-    style = {},
-    children,
-}:IPropsViewIntroduction) => {
+const IntroductionWrap: React.FC<IPropsViewIntroduction> = ({
+  style = {},
+  children,
+}: IPropsViewIntroduction) => {
   return (
     <div
-        className={styles['introduction__container-wrap']}
-        style={style}
+      className={styles['introduction__container-wrap']}
+      style={style}
     >
-    {children}</div>
+      {children}</div>
   )
 }
 

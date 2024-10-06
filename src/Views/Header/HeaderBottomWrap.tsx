@@ -3,13 +3,13 @@ import { IPropsHeader } from '../../@types/header/header';
 import styles from './styles/header.module.scss';
 import classNames from 'classnames';
 
-const  HeaderBottomWrap: React.FC<IPropsHeader> = ({children}:IPropsHeader) => {
-  const className = classNames({    
-    [styles['header__bottom-wrap']]:true,
+const HeaderBottomWrap: React.FC<IPropsHeader> = ({ children }: IPropsHeader) => {
+  const className = classNames({
+    [styles['header__bottom-wrap']]: true,
   })
   return (
     <div
-        className={className}
+      className={className}
     >{children}</div>
   )
 }

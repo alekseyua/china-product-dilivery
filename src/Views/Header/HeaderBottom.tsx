@@ -3,16 +3,16 @@ import { IPropsHeader } from '../../@types/header/header';
 import styles from './styles/header.module.scss';
 import classNames from 'classnames';
 
-const  HeaderBottom: React.FC<IPropsHeader> = ({children, isFixed}:IPropsHeader) => {
+const HeaderBottom: React.FC<IPropsHeader> = ({ children, isFixed }: IPropsHeader) => {
   const className = classNames({
     'container': true,
-    [styles['header__bottom']]:true,
-    [styles['header__bottom-sticky']]:isFixed
+    [styles['header__bottom']]: true,
+    [styles['header__bottom-sticky']]: isFixed
   })
 
   return (
     <div
-        className={className}
+      className={className}
     >{children}</div>
   )
 }

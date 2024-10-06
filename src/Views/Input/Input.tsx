@@ -72,7 +72,6 @@ const Input: React.FC<IPropsInput> = ({
                             ev.key === "Enter" && ev.target.blur();
                         }}
                         onClick={(e) => handlerClick(e)}
-
                     />
             }
         </div>

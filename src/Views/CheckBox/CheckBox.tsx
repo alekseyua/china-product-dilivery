@@ -38,31 +38,31 @@ const getVariantStyleCheckbox = (variant = variantEnum.default) => {
  */
 
 interface IProps {
-  classNameLabel?:string;
-  helpTextStyle?:object;
-  colorField?:string;
-  className?:string;
-  addClass?:string;
-  onChange:any;
-  disabled?:boolean;
+  classNameLabel?: string;
+  helpTextStyle?: object;
+  colorField?: string;
+  className?: string;
+  addClass?: string;
+  onChange: any;
+  disabled?: boolean;
   children?: React.ReactNode;
-  helptext?:string;
-  variant?:string;
-  checked:boolean;
-  value?:string;
+  helptext?: string;
+  variant?: string;
+  checked: boolean;
+  value?: string;
   label?: string | React.ReactNode;
-  style?:object;
-  role?:string;
-  name?:string;
-  id?:string;
+  style?: object;
+  role?: string;
+  name?: string;
+  id?: string;
 }
 
-const CheckBox:React.FC<IProps> = ({
-  classNameLabel='',
+const CheckBox: React.FC<IProps> = ({
+  classNameLabel = '',
   helpTextStyle = {},
   colorField,
-  className='',
-  addClass='',
+  className = '',
+  addClass = '',
   onChange,
   disabled = false,
   children,
@@ -76,7 +76,7 @@ const CheckBox:React.FC<IProps> = ({
   name,
   id,
   ...props
-}:IProps) => {
+}: IProps) => {
   //todo: чтоб не светился ошибками сделаю мега костыль не бейте пж
   const refCheck = useRef(null);
 
@@ -102,7 +102,7 @@ const CheckBox:React.FC<IProps> = ({
     [classNameLabel]: !!classNameLabel
   })
 
-  const styleColorField  = {
+  const styleColorField = {
     backgroundColor: `${colorField}`
   }
 
@@ -123,60 +123,60 @@ const CheckBox:React.FC<IProps> = ({
         ) : null
       }
       <div className={styles['checkbox__container-trigger']}>
-      <input
-        key={name}
-        onChange={() => { }} //чтобы не ругался реакт
-        ref={refCheck}
-        type={'checkbox'}
-        className={classNameCustom}
-        disabled={disabled}
-        checked={checked}
-        data-label={label}
-        role={role}
-        name={name}//iAgreeDataProcessing   ----- name="check" 
-        id={id}
-        style={{
-          pointerEvents: disabled ? 'none' : 'all',
-        }}
-        value={value}
-        {...props}
-      />
-      {
-        role?
-        <span className={styles['checkbox__switch-state']}>
-        <span className={styles['checkbox__switch-container']}>
-          <span className={styles['checkbox__switch-position']}> </span>
-        </span>        
-      </span>
-      :
-      <label
-        htmlFor={id}
-        className={classNameLabelCheckBox}
-      >
-        <span></span>
-        <span>
-          {label}
-        </span>
-      </label>
-      }
+        <input
+          key={name}
+          onChange={() => { }} //чтобы не ругался реакт
+          ref={refCheck}
+          type={'checkbox'}
+          className={classNameCustom}
+          disabled={disabled}
+          checked={checked}
+          data-label={label}
+          role={role}
+          name={name}//iAgreeDataProcessing   ----- name="check" 
+          id={id}
+          style={{
+            pointerEvents: disabled ? 'none' : 'all',
+          }}
+          value={value}
+          {...props}
+        />
+        {
+          role ?
+            <span className={styles['checkbox__switch-state']}>
+              <span className={styles['checkbox__switch-container']}>
+                <span className={styles['checkbox__switch-position']}> </span>
+              </span>
+            </span>
+            :
+            <label
+              htmlFor={id}
+              className={classNameLabelCheckBox}
+            >
+              <span></span>
+              <span>
+                {label}
+              </span>
+            </label>
+        }
 
-      {
-        helptext ?
-          <span
-            style={{
-              paddingLeft: 27,
-              left: -10,
-              pointerEvents: disabled ? 'none' : 'all',
-              color: `var(--text-color)`,
-              position: 'relative',
-              fontSize: 12,
-              fontWeight: 500,
-              lineHeight: '18px',
-              fontFamily: 'HelveticaNeue',
-              ...helpTextStyle
-            }}>{helptext}</span>
-          : null
-      }
+        {
+          helptext ?
+            <span
+              style={{
+                paddingLeft: 27,
+                left: -10,
+                pointerEvents: disabled ? 'none' : 'all',
+                color: `var(--text-color)`,
+                position: 'relative',
+                fontSize: 12,
+                fontWeight: 500,
+                lineHeight: '18px',
+                fontFamily: 'HelveticaNeue',
+                ...helpTextStyle
+              }}>{helptext}</span>
+            : null
+        }
       </div>
       {children}
 
@@ -184,4 +184,4 @@ const CheckBox:React.FC<IProps> = ({
   );
 };
 
-export default React.memo(CheckBox);
+export default CheckBox;

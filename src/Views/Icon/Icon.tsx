@@ -1,32 +1,30 @@
 import React from 'react'
 import { IPropsIcon } from '../../@types/image/image';
-import styles from './styles/icon.module.scss';
 import classNames from 'classnames';
+import styles from './styles/icon.module.scss';
 
-const  Icon: React.FC<IPropsIcon> = ({
+const Icon: React.FC<IPropsIcon> = ({
   src,
   alt,
-  style={},
-  addClass='',
-}:IPropsIcon) => {
-  const className = classNames({    
-    [styles['icon']]:true,
-    [styles[addClass]]:addClass,
+  style = {},
+  addClass = '',
+}: IPropsIcon) => {
+  const className = classNames({
+    [styles['icon']]: true,
+    [styles[addClass]]: addClass,
   })
 
-  
   return (
     <div
-        className={className}
+      className={className}
     >
-      <img 
+      <img
         src={src}
         style={{
           ...style
         }}
-        alt={alt ?? src.split('/')[src.split('/').length-1]}
+        alt={alt ?? src.split('/')[src.split('/').length - 1]}
       />
-
     </div>
   )
 }

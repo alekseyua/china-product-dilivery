@@ -20,8 +20,6 @@ interface IProps {
 
 class MainContainer extends React.Component<IProps>{
     componentDidMount(): void {
-        // this.props.dispathe(getDataPage());
-        // this.props.test()
         this.props.dispatch('getPage',{
             url: '/content/page/get_page/',
             slug: 'main'
@@ -37,7 +35,6 @@ class MainContainer extends React.Component<IProps>{
     }
 }
 
-// export default connect(()=>{},{test : () => (getDataPage()) })(MainContainer);
 export default connectStoreon(
     'dataPage',
     MainContainer)

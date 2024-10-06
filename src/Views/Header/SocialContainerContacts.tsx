@@ -4,13 +4,13 @@ import classNames from 'classnames';
 
 import styles from './styles/header.module.scss';
 
-const  SocialContainerContacts: React.FC<IPropsHeader> = ({children}:IPropsHeader) => {
+const SocialContainerContacts: React.FC<IPropsHeader> = ({ children }: IPropsHeader) => {
   const className = classNames({
-    [styles['header__socialcontainer-contact']]:true,
+    [styles['header__socialcontainer-contact']]: true,
   })
   return (
     <div
-        className={className}
+      className={className}
     >{children}</div>
   )
 }

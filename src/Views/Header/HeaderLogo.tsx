@@ -7,20 +7,20 @@ import { logo } from '../../Images';
 
 import styles from './styles/header.module.scss';
 
-const  HeaderLogo: React.FC<IBurgerLogo> = ({
+const HeaderLogo: React.FC<IBurgerLogo> = ({
   isBurger
-}:IBurgerLogo) => {
+}: IBurgerLogo) => {
   const className = classNames({
-    [styles['header__logo']]:true,
-    [styles['header__logo-burger']]:isBurger,
+    [styles['header__logo']]: true,
+    [styles['header__logo-burger']]: isBurger,
   })
   return (
     <div
-        className={className}
+      className={className}
     >
-    <Link to="/">
-      <Icon src={logo} alt="С Китая легко" />
-    </Link>
+      <Link to="/">
+        <Icon src={logo} alt="С Китая легко" />
+      </Link>
     </div>
   )
 }

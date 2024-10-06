@@ -4,10 +4,10 @@ import { IProps } from '../../@types/common';
 
 import styles from './styles/breadcrumbs.module.scss';
 
-const BreadcrumbsContainer:React.FC<IProps> = ({children}:IProps) => {
-    const classNameInit = classNames({
-        [styles['braedcrumbs']]: true,
-    })
+const BreadcrumbsContainer: React.FC<IProps> = ({ children }: IProps) => {
+  const classNameInit = classNames({
+    [styles['braedcrumbs']]: true,
+  })
   return (
     <div className={classNameInit}>{children}</div>
   )

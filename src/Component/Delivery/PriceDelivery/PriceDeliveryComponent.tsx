@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import { Component } from 'react'
 import PriceDelivery from './PriceDelivery'
 import withRouter from '../../../HOC/withRouter/withRouter';
 import { WithRouterProps } from '../../../@types/hoc/hoc';
@@ -14,10 +14,8 @@ export class PriceDeliveryComponent extends Component<WithRouterProps & IProps> 
   delayLoad(): any {
     setTimeout(() => {
       if (document.querySelector('#calculation')) {
-        document.querySelector('#calculation')?.
-          scrollIntoView({ block: "center", behavior: "smooth" })
+        document.querySelector('#calculation')?.scrollIntoView({ block: "center", behavior: "smooth" })
       } else {
-        console.log('time off repeat')
         this.delayLoad()
       }
     }, 1000)

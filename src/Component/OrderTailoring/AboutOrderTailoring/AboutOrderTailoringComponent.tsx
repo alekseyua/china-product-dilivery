@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import { Component } from 'react'
 import AboutOrderTailoring from './AboutOrderTailoring'
 import { IPropsDataPage } from '../../../@types/common';
 import { connectStoreon } from 'storeon/react';
@@ -26,7 +26,6 @@ export class AboutOrderTailoringComponent extends Component<IAboutMainProps, ISt
   }
 
   render() {
-    // console.log(this.props.dataSection)
     return (
       <AboutOrderTailoring
         infoBlock={this.props.dataSection}

@@ -63,7 +63,6 @@ export class CalculateComponent extends Component<IProps & WithRouterProps, ISta
   }
 
   handlerChangeSelect = ({ values, name }: { values: { label: string, value: string }, name: string }): any => {
-    // console.log(values)
     this.setState(state => ({
       ...state,
       [name]: {
@@ -77,7 +76,6 @@ export class CalculateComponent extends Component<IProps & WithRouterProps, ISta
         value: values.value,
       }
     }
-    console.log({ copyState })
     if (copyState.volume && copyState.wheigt && copyState.delivery?.value && copyState.type_product?.value) {
       this.props.dispatch(GET_LIST_PRICE, {
         url: '/service/services/get_price/',
@@ -95,12 +93,8 @@ export class CalculateComponent extends Component<IProps & WithRouterProps, ISta
   delayLoad(): any {
     setTimeout(() => {
       if (document.querySelector('#expert')) {
-        const res = document.querySelector('#expert')?.
-          scrollIntoView({ block: "center", behavior: "smooth" })
-        console.log({ res })
-        // setTimeout(() => window.scrollBy(0, 3468),500);        
+        document.querySelector('#expert')?.scrollIntoView({ block: "center", behavior: "smooth" });
       } else {
-        console.log('time off repeat')
         this.delayLoad()
       }
     }, 1000)

@@ -17,17 +17,16 @@ interface IProps {
     };
     dispatch: any;
 }
-class OrderTailoringContainer extends React.Component<IProps>{
-    //order-tailoring
+class OrderTailoringContainer extends React.Component<IProps> {
     componentDidMount(): void {
         this.props.dispatch('getPage', {
             url: '/content/page/get_page/',
             slug: 'order_tailoring'
         })
     }
-    render(): React.ReactNode{
+    render(): React.ReactNode {
         return (
-            <OrderTailoring 
+            <OrderTailoring
                 listSection={this.props.dataPage?.order_tailoring?.sections}
                 image={this.props.dataPage?.order_tailoring?.image}
             />

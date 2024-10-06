@@ -2,10 +2,8 @@ import React from 'react'
 import Container from '../../../Views/Block/Container'
 import HeaderSectionFull from '../../Chunks/HeaderSectionFull/HeaderSectionFull';
 import { IListDeliveries, IListProducts, IPropsDataPage } from '../../../@types/common';
-import ReactPlayer from 'react-player';
 import BlockWrap from '../../../Views/Block/BlolckWrap/BlockWrap';
 import Text from '../../../Views/Text/Text';
-import TextTitle from '../../../Views/Text/TextTitle';
 import Input from '../../../Views/Input/Input';
 import Offset from '../../../Views/Offset/Offset';
 import SelectComponent from '../../../Views/Select/Select';
@@ -45,7 +43,6 @@ const Calculate: React.FC<IProps> = ({
     handlerChangeScreen,
     handlerChangeSelect
 }: IProps) => {
-    // console.log({infoBlock})
     return (
         <Container
             size={1400}

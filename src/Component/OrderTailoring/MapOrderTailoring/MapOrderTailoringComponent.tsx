@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import { Component } from 'react'
 import MapOrderTailoring from './MapOrderTailoring'
 import withRouter from '../../../HOC/withRouter/withRouter';
 import { WithRouterProps } from '../../../@types/hoc/hoc';
@@ -17,7 +17,6 @@ export class MapOrderTailoringComponent extends Component<WithRouterProps & IAbo
   }
 
   render() {
-    // console.log(this.props.dataSection)
     return (
       <MapOrderTailoring
         infoBlock={this.props.dataSection}

@@ -18,31 +18,24 @@ interface IProps {
 const DeliveryServices: React.FC<IProps> = function ({
     listSection,
     image,
-}:IProps){
-    console.log({ listSection })
+}: IProps) {
     return (
         <Container>
             <Offset sectionTop />
             <Breadcrumbs image={image} />
             <Offset sectionTop />
-
             <InfoDeliveryComponent dataSection={listSection[0]} />
             <Offset sectionTop />
-            
             <PriceDeliveryComponent dataSection={listSection[1]} />
             <Offset sectionTop />
-            
             <InfoAboutCargoComponent dataSection={listSection[2]} />
             <Offset sectionTop />
-
             <OurAdvantageComponent dataSection={listSection[3]} />
             <Offset sectionTop />
-            
             <CalculateComponent dataSection={listSection[4]} />
             <Offset sectionTop />
-
-    </Container>
+        </Container>
     )
 }
 
-export default WithCheckLoadDataPage( DeliveryServices);
+export default WithCheckLoadDataPage(DeliveryServices);

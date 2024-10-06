@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import { Component } from 'react'
 import withRouter from '../../../HOC/withRouter/withRouter';
 import { WithRouterProps } from '../../../@types/hoc/hoc';
 import { IPropsDataPage } from '../../../@types/common';
@@ -18,7 +18,6 @@ export class InfoFindProviderMainComponent extends Component<WithRouterProps & I
   }
 
   render() {
-    // console.log(this.props.dataSection)
     return (
       <InfoFindProviderMain
         infoBlock={this.props.dataSection}

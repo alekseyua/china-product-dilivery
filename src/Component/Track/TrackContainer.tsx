@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import { Component } from 'react'
 import { connectStoreon } from 'storeon/react'
 import Track from './Track'
 
@@ -12,7 +12,6 @@ export class TrackContainer extends Component {
     }
 
     handlerChangeInput = (event: Event) => {
-        console.log({event})
         const target = event.target as HTMLInputElement;
         this.setState({
             valueTrack: target? target.value : '',

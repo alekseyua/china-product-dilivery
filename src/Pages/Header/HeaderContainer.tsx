@@ -25,46 +25,8 @@ class HeaderContainer extends React.Component<WithRouterProps & IProps,IStateHea
         const height =
             document.documentElement.scrollHeight -
             document.documentElement.clientHeight;
-
         const scrolled = winScroll / height;
-        // console.log({winScroll,height,scrolled})
         document.documentElement.style.setProperty('--fill-scrolling',`${36*(scrolled*10)}deg`);
-        // console.log({scrolled: scrolled * 100})
-        // if(scrolled * 100 > 8 && scrolled * 100 < 35){
-        //     document.documentElement.style.setProperty('--animation-main-about-right',`fadeInRight`);
-        //     document.documentElement.style.setProperty('--animation-main-about-left',`fadeInLeft`);
-        // }else{
-        //     document.documentElement.style.setProperty('--animation-main-about-right',``);
-        //     document.documentElement.style.setProperty('--animation-main-about-left',``);
-        // }
-        // if(scrolled * 100 > 18 && scrolled * 100 < 35){
-        //     document.documentElement.style.setProperty('--animation-main-feature',`fadeInUp`);
-        // }else{
-        //     document.documentElement.style.setProperty('--animation-main-feature',``);
-        // }
-        // if(scrolled * 100 > 35 && scrolled * 100 < 55){
-        //     document.documentElement.style.setProperty('--animation-main-counter',`fadeInUp`);
-        // }else{
-        //     document.documentElement.style.setProperty('--animation-main-counter',``);
-        // }
-        // if(scrolled * 100 > 45 && scrolled * 100 < 65){
-        //     document.documentElement.style.setProperty('--animation-main-hight',`fadeInUp`);
-        // }else{
-        //     document.documentElement.style.setProperty('--animation-main-hight',``);
-        // }
-        // if(scrolled * 100 > 55 && scrolled * 100 < 75){
-        //     document.documentElement.style.setProperty('--animation-main-expert',`fadeInUp`);
-        // }else{
-        //     // document.documentElement.style.setProperty('--animation-main-expert',``);
-        // }
-        // if(scrolled * 100 > 65 && scrolled * 100 < 95){
-        //     document.documentElement.style.setProperty('--animation-main-contact-left',`fadeInLeft`);
-        //     document.documentElement.style.setProperty('--animation-main-contact-right',`fadeInRight`);
-        // }else{
-        //     // document.documentElement.style.setProperty('--animation-main-contact-left',``);
-        //     // document.documentElement.style.setProperty('--animation-main-contact-right',``);
-        // }
-        
         this.setState(state =>({
             ...state,
             isFixed: winScroll > 100,
@@ -97,21 +59,17 @@ class HeaderContainer extends React.Component<WithRouterProps & IProps,IStateHea
         window.removeEventListener('reset', this.listenWidth)
       }
       handlerClickButtonUp=()=>{
-        console.log('click up')
         document.documentElement.scrollTo({top: 0, behavior: 'smooth'});
       }
     render(): React.ReactNode{
         return (
             <Header 
-
                 phoneNumber={this.props?.dataHeaderFooter?.footer.sections[2].blocks[1].description}
                 listSocialNetwork={this.props?.dataHeaderFooter?.footer.sections[0].blocks[0].social_networks}
-
                 isMainPage={this.props.location && this.props.location.pathname === '/'}
                 isFixed={this.state.isFixed}
                 isBurger={this.state.isBurger}
                 handlerClickButtonUp={this.handlerClickButtonUp}
-
                 handlerChangeOpenFAQ={this.props.handlerChangeOpenFAQ}
             />
         )

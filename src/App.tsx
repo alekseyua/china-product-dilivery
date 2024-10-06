@@ -1,17 +1,13 @@
-import {BrowserRouter, Route, RouterProvider, Routes} from 'react-router-dom';
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import router from './routers/routers';
 import { WithIconAwesome } from './HOC/IconsFontAwesome/WithIconAwesome';
 
-console.log({router})
-
 function App() {
   return (
-    // <RouterProvider router={router} />
     <BrowserRouter basename={router.basename}>
       <Routes>
         {
           router.routes.map((route: any) => {
-            console.log({ route })
             return (
               <Route key={route.id} path={route.path} element={route.element}>
                 {

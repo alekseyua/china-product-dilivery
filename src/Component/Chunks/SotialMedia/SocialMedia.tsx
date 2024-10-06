@@ -24,7 +24,6 @@ const SocialMedia: React.FC<IProps> = ({ listMedia, isIcon, location = 'center' 
         <>
         {
               listMedia && listMedia.map( (social: IPropsBloksSocial) => {
-                // console.log({social})
                 return (
                   <Link key={social.id} target="_blank" to={social.url}>
                     <IconSvg src={getIconFromName(social.type)} addClass='icon__link-header' alt={social.name} />

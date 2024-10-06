@@ -18,16 +18,16 @@ interface IProps {
     dispatch: any;
 }
 
-class FulfilmentContainer extends React.Component<IProps>{
+class FulfilmentContainer extends React.Component<IProps> {
     componentDidMount(): void {
         this.props.dispatch('getPage', {
             url: '/content/page/get_page/',
             slug: 'fullfilment'
         })
     }
-    render(): React.ReactNode{
+    render(): React.ReactNode {
         return (
-            <Fulfilment 
+            <Fulfilment
                 listSection={this.props.dataPage?.fullfilment?.sections}
                 image={this.props.dataPage?.fullfilment?.image}
             />

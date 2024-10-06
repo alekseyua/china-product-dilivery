@@ -1,4 +1,3 @@
-import React from 'react'
 import BlockWrap from '../../Block/BlolckWrap/BlockWrap'
 import Image from '../../Image/Image'
 import Offset from '../../Offset/Offset'
@@ -49,14 +48,12 @@ const Card = ({
         >
             {
                 image ?
-                    <>
-                        <BlockWrap>
-                            <Image src={image} />
-                        </BlockWrap>
-                    </>
-                    : svgIcon? 
-                        <IconSvg  src={svgIcon} addClass='icon__card' />
-                        :null
+                    <BlockWrap>
+                        <Image src={image} />
+                    </BlockWrap>
+                    : svgIcon ?
+                        <IconSvg src={svgIcon} addClass='icon__card' />
+                        : null
             }
 
             <Offset mt={20} style={{ padding: `0px 40px` }}>
@@ -90,7 +87,6 @@ const Card = ({
                                     name={button.title}
                                     href={button.locationPath}
                                     onClick={onClick}
-
                                 />
                             </BlockWrap>
                         </>

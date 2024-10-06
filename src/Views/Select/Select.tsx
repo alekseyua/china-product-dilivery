@@ -24,7 +24,7 @@ const SelectComponent: React.FC<IProps> = ({
     name,
     style,
     value,
-    addClass ='',
+    addClass = '',
     listOptions,
     onChange,
     placeholder = 'Выберите...'  // default 'Выберите...'
@@ -33,18 +33,17 @@ const SelectComponent: React.FC<IProps> = ({
         [styles['select']]: true,
         [styles[addClass]]: addClass
     })
-  return (
-    <Select
-        options={listOptions}
-        // defaultValue={listOptions[0]}
-        value={value}
-        placeholder={placeholder}
-        name={name}
-        onChange={onChange}
-        styles={style}
-        className={className}
-    />
-  )
+    return (
+        <Select
+            options={listOptions}
+            value={value}
+            placeholder={placeholder}
+            name={name}
+            onChange={onChange}
+            styles={style}
+            className={className}
+        />
+    )
 }
 
 export default SelectComponent

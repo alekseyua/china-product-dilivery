@@ -18,7 +18,6 @@ interface IProps {
     dispatch: any;
 }
 class RepurchaseOfGoodsContainer extends React.Component<IProps>{
-    //order-tailoring
     componentDidMount(): void {
         this.props.dispatch('getPage', {
             url: '/content/page/get_page/',

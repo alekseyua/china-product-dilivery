@@ -3,16 +3,16 @@ import { IPropsViewIntroduction } from '../../@types/introduction/introduction'
 import styles from './style/introduction.module.scss';
 
 
-const IntroductionGrid:React.FC<IPropsViewIntroduction> = ({
-    style = {},
-    children,
-}:IPropsViewIntroduction) => {
+const IntroductionGrid: React.FC<IPropsViewIntroduction> = ({
+  style = {},
+  children,
+}: IPropsViewIntroduction) => {
   return (
     <div
-        className={styles['introduction__container-grid']}
-        style={style}
+      className={styles['introduction__container-grid']}
+      style={style}
     >
-    {children}</div>
+      {children}</div>
   )
 }
 

@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import { Component } from 'react'
 import AboutStorage from './AboutStorage'
 import withRouter from '../../../HOC/withRouter/withRouter';
 import { WithRouterProps } from '../../../@types/hoc/hoc';
@@ -16,7 +16,6 @@ export class AboutStorageContainer extends Component<WithRouterProps & IAboutMai
   }
 
   render() {
-    // console.log(this.props.dataSection)
     return (
       <AboutStorage
         infoBlock={this.props.dataSection}

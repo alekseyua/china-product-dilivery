@@ -1,15 +1,14 @@
-import React from 'react'
 import { IPropsSliderWrap } from '../../@types/Slider/slider'
 import styles from './styles/slider.module.scss'
 
 function SlideWrap({
-    children,
+  children,
 
-}:IPropsSliderWrap) {
+}: IPropsSliderWrap) {
   return (
     <div
-        id={'mainSlider'}
-        className={styles['slider__slide-wrap']}
+      id={'mainSlider'}
+      className={styles['slider__slide-wrap']}
     >{children}</div>
   )
 }

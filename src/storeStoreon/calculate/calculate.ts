@@ -16,7 +16,6 @@ export const calculate = (store:StoreonStore) => {
         const response: Response = await api.get({
           url: data.url,
         });
-        console.log({response})
         dispatch(SET_LIST_DELIVERIES,response)
     });
     
@@ -27,7 +26,6 @@ export const calculate = (store:StoreonStore) => {
         const response: Response = await api.get({
           url: data.url,
         });
-        console.log({response})
         dispatch(SET_LIST_PRODUCTS, response);
     });
     
@@ -38,7 +36,6 @@ export const calculate = (store:StoreonStore) => {
         const response: Response = await api.get({
           ...data,
         });
-        console.log({response})
         dispatch(SET_LIST_PRICE, response);
     });
 }

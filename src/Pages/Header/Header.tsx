@@ -12,9 +12,7 @@ import NavDesktopContainer from "../../Component/NavDesktop/NavDesktopContainer"
 import SocialMedia from "../../Component/Chunks/SotialMedia/SocialMedia";
 import SocialBox from "../../Views/Header/SocialBox";
 import ButtonGoToUp from "../../Component/Chunks/ButtonGoTo/ButtonGoToUp";
-import SocialContainerContacts from "../../Views/Header/SocialContainerContacts";
 import Container from "../../Views/Block/Container";
-import Phone from "../../Component/Chunks/Phone/Phone";
 import { IPropsBloksSocial } from "../../@types/common";
 import FAQContainer from "../../Component/FAQ/FAQContainer";
 
@@ -28,57 +26,46 @@ interface IPropsHeaderTop {
 const Header: React.FC<IPropsHeader & IPropsHeaderTop> = function ({
     isFixed,
     isBurger,
-    isMainPage,
-    phoneNumber,
     listSocialNetwork,
     handlerClickButtonUp,
     handlerChangeOpenFAQ,
 }: IPropsHeader & IPropsHeaderTop) {
-    // при пролистывании в HeaderBottom нужно добавлять клас sticky > 480px
     return (
-        <HeaderSection isBurger={isBurger}> 
+        <HeaderSection isBurger={isBurger}>
             <Container>
                 <HeaderTop>
-                            <SocialContainer>
-                                <SocialBox>
-                                        <SocialMedia isIcon listMedia={listSocialNetwork}/>                        
-                                </SocialBox>
-                                <BlockWrap style={{ justifyContent: 'flex-end', alignItems: 'center' }}>
-                                    <FAQContainer handlerChangeOpenFAQ={handlerChangeOpenFAQ} />
-                                </BlockWrap>
-                            </SocialContainer>                    
+                    <SocialContainer>
+                        <SocialBox>
+                            <SocialMedia isIcon listMedia={listSocialNetwork} />
+                        </SocialBox>
+                        <BlockWrap style={{ justifyContent: 'flex-end', alignItems: 'center' }}>
+                            <FAQContainer handlerChangeOpenFAQ={handlerChangeOpenFAQ} />
+                        </BlockWrap>
+                    </SocialContainer>
                 </HeaderTop>
                 <HeaderBottom isFixed={isFixed}>
                     <div className="sticky-active">
                         <div className="menu-area">
+                            <HeaderBottomWrap>
+                                <BlockWrap>
+                                    <HeaderLogo />
+                                </BlockWrap>
+                                {
+                                    isBurger ?
+                                        <NavBurgerContainer />
+                                        :
+                                        <NavDesktopContainer isBurger={isBurger} />
+                                }
 
-                            {/* <Container> */}
-                                <HeaderBottomWrap>
-                                    <BlockWrap>
-                                        <HeaderLogo />
-                                    </BlockWrap>
-                                    {
-                                        isBurger ?
-                                            <NavBurgerContainer />
-                                            :
-                                            <NavDesktopContainer isBurger={isBurger}/>
-                                    }
-
-                                </HeaderBottomWrap>
-                            {/* </Container> */}
+                            </HeaderBottomWrap>
                         </div>
                     </div>
                 </HeaderBottom>
-                <ButtonGoToUp 
+                {isFixed && <ButtonGoToUp
                     onClick={handlerClickButtonUp}
-                    />
-         </Container>
-                    {/* {
-                        isBurger? 
-                            <Offset mt={250} />
-                            : null
-                    } */}
-            </HeaderSection>
+                />}
+            </Container>
+        </HeaderSection>
 
     )
 }

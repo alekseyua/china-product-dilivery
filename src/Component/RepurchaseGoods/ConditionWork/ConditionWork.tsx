@@ -1,35 +1,22 @@
 import React from 'react'
-
 import Container from '../../../Views/Block/Container'
-import Image from '../../../Views/Image/Image'
-import Button from '../../../Views/Button/Button';
-import AboutMainImageContainer from '../../../Views/AboutMain/AboutMainImageContainer';
-import AboutMainWrapBlock from '../../../Views/AboutMain/AboutMainWrapBlock';
-import BlockFlex from '../../../Views/Block/BlockTwoSection/BlockTwoSection';
-import AboutMainContentContainer from '../../../Views/AboutMain/AboutMainContentContainer';
 import Text from '../../../Views/Text/Text';
 import TextTitle from '../../../Views/Text/TextTitle';
-import { line } from '../../../Images';
 import { IPropsBloks, IPropsDataPage } from '../../../@types/common';
 import HeaderSectionFull from '../../Chunks/HeaderSectionFull/HeaderSectionFull';
-import ReactPlayer from 'react-player';
-import Offset from '../../../Views/Offset/Offset';
 import BlockGrid from '../../../Views/Block/BlockGrid/BlockGrid';
 import Line from '../../../Views/Line/Line';
 import BlockWrap from '../../../Views/Block/BlolckWrap/BlockWrap';
 
 interface IAboutMainProps {
     infoBlock: IPropsDataPage;
-    handlerDonwload: any;
 }
 
 
 const ConditionWork: React.FC<IAboutMainProps
 > = ({
     infoBlock,
-    handlerDonwload,
 }: IAboutMainProps) => {
-    console.log({infoBlock})
 
         return (
             <Container
@@ -45,7 +32,6 @@ const ConditionWork: React.FC<IAboutMainProps
                     {
                         infoBlock?.blocks && infoBlock?.blocks.length &&
                         infoBlock?.blocks.map((info: IPropsBloks, index: number): any => {
-                            console.log(info.short_description === '<p>&nbsp;</p>')
                             return (
                                 <BlockWrap col key={info.id} addClass={(index === 0 || index === 1) ? 'block__card-container--allotted' : 'block__card-container'}>
                                     <TextTitle type='h4' style={{
@@ -60,7 +46,6 @@ const ConditionWork: React.FC<IAboutMainProps
                                     <Line thick/>
                                     <Text addClass='style-table-card'>{info.description}</Text>
                                </BlockWrap>
-                                    
                             )
                         })
                     }

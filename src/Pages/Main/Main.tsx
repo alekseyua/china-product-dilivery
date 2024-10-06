@@ -16,9 +16,9 @@ import TrackContainer from "../../Component/Track/TrackContainer";
 interface IProps {
     listSection: IPropsDataPage[];
     image: string;
-}   
+}
 
-const Main: React.FC<IProps> = ({listSection}:IProps) => (
+const Main: React.FC<IProps> = ({ listSection }: IProps) => (
     <React.Fragment>
 
 
@@ -27,16 +27,16 @@ const Main: React.FC<IProps> = ({listSection}:IProps) => (
 
         <TrackContainer />
 
-        <InfoFindProviderMainComponent dataSection={listSection[2]}/>
+        <InfoFindProviderMainComponent dataSection={listSection[2]} />
         <Offset sectionTop>
-        <Background />
+            <Background />
         </Offset>
 
-        <AboutMainComponent dataSection={listSection[1]} /> 
+        <AboutMainComponent dataSection={listSection[1]} />
         <Offset sectionTop />
 
         <FeatureMainComponent dataSection={listSection[3]} />
-        
+
         <Offset sectionTop />
         <VideoReviewComponent dataSection={listSection[4]} />
         <Offset sectionTop />
@@ -54,4 +54,4 @@ const Main: React.FC<IProps> = ({listSection}:IProps) => (
     </React.Fragment>
 )
 
-export default WithCheckLoadDataPage( Main);
+export default WithCheckLoadDataPage(Main);

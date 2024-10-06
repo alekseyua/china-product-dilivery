@@ -1,14 +1,13 @@
-import React from 'react'
-import { IPropsSlider} from '../../@types/Slider/slider'
+import { IPropsSlider } from '../../@types/Slider/slider'
 import styles from './styles/slider.module.scss'
 
 function SliderReatureControllerContainer({
-    children,
+  children,
 
-}:IPropsSlider) {
+}: IPropsSlider) {
   return (
     <div
-        className={styles['slider__feature-controller-container']}
+      className={styles['slider__feature-controller-container']}
     >{children}</div>
   )
 }

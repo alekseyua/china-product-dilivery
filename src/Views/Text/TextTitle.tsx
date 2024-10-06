@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import stylesH from './style/h.module.scss';
 import classNames from 'classnames';
 import { IPropsTagTitleText } from '../../@types/common';
@@ -6,23 +6,23 @@ import GetText from '../GetText/GetText';
 
 import styles from './style/text.module.scss';
 
-const TextTitle:React.FC<IPropsTagTitleText> = ({    
-    style={},
+const TextTitle: React.FC<IPropsTagTitleText> = ({
+    style = {},
     children,
-    addClass='',
+    addClass = '',
     className,
-    type='',
+    type = '',
     sub,
     center,
-}:IPropsTagTitleText) => {
+}: IPropsTagTitleText) => {
     const classNameInit = classNames({
-        [styles['text']]:true,
-        [styles['text__title']]:true,
-        [styles['text__sub-title']]:!!sub,
-        [styles['text__title--center']]:!!center,
-        [stylesH[type]]:!!type,
+        [styles['text']]: true,
+        [styles['text__title']]: true,
+        [styles['text__sub-title']]: !!sub,
+        [styles['text__title--center']]: !!center,
+        [stylesH[type]]: !!type,
         [styles[addClass]]: !!addClass,
-        [`${className}`]:!!className
+        [`${className}`]: !!className
     })
 
     switch (type) {
@@ -38,10 +38,10 @@ const TextTitle:React.FC<IPropsTagTitleText> = ({
             return GetText(children) ? <h5 className={classNameInit} style={style}>{GetText(children)}</h5> : null
         case 'h6':
             return GetText(children) ? <h6 className={classNameInit} style={style}>{GetText(children)}</h6> : null
-            
+
         default:
-            return GetText(children)? <div className={classNameInit} style={style}>{GetText(children)}</div> : null
-    } 
+            return GetText(children) ? <div className={classNameInit} style={style}>{GetText(children)}</div> : null
+    }
 }
 
 export default TextTitle

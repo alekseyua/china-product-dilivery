@@ -13,7 +13,6 @@ interface IProps {
     image: string;
 }
 
-
 const RepurchaseOfGoods: React.FC<IProps> = function ({ listSection,
     image, }:IProps){
 
@@ -28,9 +27,6 @@ const RepurchaseOfGoods: React.FC<IProps> = function ({ listSection,
             <Offset sectionTop />
             <ConditionWorkComponent dataSection={listSection[2]} />
             <Offset sectionTop />
-
-
-            
         </Container>
     )
 }

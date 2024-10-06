@@ -17,7 +17,6 @@ export class AboutSectionComponent extends Component<WithRouterProps & IProps> {
   }
 
   render() {
-    console.log('AboutSectionComponent', this.props.dataSection)
     return (
       <AboutSection
         infoBlock={this.props.dataSection}
